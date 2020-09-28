@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\CinemagicDB.mdf
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\CinemagicDB_log.ldf
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\Cinemagic.exe.config
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\Cinemagic.exe
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\Cinemagic.pdb
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Form1.resources
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Properties.Resources.resources
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.exe
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.pdb
