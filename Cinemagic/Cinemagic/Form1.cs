@@ -36,7 +36,7 @@ namespace Cinemagic
             catch
             {
                 MessageBox.Show("Could not connect to db");
-;            }
+            }
         }
     }
 }
