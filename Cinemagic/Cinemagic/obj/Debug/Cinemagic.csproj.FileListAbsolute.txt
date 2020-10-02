@@ -10,3 +10,8 @@ C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.c
 C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.exe
 C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.pdb
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CopyComplete
