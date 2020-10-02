@@ -15,3 +15,4 @@ C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFrame
 C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFramework.xml
 C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CopyComplete
+C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\RandomProj.Main.resources
