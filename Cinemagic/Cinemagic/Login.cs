@@ -14,8 +14,8 @@ namespace Cinemagic
 {
     public partial class Form1 : Form
     {
-        public const string USER_NAME = "Admin";
-        public const string PASSWORD = "C!n3M@giK";
+        private const string USER_NAME = "Admin";
+        private const string PASSWORD = "C!n3M@giK";
 
         public Form1()
         {
