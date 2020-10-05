@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using RandomProj;
 
 namespace RandomProj
 {
@@ -39,6 +40,13 @@ namespace RandomProj
             {
                 MessageBox.Show("Could not connect to db");
             }
+        }
+
+        private void btnCommitSale_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Main_Snacks main_snacks = new Main_Snacks();
+            main_snacks.ShowDialog();
         }
     }
 }
