@@ -52,6 +52,11 @@ namespace Cinemagic
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void lblHeading_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
            
