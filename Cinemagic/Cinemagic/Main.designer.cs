@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.btnCommitSale = new System.Windows.Forms.Button();
-            this.btnCustomers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCommitSale
             // 
             this.btnCommitSale.Location = new System.Drawing.Point(314, 313);
-            this.btnCommitSale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCommitSale.Margin = new System.Windows.Forms.Padding(2);
             this.btnCommitSale.Name = "btnCommitSale";
             this.btnCommitSale.Size = new System.Drawing.Size(114, 50);
             this.btnCommitSale.TabIndex = 0;
@@ -43,24 +42,13 @@
             this.btnCommitSale.UseVisualStyleBackColor = true;
             this.btnCommitSale.Click += new System.EventHandler(this.btnCommitSale_Click);
             // 
-            // btnCustomers
-            // 
-            this.btnCustomers.Location = new System.Drawing.Point(108, 304);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(97, 59);
-            this.btnCustomers.TabIndex = 1;
-            this.btnCustomers.Text = "Customers";
-            this.btnCustomers.UseVisualStyleBackColor = true;
-            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 409);
-            this.Controls.Add(this.btnCustomers);
             this.Controls.Add(this.btnCommitSale);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
@@ -71,6 +59,5 @@
         #endregion
 
         private System.Windows.Forms.Button btnCommitSale;
-        private System.Windows.Forms.Button btnCustomers;
     }
 }

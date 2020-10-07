@@ -34,7 +34,7 @@
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(114, 226);
+            this.btnAddCustomer.Location = new System.Drawing.Point(188, 216);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(102, 43);
             this.btnAddCustomer.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             this.btnEditCustomer.Location = new System.Drawing.Point(449, 226);
             this.btnEditCustomer.Name = "btnEditCustomer";
-            this.btnEditCustomer.Size = new System.Drawing.Size(75, 23);
+            this.btnEditCustomer.Size = new System.Drawing.Size(75, 51);
             this.btnEditCustomer.TabIndex = 1;
             this.btnEditCustomer.Text = "button2";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
