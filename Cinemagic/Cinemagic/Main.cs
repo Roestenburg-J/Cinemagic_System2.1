@@ -48,5 +48,10 @@ namespace RandomProj
             Main_Snacks main_snacks = new Main_Snacks();
             main_snacks.ShowDialog();
         }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
