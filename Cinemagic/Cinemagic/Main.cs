@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using RandomProj;
 
+
 namespace RandomProj
 {
     public partial class Main : Form
@@ -49,9 +50,11 @@ namespace RandomProj
             main_snacks.ShowDialog();
         }
 
-        private void btnCustomers_Click(object sender, EventArgs e)
+        private void btnCustomers_Click_1(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            Cinemagic.frmCustomer customer = new Cinemagic.frmCustomer();
+            customer.ShowDialog();
         }
     }
 }

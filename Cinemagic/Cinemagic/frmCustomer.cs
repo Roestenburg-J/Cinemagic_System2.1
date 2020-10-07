@@ -11,9 +11,9 @@ using System.Drawing;
 
 namespace Cinemagic
 {
-    public partial class Customer : Form
+    public partial class frmCustomer : Form
     {
-        public Customer()
+        public frmCustomer()
         {
             InitializeComponent();
         }
@@ -86,6 +86,11 @@ namespace Cinemagic
         {
             AddCustomer("customer", "add");
            
+        }
+
+        private void Customer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

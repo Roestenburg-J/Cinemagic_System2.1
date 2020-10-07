@@ -1,6 +1,6 @@
 ﻿namespace Cinemagic
 {
-    partial class Customer
+    partial class frmCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -51,15 +51,16 @@
             this.btnEditCustomer.Text = "button2";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
             // 
-            // Customer
+            // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.btnAddCustomer);
-            this.Name = "Customer";
+            this.Name = "frmCustomer";
             this.Text = "Customers";
+            this.Load += new System.EventHandler(this.Customer_Load);
             this.ResumeLayout(false);
 
         }
