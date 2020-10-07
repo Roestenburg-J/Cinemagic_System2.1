@@ -11,23 +11,37 @@ using System.Drawing;
 
 namespace Cinemagic
 {
+
     public partial class frmCustomer : Form
     {
+        private string id;
+        private string name;
+        private string surname;
+        private string phone;
+        private string email;
+
+
         public frmCustomer()
         {
             InitializeComponent();
         }
 
 
-        public static DialogResult AddCustomer(string title, string promptText)
+        public static DialogResult AddCustomer()
         {
-            Form form = new Form();
+            Form form = new Form();        
 
             Label lblID = new Label();
             Label lblName = new Label();
             Label lblSurname = new Label();
             Label lblEmail = new Label();
-            Label lblPhone = new Label(); 
+            Label lblPhone = new Label();
+
+            lblID.Text = "Customer ID:";
+            lblName.Text = "Name:";
+            lblSurname.Text = "Surname:";
+            lblPhone.Text = "Phone:";
+            lblEmail.Text = "E-Mail:";
 
             TextBox txtName = new TextBox();
             TextBox txtSurname = new TextBox();
@@ -35,44 +49,47 @@ namespace Cinemagic
             TextBox txtEmail = new TextBox();
             TextBox txtPhone = new TextBox();
 
-
             Button btnAdd = new Button();
             Button btnCancel = new Button();
             btnAdd.DialogResult = DialogResult.OK;
             btnCancel.DialogResult = DialogResult.Cancel;
 
-            lblID.SetBounds(10,10,100,13);
-            lblName.SetBounds(40, 10, 100, 13);
-            lblSurname.SetBounds(70, 10, 100, 13);
-            lblPhone.SetBounds(100, 10, 100, 13);
-            lblEmail.SetBounds(130, 10, 100, 13);
+            lblID.Location = new Point(60, 35);
+            lblName.Location = new Point(60, 75);
+            lblSurname.Location = new Point(60, 115);
+            lblPhone.Location = new Point(60, 155);
+            lblEmail.Location = new Point(60, 195);
 
-            txtID.SetBounds(20, 10, 100, 13);
-            txtID.SetBounds(50, 10, 100, 13);
-            txtID.SetBounds(80, 10, 100, 13);
-            txtID.SetBounds(110, 10, 100, 13);
-            txtID.SetBounds(140, 10, 100, 13);
+            lblID.Size = new Size(80, 20);
+            lblName.Size = new Size(80, 20);
+            lblSurname.Size = new Size(80, 20);
+            lblPhone.Size = new Size(80, 20);
+            lblEmail.Size = new Size(80, 20);
 
-            lblID.AutoSize = true;
-            lblName.AutoSize = true;
-            lblSurname.AutoSize = true;
-            lblPhone.AutoSize = true;
-            lblEmail.AutoSize = true;
+            txtID.Location = new Point(150, 35);
+            txtName.Location = new Point(150, 75);
+            txtSurname.Location = new Point(150, 115);
+            txtPhone.Location = new Point(150, 155);
+            txtEmail.Location = new Point(150, 195);
 
-            txtID.Anchor = txtID.Anchor | AnchorStyles.Right;
-            txtName.Anchor = txtName.Anchor | AnchorStyles.Right;
-            txtSurname.Anchor = txtSurname.Anchor | AnchorStyles.Right;
-            txtPhone.Anchor = txtPhone.Anchor | AnchorStyles.Right;
-            txtEmail.Anchor = txtEmail.Anchor | AnchorStyles.Right;
+            txtID.Size = new Size(140, 20);
+            txtName.Size = new Size(140, 20);
+            txtSurname.Size = new Size(140, 20);
+            txtPhone.Size = new Size(140, 20);
+            txtEmail.Size = new Size(140, 20);
 
-            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAdd.Size = new Size(80,40);
+            btnCancel.Size = new Size(80, 40);
+            btnAdd.Location = new Point(60, 300);
+            btnCancel.Location = new Point(200, 300);
+            btnAdd.Text = "Add customer";
+            btnCancel.Text = "Cancel";
 
-            form.ClientSize = new Size(300, 107);
-            form.Controls.AddRange(new Control[] { lblID, lblName, lblSurname, lblPhone, lblEmail, txtID, txtName, txtSurname, txtID, txtSurname, txtEmail,btnAdd, btnCancel });
-            form.ClientSize = new Size(Math.Max(300, lblID.Right + 10), form.ClientSize.Height);
+            form.Text = "Add Customer";
+            form.ClientSize = new Size(500, 500);
+            form.Controls.AddRange(new Control[] { lblID, lblName, lblSurname, lblPhone, lblEmail, txtID, txtName, txtSurname, txtID, txtPhone, txtEmail,btnAdd, btnCancel });
+
             form.FormBorderStyle = FormBorderStyle.FixedDialog;
-            form.StartPosition = FormStartPosition.CenterScreen;
             form.MinimizeBox = false;
             form.MaximizeBox = false;
             form.AcceptButton = btnAdd;
@@ -84,7 +101,7 @@ namespace Cinemagic
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            AddCustomer("customer", "add");
+            AddCustomer();
            
         }
 

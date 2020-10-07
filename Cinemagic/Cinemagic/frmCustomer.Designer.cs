@@ -34,7 +34,7 @@
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(188, 216);
+            this.btnAddCustomer.Location = new System.Drawing.Point(64, 107);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(102, 43);
             this.btnAddCustomer.TabIndex = 0;
