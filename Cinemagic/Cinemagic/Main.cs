@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using RandomProj;
-
+using Cinemagic;
 
 namespace RandomProj
 {
@@ -55,6 +55,12 @@ namespace RandomProj
             this.Hide();
             Cinemagic.frmCustomer customer = new Cinemagic.frmCustomer();
             customer.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Booking frm = new Booking();
+            frm.Show();
         }
     }
 }
