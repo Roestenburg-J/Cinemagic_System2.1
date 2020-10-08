@@ -27,7 +27,7 @@ namespace Cinemagic
         }
 
 
-        public static DialogResult AddCustomer()
+        public DialogResult AddCustomer()
         {
             Form form = new Form();        
 
@@ -96,6 +96,59 @@ namespace Cinemagic
             form.CancelButton = btnCancel;
 
             DialogResult dialogResult = form.ShowDialog();
+            id = txtID.Text;
+            name = txtName.Text;
+            surname = txtSurname.Text;
+            phone = txtPhone.Text;
+            email = txtEmail.Text;
+
+            try
+            {
+                Convert.ToInt32(txtID.Text);
+            }
+            catch
+            {
+                MessageBox.Show("ID should be integer", "Invalid ID input");
+                txtID.Text = "";
+                txtID.Enabled = true;
+                txtName.Enabled = false;
+                txtSurname.Enabled = false;
+                txtPhone.Enabled = false;
+                txtEmail.Enabled = false;
+                form.ShowDialog();
+            }
+
+            
+                try
+                {
+                    Convert.ToInt32(txtPhone.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Phone number can only contain numbers");
+                    txtID.Enabled = false;
+                    txtName.Enabled = false;
+                    txtSurname.Enabled = false;
+                    txtEmail.Enabled = false;
+                    txtPhone.Enabled = true;
+                    txtPhone.Text = "";
+                    form.ShowDialog();
+                }
+            if (txtPhone.Text.Length != 10)
+            {
+                MessageBox.Show("Phone number should be 10 digits", "Invalid Phone Number");
+                txtID.Enabled = false;
+                txtName.Enabled = false;
+                txtSurname.Enabled = false;
+                txtEmail.Enabled = false;
+                txtPhone.Enabled = true;
+                txtPhone.Text = "";
+                form.ShowDialog();
+
+            }
+
+
+
             return dialogResult;
         }
 
