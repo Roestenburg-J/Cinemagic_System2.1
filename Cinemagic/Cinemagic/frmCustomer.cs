@@ -27,7 +27,7 @@ namespace Cinemagic
         }
 
 
-        public  DialogResult AddCustomer()
+        public static DialogResult AddCustomer()
         {
             Form form = new Form();        
 
@@ -96,63 +96,12 @@ namespace Cinemagic
             form.CancelButton = btnCancel;
 
             DialogResult dialogResult = form.ShowDialog();
-            try
-            {
-                Convert.ToInt32(txtID.Text);
-            }
-            catch
-            {
-                MessageBox.Show("ID input invalid", "Invalid Input");
-                txtID.Enabled = true;
-                txtID.Text = "";
-                txtPhone.Enabled = false;
-                txtName.Enabled = false;
-                txtSurname.Enabled = false;
-                txtEmail.Enabled = false;
-                dialogResult = form.ShowDialog();
-                
-            }
-            if (txtPhone.Text.Length != 10)
-            {
-                MessageBox.Show("Phone number should have 10 digits!", "Invalid Input");
-                txtPhone.Text = "";
-                txtPhone.Enabled = true;
-                txtID.Enabled = false;
-                txtName.Enabled = false;
-                txtSurname.Enabled = false;
-                txtEmail.Enabled = false;
-                dialogResult = form.ShowDialog();
-
-                try
-                {
-                    Convert.ToInt32(txtPhone.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Phone input should be integer!", "Invalid Input");
-                    txtPhone.Text = "";
-                    txtPhone.Enabled = true;
-                    txtID.Enabled = false;
-                    txtName.Enabled = false;
-                    txtSurname.Enabled = false;
-                    txtEmail.Enabled = false;
-                    dialogResult = form.ShowDialog();
-
-                }
-            }
-
-            id = txtID.Text;
-            name = txtName.Text;
-            surname = txtSurname.Text;
-            phone = txtPhone.Text;
-            email = txtEmail.Text;
             return dialogResult;
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             AddCustomer();
-            label1.Text = name;
            
         }
 
