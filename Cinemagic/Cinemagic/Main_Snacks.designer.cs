@@ -29,31 +29,32 @@
         private void InitializeComponent()
         {
             this.groupSnacks = new System.Windows.Forms.GroupBox();
-            this.groupTransact_Detail = new System.Windows.Forms.GroupBox();
-            this.groupDate = new System.Windows.Forms.GroupBox();
-            this.dbGridSnacks = new System.Windows.Forms.DataGridView();
             this.groupMaintain_Snacks = new System.Windows.Forms.GroupBox();
-            this.lblItem = new System.Windows.Forms.Label();
-            this.txtItem = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.spinQuantity = new System.Windows.Forms.NumericUpDown();
-            this.txtUnit_Cost = new System.Windows.Forms.TextBox();
-            this.lblUnit_Cost = new System.Windows.Forms.Label();
+            this.btnDelete_Snack = new System.Windows.Forms.Button();
+            this.lblFill_Snack = new System.Windows.Forms.Label();
+            this.spinFill_SnackID = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblDeleteSnack = new System.Windows.Forms.Label();
+            this.spinID = new System.Windows.Forms.NumericUpDown();
+            this.lbl_ID = new System.Windows.Forms.Label();
+            this.btnUpdate_Snacks = new System.Windows.Forms.Button();
+            this.btnFill_Snacks = new System.Windows.Forms.Button();
+            this.btnAdd_Snacks = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.btnAdd_Snacks = new System.Windows.Forms.Button();
-            this.btnFill_Snacks = new System.Windows.Forms.Button();
-            this.btnUpdate_Snacks = new System.Windows.Forms.Button();
-            this.lbl_ID = new System.Windows.Forms.Label();
-            this.spinID = new System.Windows.Forms.NumericUpDown();
-            this.lblDeleteSnack = new System.Windows.Forms.Label();
-            this.lblFill_Snack = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnDelete_Snack = new System.Windows.Forms.Button();
+            this.txtUnit_Cost = new System.Windows.Forms.TextBox();
+            this.lblUnit_Cost = new System.Windows.Forms.Label();
+            this.spinQuantity = new System.Windows.Forms.NumericUpDown();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtItem = new System.Windows.Forms.TextBox();
+            this.lblItem = new System.Windows.Forms.Label();
+            this.dbGridSnacks = new System.Windows.Forms.DataGridView();
+            this.groupTransact_Detail = new System.Windows.Forms.GroupBox();
             this.groupTransact_Details = new System.Windows.Forms.GroupBox();
+            this.spinSnack_Sale_ID = new System.Windows.Forms.NumericUpDown();
+            this.spinSnack_ID = new System.Windows.Forms.NumericUpDown();
             this.btnDelete_Transaction = new System.Windows.Forms.Button();
             this.lblFill_Transact = new System.Windows.Forms.Label();
             this.spinFill_SnackSaleID = new System.Windows.Forms.NumericUpDown();
@@ -71,31 +72,30 @@
             this.lblSnack_ID = new System.Windows.Forms.Label();
             this.lblSnack_Sale_ID = new System.Windows.Forms.Label();
             this.dbTransaction_Details = new System.Windows.Forms.DataGridView();
-            this.spinSnack_ID = new System.Windows.Forms.NumericUpDown();
-            this.spinSnack_Sale_ID = new System.Windows.Forms.NumericUpDown();
+            this.groupDate = new System.Windows.Forms.GroupBox();
             this.dbGridTransact_Dates = new System.Windows.Forms.DataGridView();
             this.groupSnacks.SuspendLayout();
-            this.groupTransact_Detail.SuspendLayout();
-            this.groupDate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).BeginInit();
             this.groupMaintain_Snacks.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spinQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinFill_SnackID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).BeginInit();
+            this.groupTransact_Detail.SuspendLayout();
             this.groupTransact_Details.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinSnack_Sale_ID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinSnack_ID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinFill_SnackSaleID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinDelete_TransactID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity_Ordered)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbTransaction_Details)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinSnack_ID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinSnack_Sale_ID)).BeginInit();
+            this.groupDate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridTransact_Dates)).BeginInit();
             this.SuspendLayout();
             // 
             // groupSnacks
             // 
-            this.groupSnacks.Controls.Add(this.groupMaintain_Snacks);
             this.groupSnacks.Controls.Add(this.dbGridSnacks);
+            this.groupSnacks.Controls.Add(this.groupMaintain_Snacks);
             this.groupSnacks.Location = new System.Drawing.Point(12, 12);
             this.groupSnacks.Name = "groupSnacks";
             this.groupSnacks.Size = new System.Drawing.Size(471, 733);
@@ -103,41 +103,11 @@
             this.groupSnacks.TabStop = false;
             this.groupSnacks.Text = "SNACKS";
             // 
-            // groupTransact_Detail
-            // 
-            this.groupTransact_Detail.Controls.Add(this.groupTransact_Details);
-            this.groupTransact_Detail.Controls.Add(this.dbTransaction_Details);
-            this.groupTransact_Detail.Location = new System.Drawing.Point(501, 15);
-            this.groupTransact_Detail.Name = "groupTransact_Detail";
-            this.groupTransact_Detail.Size = new System.Drawing.Size(517, 730);
-            this.groupTransact_Detail.TabIndex = 1;
-            this.groupTransact_Detail.TabStop = false;
-            this.groupTransact_Detail.Text = "TRANSACTION DETAILS";
-            // 
-            // groupDate
-            // 
-            this.groupDate.Controls.Add(this.dbGridTransact_Dates);
-            this.groupDate.Location = new System.Drawing.Point(1041, 23);
-            this.groupDate.Name = "groupDate";
-            this.groupDate.Size = new System.Drawing.Size(423, 310);
-            this.groupDate.TabIndex = 1;
-            this.groupDate.TabStop = false;
-            this.groupDate.Text = "TRANSACTION DATE";
-            // 
-            // dbGridSnacks
-            // 
-            this.dbGridSnacks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbGridSnacks.Location = new System.Drawing.Point(30, 40);
-            this.dbGridSnacks.Name = "dbGridSnacks";
-            this.dbGridSnacks.RowTemplate.Height = 24;
-            this.dbGridSnacks.Size = new System.Drawing.Size(403, 202);
-            this.dbGridSnacks.TabIndex = 0;
-            // 
             // groupMaintain_Snacks
             // 
             this.groupMaintain_Snacks.Controls.Add(this.btnDelete_Snack);
             this.groupMaintain_Snacks.Controls.Add(this.lblFill_Snack);
-            this.groupMaintain_Snacks.Controls.Add(this.numericUpDown1);
+            this.groupMaintain_Snacks.Controls.Add(this.spinFill_SnackID);
             this.groupMaintain_Snacks.Controls.Add(this.label2);
             this.groupMaintain_Snacks.Controls.Add(this.lblDeleteSnack);
             this.groupMaintain_Snacks.Controls.Add(this.spinID);
@@ -162,21 +132,144 @@
             this.groupMaintain_Snacks.TabStop = false;
             this.groupMaintain_Snacks.Text = "MAINTAIN SNACKS";
             // 
-            // lblItem
+            // btnDelete_Snack
             // 
-            this.lblItem.AutoSize = true;
-            this.lblItem.Location = new System.Drawing.Point(59, 45);
-            this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(38, 17);
-            this.lblItem.TabIndex = 0;
-            this.lblItem.Text = "Item:";
+            this.btnDelete_Snack.Location = new System.Drawing.Point(236, 394);
+            this.btnDelete_Snack.Name = "btnDelete_Snack";
+            this.btnDelete_Snack.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete_Snack.TabIndex = 19;
+            this.btnDelete_Snack.Text = "DELETE";
+            this.btnDelete_Snack.UseVisualStyleBackColor = true;
             // 
-            // txtItem
+            // lblFill_Snack
             // 
-            this.txtItem.Location = new System.Drawing.Point(113, 42);
-            this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(100, 22);
-            this.txtItem.TabIndex = 1;
+            this.lblFill_Snack.AutoSize = true;
+            this.lblFill_Snack.Location = new System.Drawing.Point(28, 269);
+            this.lblFill_Snack.Name = "lblFill_Snack";
+            this.lblFill_Snack.Size = new System.Drawing.Size(241, 17);
+            this.lblFill_Snack.TabIndex = 18;
+            this.lblFill_Snack.Text = "FILL INPUT CONTROLS WITH DATA";
+            // 
+            // spinFill_SnackID
+            // 
+            this.spinFill_SnackID.Location = new System.Drawing.Point(109, 302);
+            this.spinFill_SnackID.Name = "spinFill_SnackID";
+            this.spinFill_SnackID.Size = new System.Drawing.Size(100, 22);
+            this.spinFill_SnackID.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 307);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 17);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Snack_ID:";
+            // 
+            // lblDeleteSnack
+            // 
+            this.lblDeleteSnack.AutoSize = true;
+            this.lblDeleteSnack.Location = new System.Drawing.Point(28, 362);
+            this.lblDeleteSnack.Name = "lblDeleteSnack";
+            this.lblDeleteSnack.Size = new System.Drawing.Size(125, 17);
+            this.lblDeleteSnack.TabIndex = 15;
+            this.lblDeleteSnack.Text = "DELETE A SNACK";
+            // 
+            // spinID
+            // 
+            this.spinID.Location = new System.Drawing.Point(109, 395);
+            this.spinID.Name = "spinID";
+            this.spinID.Size = new System.Drawing.Size(100, 22);
+            this.spinID.TabIndex = 14;
+            // 
+            // lbl_ID
+            // 
+            this.lbl_ID.AutoSize = true;
+            this.lbl_ID.Location = new System.Drawing.Point(28, 400);
+            this.lbl_ID.Name = "lbl_ID";
+            this.lbl_ID.Size = new System.Drawing.Size(72, 17);
+            this.lbl_ID.TabIndex = 13;
+            this.lbl_ID.Text = "Snack_ID:";
+            // 
+            // btnUpdate_Snacks
+            // 
+            this.btnUpdate_Snacks.Location = new System.Drawing.Point(264, 86);
+            this.btnUpdate_Snacks.Name = "btnUpdate_Snacks";
+            this.btnUpdate_Snacks.Size = new System.Drawing.Size(92, 23);
+            this.btnUpdate_Snacks.TabIndex = 12;
+            this.btnUpdate_Snacks.Text = "UPDATE";
+            this.btnUpdate_Snacks.UseVisualStyleBackColor = true;
+            this.btnUpdate_Snacks.Click += new System.EventHandler(this.btnUpdate_Snacks_Click);
+            // 
+            // btnFill_Snacks
+            // 
+            this.btnFill_Snacks.Location = new System.Drawing.Point(236, 301);
+            this.btnFill_Snacks.Name = "btnFill_Snacks";
+            this.btnFill_Snacks.Size = new System.Drawing.Size(75, 23);
+            this.btnFill_Snacks.TabIndex = 11;
+            this.btnFill_Snacks.Text = "FILL";
+            this.btnFill_Snacks.UseVisualStyleBackColor = true;
+            this.btnFill_Snacks.Click += new System.EventHandler(this.btnFill_Snacks_Click);
+            // 
+            // btnAdd_Snacks
+            // 
+            this.btnAdd_Snacks.Location = new System.Drawing.Point(281, 42);
+            this.btnAdd_Snacks.Name = "btnAdd_Snacks";
+            this.btnAdd_Snacks.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd_Snacks.TabIndex = 10;
+            this.btnAdd_Snacks.Text = "ADD";
+            this.btnAdd_Snacks.UseVisualStyleBackColor = true;
+            this.btnAdd_Snacks.Click += new System.EventHandler(this.btnAdd_Snacks_Click);
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(113, 202);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(100, 22);
+            this.txtPrice.TabIndex = 9;
+            this.txtPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrice_Validating);
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(53, 205);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(44, 17);
+            this.lblPrice.TabIndex = 8;
+            this.lblPrice.Text = "Price:";
+            // 
+            // txtUnit_Cost
+            // 
+            this.txtUnit_Cost.Location = new System.Drawing.Point(113, 161);
+            this.txtUnit_Cost.Name = "txtUnit_Cost";
+            this.txtUnit_Cost.Size = new System.Drawing.Size(100, 22);
+            this.txtUnit_Cost.TabIndex = 7;
+            this.txtUnit_Cost.Validating += new System.ComponentModel.CancelEventHandler(this.txtUnit_Cost_Validating);
+            // 
+            // lblUnit_Cost
+            // 
+            this.lblUnit_Cost.AutoSize = true;
+            this.lblUnit_Cost.Location = new System.Drawing.Point(28, 164);
+            this.lblUnit_Cost.Name = "lblUnit_Cost";
+            this.lblUnit_Cost.Size = new System.Drawing.Size(69, 17);
+            this.lblUnit_Cost.TabIndex = 6;
+            this.lblUnit_Cost.Text = "Unit Cost:";
+            // 
+            // spinQuantity
+            // 
+            this.spinQuantity.Location = new System.Drawing.Point(113, 122);
+            this.spinQuantity.Name = "spinQuantity";
+            this.spinQuantity.Size = new System.Drawing.Size(100, 22);
+            this.spinQuantity.TabIndex = 5;
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(32, 127);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(65, 17);
+            this.lblQuantity.TabIndex = 4;
+            this.lblQuantity.Text = "Quantity:";
             // 
             // txtDescription
             // 
@@ -194,139 +287,41 @@
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "Description:";
             // 
-            // lblQuantity
+            // txtItem
             // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(32, 127);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(65, 17);
-            this.lblQuantity.TabIndex = 4;
-            this.lblQuantity.Text = "Quantity:";
+            this.txtItem.Location = new System.Drawing.Point(113, 42);
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Size = new System.Drawing.Size(100, 22);
+            this.txtItem.TabIndex = 1;
             // 
-            // spinQuantity
+            // lblItem
             // 
-            this.spinQuantity.Location = new System.Drawing.Point(113, 122);
-            this.spinQuantity.Name = "spinQuantity";
-            this.spinQuantity.Size = new System.Drawing.Size(100, 22);
-            this.spinQuantity.TabIndex = 5;
+            this.lblItem.AutoSize = true;
+            this.lblItem.Location = new System.Drawing.Point(59, 45);
+            this.lblItem.Name = "lblItem";
+            this.lblItem.Size = new System.Drawing.Size(38, 17);
+            this.lblItem.TabIndex = 0;
+            this.lblItem.Text = "Item:";
             // 
-            // txtUnit_Cost
+            // dbGridSnacks
             // 
-            this.txtUnit_Cost.Location = new System.Drawing.Point(113, 161);
-            this.txtUnit_Cost.Name = "txtUnit_Cost";
-            this.txtUnit_Cost.Size = new System.Drawing.Size(100, 22);
-            this.txtUnit_Cost.TabIndex = 7;
+            this.dbGridSnacks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbGridSnacks.Location = new System.Drawing.Point(30, 40);
+            this.dbGridSnacks.Name = "dbGridSnacks";
+            this.dbGridSnacks.RowTemplate.Height = 24;
+            this.dbGridSnacks.Size = new System.Drawing.Size(403, 202);
+            this.dbGridSnacks.TabIndex = 0;
             // 
-            // lblUnit_Cost
+            // groupTransact_Detail
             // 
-            this.lblUnit_Cost.AutoSize = true;
-            this.lblUnit_Cost.Location = new System.Drawing.Point(28, 164);
-            this.lblUnit_Cost.Name = "lblUnit_Cost";
-            this.lblUnit_Cost.Size = new System.Drawing.Size(69, 17);
-            this.lblUnit_Cost.TabIndex = 6;
-            this.lblUnit_Cost.Text = "Unit Cost:";
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(113, 202);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 22);
-            this.txtPrice.TabIndex = 9;
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(53, 205);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(44, 17);
-            this.lblPrice.TabIndex = 8;
-            this.lblPrice.Text = "Price:";
-            // 
-            // btnAdd_Snacks
-            // 
-            this.btnAdd_Snacks.Location = new System.Drawing.Point(281, 42);
-            this.btnAdd_Snacks.Name = "btnAdd_Snacks";
-            this.btnAdd_Snacks.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd_Snacks.TabIndex = 10;
-            this.btnAdd_Snacks.Text = "ADD";
-            this.btnAdd_Snacks.UseVisualStyleBackColor = true;
-            // 
-            // btnFill_Snacks
-            // 
-            this.btnFill_Snacks.Location = new System.Drawing.Point(236, 301);
-            this.btnFill_Snacks.Name = "btnFill_Snacks";
-            this.btnFill_Snacks.Size = new System.Drawing.Size(75, 23);
-            this.btnFill_Snacks.TabIndex = 11;
-            this.btnFill_Snacks.Text = "FILL";
-            this.btnFill_Snacks.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate_Snacks
-            // 
-            this.btnUpdate_Snacks.Location = new System.Drawing.Point(264, 86);
-            this.btnUpdate_Snacks.Name = "btnUpdate_Snacks";
-            this.btnUpdate_Snacks.Size = new System.Drawing.Size(92, 23);
-            this.btnUpdate_Snacks.TabIndex = 12;
-            this.btnUpdate_Snacks.Text = "UPDATE";
-            this.btnUpdate_Snacks.UseVisualStyleBackColor = true;
-            // 
-            // lbl_ID
-            // 
-            this.lbl_ID.AutoSize = true;
-            this.lbl_ID.Location = new System.Drawing.Point(28, 400);
-            this.lbl_ID.Name = "lbl_ID";
-            this.lbl_ID.Size = new System.Drawing.Size(72, 17);
-            this.lbl_ID.TabIndex = 13;
-            this.lbl_ID.Text = "Snack_ID:";
-            // 
-            // spinID
-            // 
-            this.spinID.Location = new System.Drawing.Point(109, 395);
-            this.spinID.Name = "spinID";
-            this.spinID.Size = new System.Drawing.Size(100, 22);
-            this.spinID.TabIndex = 14;
-            // 
-            // lblDeleteSnack
-            // 
-            this.lblDeleteSnack.AutoSize = true;
-            this.lblDeleteSnack.Location = new System.Drawing.Point(28, 362);
-            this.lblDeleteSnack.Name = "lblDeleteSnack";
-            this.lblDeleteSnack.Size = new System.Drawing.Size(125, 17);
-            this.lblDeleteSnack.TabIndex = 15;
-            this.lblDeleteSnack.Text = "DELETE A SNACK";
-            // 
-            // lblFill_Snack
-            // 
-            this.lblFill_Snack.AutoSize = true;
-            this.lblFill_Snack.Location = new System.Drawing.Point(28, 269);
-            this.lblFill_Snack.Name = "lblFill_Snack";
-            this.lblFill_Snack.Size = new System.Drawing.Size(241, 17);
-            this.lblFill_Snack.TabIndex = 18;
-            this.lblFill_Snack.Text = "FILL INPUT CONTROLS WITH DATA";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(109, 302);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 22);
-            this.numericUpDown1.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 307);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 17);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Snack_ID:";
-            // 
-            // btnDelete_Snack
-            // 
-            this.btnDelete_Snack.Location = new System.Drawing.Point(236, 394);
-            this.btnDelete_Snack.Name = "btnDelete_Snack";
-            this.btnDelete_Snack.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete_Snack.TabIndex = 19;
-            this.btnDelete_Snack.Text = "DELETE";
-            this.btnDelete_Snack.UseVisualStyleBackColor = true;
+            this.groupTransact_Detail.Controls.Add(this.dbTransaction_Details);
+            this.groupTransact_Detail.Controls.Add(this.groupTransact_Details);
+            this.groupTransact_Detail.Location = new System.Drawing.Point(501, 15);
+            this.groupTransact_Detail.Name = "groupTransact_Detail";
+            this.groupTransact_Detail.Size = new System.Drawing.Size(517, 730);
+            this.groupTransact_Detail.TabIndex = 1;
+            this.groupTransact_Detail.TabStop = false;
+            this.groupTransact_Detail.Text = "TRANSACTION DETAILS";
             // 
             // groupTransact_Details
             // 
@@ -354,6 +349,20 @@
             this.groupTransact_Details.TabIndex = 3;
             this.groupTransact_Details.TabStop = false;
             this.groupTransact_Details.Text = "MAINTAIN TRANSACTION DETAILS";
+            // 
+            // spinSnack_Sale_ID
+            // 
+            this.spinSnack_Sale_ID.Location = new System.Drawing.Point(157, 45);
+            this.spinSnack_Sale_ID.Name = "spinSnack_Sale_ID";
+            this.spinSnack_Sale_ID.Size = new System.Drawing.Size(100, 22);
+            this.spinSnack_Sale_ID.TabIndex = 21;
+            // 
+            // spinSnack_ID
+            // 
+            this.spinSnack_ID.Location = new System.Drawing.Point(157, 87);
+            this.spinSnack_ID.Name = "spinSnack_ID";
+            this.spinSnack_ID.Size = new System.Drawing.Size(100, 22);
+            this.spinSnack_ID.TabIndex = 20;
             // 
             // btnDelete_Transaction
             // 
@@ -500,19 +509,15 @@
             this.dbTransaction_Details.Size = new System.Drawing.Size(440, 202);
             this.dbTransaction_Details.TabIndex = 2;
             // 
-            // spinSnack_ID
+            // groupDate
             // 
-            this.spinSnack_ID.Location = new System.Drawing.Point(157, 87);
-            this.spinSnack_ID.Name = "spinSnack_ID";
-            this.spinSnack_ID.Size = new System.Drawing.Size(100, 22);
-            this.spinSnack_ID.TabIndex = 20;
-            // 
-            // spinSnack_Sale_ID
-            // 
-            this.spinSnack_Sale_ID.Location = new System.Drawing.Point(157, 45);
-            this.spinSnack_Sale_ID.Name = "spinSnack_Sale_ID";
-            this.spinSnack_Sale_ID.Size = new System.Drawing.Size(100, 22);
-            this.spinSnack_Sale_ID.TabIndex = 21;
+            this.groupDate.Controls.Add(this.dbGridTransact_Dates);
+            this.groupDate.Location = new System.Drawing.Point(1041, 23);
+            this.groupDate.Name = "groupDate";
+            this.groupDate.Size = new System.Drawing.Size(423, 310);
+            this.groupDate.TabIndex = 1;
+            this.groupDate.TabStop = false;
+            this.groupDate.Text = "TRANSACTION DATE";
             // 
             // dbGridTransact_Dates
             // 
@@ -535,22 +540,22 @@
             this.Text = "Main_Snacks";
             this.Load += new System.EventHandler(this.Main_Snacks_Load);
             this.groupSnacks.ResumeLayout(false);
-            this.groupTransact_Detail.ResumeLayout(false);
-            this.groupDate.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).EndInit();
             this.groupMaintain_Snacks.ResumeLayout(false);
             this.groupMaintain_Snacks.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spinQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinFill_SnackID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).EndInit();
+            this.groupTransact_Detail.ResumeLayout(false);
             this.groupTransact_Details.ResumeLayout(false);
             this.groupTransact_Details.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinSnack_Sale_ID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinSnack_ID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinFill_SnackSaleID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinDelete_TransactID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity_Ordered)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbTransaction_Details)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinSnack_ID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinSnack_Sale_ID)).EndInit();
+            this.groupDate.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dbGridTransact_Dates)).EndInit();
             this.ResumeLayout(false);
 
@@ -581,7 +586,7 @@
         private System.Windows.Forms.Label lblDeleteSnack;
         private System.Windows.Forms.Button btnDelete_Snack;
         private System.Windows.Forms.Label lblFill_Snack;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown spinFill_SnackID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupTransact_Details;
         private System.Windows.Forms.Button btnDelete_Transaction;
