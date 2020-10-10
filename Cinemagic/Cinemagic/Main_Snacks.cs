@@ -24,5 +24,10 @@ namespace RandomProj
             Snack_Sale snack_Sale = new Snack_Sale();
             snack_Sale.ShowDialog();
         }
+
+        private void Main_Snacks_Load(object sender, EventArgs e)
+        {
+            spinID.Maximum = Int32.MaxValue;
+        }
     }
 }
