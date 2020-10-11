@@ -142,7 +142,7 @@
             // 
             this.btnDelete_Snack.Location = new System.Drawing.Point(236, 394);
             this.btnDelete_Snack.Name = "btnDelete_Snack";
-            this.btnDelete_Snack.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete_Snack.Size = new System.Drawing.Size(92, 23);
             this.btnDelete_Snack.TabIndex = 19;
             this.btnDelete_Snack.Text = "DELETE";
             this.btnDelete_Snack.UseVisualStyleBackColor = true;
@@ -366,10 +366,11 @@
             // 
             this.btnDelete_Transaction.Location = new System.Drawing.Point(278, 356);
             this.btnDelete_Transaction.Name = "btnDelete_Transaction";
-            this.btnDelete_Transaction.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete_Transaction.Size = new System.Drawing.Size(102, 23);
             this.btnDelete_Transaction.TabIndex = 19;
             this.btnDelete_Transaction.Text = "DELETE";
             this.btnDelete_Transaction.UseVisualStyleBackColor = true;
+            this.btnDelete_Transaction.Click += new System.EventHandler(this.btnDelete_Transaction_Click);
             // 
             // lblFill_Transact
             // 
@@ -429,6 +430,7 @@
             this.btnUpdate_Transact.TabIndex = 12;
             this.btnUpdate_Transact.Text = "UPDATE";
             this.btnUpdate_Transact.UseVisualStyleBackColor = true;
+            this.btnUpdate_Transact.Click += new System.EventHandler(this.btnUpdate_Transact_Click);
             // 
             // btnFill_Transact
             // 
@@ -438,6 +440,7 @@
             this.btnFill_Transact.TabIndex = 11;
             this.btnFill_Transact.Text = "FILL";
             this.btnFill_Transact.UseVisualStyleBackColor = true;
+            this.btnFill_Transact.Click += new System.EventHandler(this.btnFill_Transact_Click);
             // 
             // btnAdd_Transact
             // 

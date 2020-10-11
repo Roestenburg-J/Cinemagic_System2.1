@@ -198,6 +198,39 @@ namespace RandomProj
             }
         }
 
+        private void UpdateTransactions()
+        {
+            Main cinema = new Main();
+            cinema.conn = new SqlConnection(connection);
+            string select_transactions = "SELECT * FROM SNACK_TRANSACTION WHERE Snack_Sale_ID = " + spinFill_SnackSaleID.Value.ToString() + ";";
+            string update_transactions = $"UPDATE SNACK_TRANSACTION SET Snack_ID = '{spinSnack_ID.Value.ToString()}',  Quantity_Ordered = " +
+            $"{spinQuantity_Ordered.Value.ToString()}, Unit_Price = CAST(REPLACE('{txtTotal.Text}', ',', '.') AS DECIMAL(10, 2)) WHERE Snack_Sale_ID = { spinFill_SnackSaleID.Value.ToString()}";
+            cinema.com = new SqlCommand(update_transactions, cinema.conn);
+            command = new SqlCommand(select_transactions, cinema.conn);
+            cinema.adap = new SqlDataAdapter();
+            cinema.adap.SelectCommand = command;
+            cinema.adap.Fill(dt);
+            try
+            {
+                cinema.conn.Open();
+                if (dt.Rows.Count > 0)
+                {
+                    cinema.com.ExecuteNonQuery();
+                    cinema.conn.Close();
+                    DisplayTransact_Details();
+                    MessageBox.Show("Transaction updated successfully!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("The selected Snack_Sale_ID does not exist!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message + " Failed to update transaction...", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void FillSnacks()
         {
             Main cinema = new Main();
@@ -225,7 +258,102 @@ namespace RandomProj
             catch (Exception err)
 
             {
-                MessageBox.Show(err.Message+" Failed to fill textboxes with data from selected record", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(err.Message+" Failed to fill inputs with data from selected record", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FillTransactions()
+        {
+            Main cinema = new Main();
+            string select_transactions = "SELECT * FROM SNACK_TRANSACTION WHERE Snack_Sale_Id = " + spinFill_SnackSaleID.Value.ToString();
+            try
+            {
+                cinema.conn = new SqlConnection(cinema.constr);
+                cinema.conn.Open();
+                cinema.com = new SqlCommand(select_transactions, cinema.conn);
+                SqlDataReader dr = cinema.com.ExecuteReader();
+                if (dr.Read())
+                {
+                    spinSnack_ID.Value = int.Parse(dr.GetValue(1).ToString());
+                    spinQuantity_Ordered.Value = int.Parse(dr.GetValue(2).ToString());
+                    txtTotal.Text = dr.GetValue(3).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid Snack_Sale_ID", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                cinema.conn.Close();
+            }
+            catch (Exception err)
+
+            {
+                MessageBox.Show(err.Message + " Failed to fill inputs with data from selected record", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeleteSnacks()
+        {
+            Main cinema = new Main();
+            string select_snacks = "SELECT * FROM SNACK WHERE Snack_ID = " + spinID.Value.ToString() + ";";
+            SqlCommand cmd;
+            try
+            {
+                string delete_snack = "DELETE FROM SNACK WHERE Snack_Id = " + spinID.Value.ToString();
+                cinema.conn = new SqlConnection(cinema.constr);
+                cinema.conn.Open();
+                cinema.com = new SqlCommand(select_snacks, cinema.conn);
+                cmd = new SqlCommand(delete_snack, cinema.conn);
+                cinema.adap = new SqlDataAdapter();
+                cinema.adap.SelectCommand = cinema.com;
+                cinema.adap.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    cmd.ExecuteNonQuery();
+                    cinema.conn.Close();
+                    MessageBox.Show("Snack was deleted successfully!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DisplaySnacks();
+                }
+                else
+                {
+                    MessageBox.Show("Snack_ID does not exist", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message + " Failed to delete record...", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeleteTransactions()
+        {
+            Main cinema = new Main();
+            string select_transactions = "SELECT * FROM SNACK_TRANSACTION WHERE Snack_Sale_ID = " + spinDelete_TransactID.Value.ToString() + ";";
+            SqlCommand cmd;
+            try
+            {
+                string delete_transaction = "DELETE FROM SNACK_TRANSACTION WHERE Snack_Sale_Id = " + spinDelete_TransactID.Value.ToString();
+                cinema.conn = new SqlConnection(cinema.constr);
+                cinema.conn.Open();
+                cinema.com = new SqlCommand(select_transactions, cinema.conn);
+                cmd = new SqlCommand(delete_transaction, cinema.conn);
+                cinema.adap = new SqlDataAdapter();
+                cinema.adap.SelectCommand = cinema.com;
+                cinema.adap.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    cmd.ExecuteNonQuery();
+                    cinema.conn.Close();
+                    MessageBox.Show("Transaction was deleted successfully!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DisplayTransact_Details();
+                }
+                else
+                {
+                    MessageBox.Show("Snack_Sale_ID does not exist", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message + " Failed to delete record...", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -278,40 +406,27 @@ namespace RandomProj
 
         private void btnDelete_Snack_Click(object sender, EventArgs e)
         {
-            Main cinema = new Main();
-            string select_snacks = "SELECT * FROM SNACK WHERE Snack_ID = "+ spinID.Value.ToString() + ";";
-            SqlCommand cmd;
-            try
-            {
-                string delete_snack = "DELETE FROM SNACK WHERE Snack_Id = " + spinID.Value.ToString();
-                cinema.conn = new SqlConnection(cinema.constr);
-                cinema.conn.Open();
-                cinema.com = new SqlCommand(select_snacks, cinema.conn);
-                cmd = new SqlCommand(delete_snack, cinema.conn);
-                cinema.adap = new SqlDataAdapter();
-                cinema.adap.SelectCommand = cinema.com;
-                cinema.adap.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    cmd.ExecuteNonQuery();
-                    cinema.conn.Close();
-                    MessageBox.Show("Snack was deleted successfully!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DisplaySnacks();
-                }
-                else
-                {
-                    MessageBox.Show("Snack_ID does not exist", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message+" Failed to delete record...", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            DeleteSnacks();
         }
 
         private void btnAdd_Transact_Click(object sender, EventArgs e)
         {
             AddTransaction();
+        }
+
+        private void btnFill_Transact_Click(object sender, EventArgs e)
+        {
+            FillTransactions();
+        }
+
+        private void btnUpdate_Transact_Click(object sender, EventArgs e)
+        {
+            UpdateTransactions();
+        }
+
+        private void btnDelete_Transaction_Click(object sender, EventArgs e)
+        {
+            DeleteTransactions();
         }
     }
 }
