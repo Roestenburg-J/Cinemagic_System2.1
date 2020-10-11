@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupSnacks = new System.Windows.Forms.GroupBox();
+            this.dbGridSnacks = new System.Windows.Forms.DataGridView();
             this.groupMaintain_Snacks = new System.Windows.Forms.GroupBox();
             this.btnDelete_Snack = new System.Windows.Forms.Button();
             this.lblFill_Snack = new System.Windows.Forms.Label();
@@ -50,10 +51,9 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.txtItem = new System.Windows.Forms.TextBox();
             this.lblItem = new System.Windows.Forms.Label();
-            this.dbGridSnacks = new System.Windows.Forms.DataGridView();
             this.groupTransact_Detail = new System.Windows.Forms.GroupBox();
+            this.dbTransaction_Details = new System.Windows.Forms.DataGridView();
             this.groupTransact_Details = new System.Windows.Forms.GroupBox();
-            this.spinSnack_Sale_ID = new System.Windows.Forms.NumericUpDown();
             this.spinSnack_ID = new System.Windows.Forms.NumericUpDown();
             this.btnDelete_Transaction = new System.Windows.Forms.Button();
             this.lblFill_Transact = new System.Windows.Forms.Label();
@@ -62,32 +62,29 @@
             this.lblDelete_Transact = new System.Windows.Forms.Label();
             this.spinDelete_TransactID = new System.Windows.Forms.NumericUpDown();
             this.lblDelete_TransactID = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdate_Transact = new System.Windows.Forms.Button();
             this.btnFill_Transact = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAdd_Transact = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.spinQuantity_Ordered = new System.Windows.Forms.NumericUpDown();
             this.lblQuantity_Ordered = new System.Windows.Forms.Label();
             this.lblSnack_ID = new System.Windows.Forms.Label();
-            this.lblSnack_Sale_ID = new System.Windows.Forms.Label();
-            this.dbTransaction_Details = new System.Windows.Forms.DataGridView();
             this.groupDate = new System.Windows.Forms.GroupBox();
             this.dbGridTransact_Dates = new System.Windows.Forms.DataGridView();
             this.groupSnacks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).BeginInit();
             this.groupMaintain_Snacks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinFill_SnackID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).BeginInit();
             this.groupTransact_Detail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbTransaction_Details)).BeginInit();
             this.groupTransact_Details.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spinSnack_Sale_ID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinSnack_ID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinFill_SnackSaleID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinDelete_TransactID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity_Ordered)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbTransaction_Details)).BeginInit();
             this.groupDate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridTransact_Dates)).BeginInit();
             this.SuspendLayout();
@@ -102,6 +99,15 @@
             this.groupSnacks.TabIndex = 0;
             this.groupSnacks.TabStop = false;
             this.groupSnacks.Text = "SNACKS";
+            // 
+            // dbGridSnacks
+            // 
+            this.dbGridSnacks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbGridSnacks.Location = new System.Drawing.Point(30, 40);
+            this.dbGridSnacks.Name = "dbGridSnacks";
+            this.dbGridSnacks.RowTemplate.Height = 24;
+            this.dbGridSnacks.Size = new System.Drawing.Size(403, 202);
+            this.dbGridSnacks.TabIndex = 0;
             // 
             // groupMaintain_Snacks
             // 
@@ -140,6 +146,7 @@
             this.btnDelete_Snack.TabIndex = 19;
             this.btnDelete_Snack.Text = "DELETE";
             this.btnDelete_Snack.UseVisualStyleBackColor = true;
+            this.btnDelete_Snack.Click += new System.EventHandler(this.btnDelete_Snack_Click);
             // 
             // lblFill_Snack
             // 
@@ -303,15 +310,6 @@
             this.lblItem.TabIndex = 0;
             this.lblItem.Text = "Item:";
             // 
-            // dbGridSnacks
-            // 
-            this.dbGridSnacks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbGridSnacks.Location = new System.Drawing.Point(30, 40);
-            this.dbGridSnacks.Name = "dbGridSnacks";
-            this.dbGridSnacks.RowTemplate.Height = 24;
-            this.dbGridSnacks.Size = new System.Drawing.Size(403, 202);
-            this.dbGridSnacks.TabIndex = 0;
-            // 
             // groupTransact_Detail
             // 
             this.groupTransact_Detail.Controls.Add(this.dbTransaction_Details);
@@ -323,9 +321,17 @@
             this.groupTransact_Detail.TabStop = false;
             this.groupTransact_Detail.Text = "TRANSACTION DETAILS";
             // 
+            // dbTransaction_Details
+            // 
+            this.dbTransaction_Details.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbTransaction_Details.Location = new System.Drawing.Point(27, 37);
+            this.dbTransaction_Details.Name = "dbTransaction_Details";
+            this.dbTransaction_Details.RowTemplate.Height = 24;
+            this.dbTransaction_Details.Size = new System.Drawing.Size(440, 202);
+            this.dbTransaction_Details.TabIndex = 2;
+            // 
             // groupTransact_Details
             // 
-            this.groupTransact_Details.Controls.Add(this.spinSnack_Sale_ID);
             this.groupTransact_Details.Controls.Add(this.spinSnack_ID);
             this.groupTransact_Details.Controls.Add(this.btnDelete_Transaction);
             this.groupTransact_Details.Controls.Add(this.lblFill_Transact);
@@ -334,15 +340,14 @@
             this.groupTransact_Details.Controls.Add(this.lblDelete_Transact);
             this.groupTransact_Details.Controls.Add(this.spinDelete_TransactID);
             this.groupTransact_Details.Controls.Add(this.lblDelete_TransactID);
-            this.groupTransact_Details.Controls.Add(this.button2);
+            this.groupTransact_Details.Controls.Add(this.btnUpdate_Transact);
             this.groupTransact_Details.Controls.Add(this.btnFill_Transact);
-            this.groupTransact_Details.Controls.Add(this.button4);
+            this.groupTransact_Details.Controls.Add(this.btnAdd_Transact);
             this.groupTransact_Details.Controls.Add(this.txtTotal);
             this.groupTransact_Details.Controls.Add(this.lblTotal);
             this.groupTransact_Details.Controls.Add(this.spinQuantity_Ordered);
             this.groupTransact_Details.Controls.Add(this.lblQuantity_Ordered);
             this.groupTransact_Details.Controls.Add(this.lblSnack_ID);
-            this.groupTransact_Details.Controls.Add(this.lblSnack_Sale_ID);
             this.groupTransact_Details.Location = new System.Drawing.Point(27, 256);
             this.groupTransact_Details.Name = "groupTransact_Details";
             this.groupTransact_Details.Size = new System.Drawing.Size(440, 438);
@@ -350,16 +355,9 @@
             this.groupTransact_Details.TabStop = false;
             this.groupTransact_Details.Text = "MAINTAIN TRANSACTION DETAILS";
             // 
-            // spinSnack_Sale_ID
-            // 
-            this.spinSnack_Sale_ID.Location = new System.Drawing.Point(157, 45);
-            this.spinSnack_Sale_ID.Name = "spinSnack_Sale_ID";
-            this.spinSnack_Sale_ID.Size = new System.Drawing.Size(100, 22);
-            this.spinSnack_Sale_ID.TabIndex = 21;
-            // 
             // spinSnack_ID
             // 
-            this.spinSnack_ID.Location = new System.Drawing.Point(157, 87);
+            this.spinSnack_ID.Location = new System.Drawing.Point(157, 45);
             this.spinSnack_ID.Name = "spinSnack_ID";
             this.spinSnack_ID.Size = new System.Drawing.Size(100, 22);
             this.spinSnack_ID.TabIndex = 20;
@@ -423,14 +421,14 @@
             this.lblDelete_TransactID.TabIndex = 13;
             this.lblDelete_TransactID.Text = "Snack_Sale_ID:";
             // 
-            // button2
+            // btnUpdate_Transact
             // 
-            this.button2.Location = new System.Drawing.Point(311, 86);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "UPDATE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdate_Transact.Location = new System.Drawing.Point(311, 86);
+            this.btnUpdate_Transact.Name = "btnUpdate_Transact";
+            this.btnUpdate_Transact.Size = new System.Drawing.Size(92, 23);
+            this.btnUpdate_Transact.TabIndex = 12;
+            this.btnUpdate_Transact.Text = "UPDATE";
+            this.btnUpdate_Transact.UseVisualStyleBackColor = true;
             // 
             // btnFill_Transact
             // 
@@ -441,18 +439,19 @@
             this.btnFill_Transact.Text = "FILL";
             this.btnFill_Transact.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnAdd_Transact
             // 
-            this.button4.Location = new System.Drawing.Point(328, 41);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "ADD";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAdd_Transact.Location = new System.Drawing.Point(328, 41);
+            this.btnAdd_Transact.Name = "btnAdd_Transact";
+            this.btnAdd_Transact.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd_Transact.TabIndex = 10;
+            this.btnAdd_Transact.Text = "ADD";
+            this.btnAdd_Transact.UseVisualStyleBackColor = true;
+            this.btnAdd_Transact.Click += new System.EventHandler(this.btnAdd_Transact_Click);
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(157, 159);
+            this.txtTotal.Location = new System.Drawing.Point(157, 127);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 22);
             this.txtTotal.TabIndex = 7;
@@ -460,7 +459,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(98, 166);
+            this.lblTotal.Location = new System.Drawing.Point(98, 132);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(44, 17);
             this.lblTotal.TabIndex = 6;
@@ -468,7 +467,7 @@
             // 
             // spinQuantity_Ordered
             // 
-            this.spinQuantity_Ordered.Location = new System.Drawing.Point(157, 122);
+            this.spinQuantity_Ordered.Location = new System.Drawing.Point(157, 87);
             this.spinQuantity_Ordered.Name = "spinQuantity_Ordered";
             this.spinQuantity_Ordered.Size = new System.Drawing.Size(100, 22);
             this.spinQuantity_Ordered.TabIndex = 5;
@@ -476,7 +475,7 @@
             // lblQuantity_Ordered
             // 
             this.lblQuantity_Ordered.AutoSize = true;
-            this.lblQuantity_Ordered.Location = new System.Drawing.Point(20, 127);
+            this.lblQuantity_Ordered.Location = new System.Drawing.Point(20, 92);
             this.lblQuantity_Ordered.Name = "lblQuantity_Ordered";
             this.lblQuantity_Ordered.Size = new System.Drawing.Size(122, 17);
             this.lblQuantity_Ordered.TabIndex = 4;
@@ -485,29 +484,11 @@
             // lblSnack_ID
             // 
             this.lblSnack_ID.AutoSize = true;
-            this.lblSnack_ID.Location = new System.Drawing.Point(70, 92);
+            this.lblSnack_ID.Location = new System.Drawing.Point(70, 50);
             this.lblSnack_ID.Name = "lblSnack_ID";
             this.lblSnack_ID.Size = new System.Drawing.Size(72, 17);
             this.lblSnack_ID.TabIndex = 2;
             this.lblSnack_ID.Text = "Snack_ID:";
-            // 
-            // lblSnack_Sale_ID
-            // 
-            this.lblSnack_Sale_ID.AutoSize = true;
-            this.lblSnack_Sale_ID.Location = new System.Drawing.Point(34, 47);
-            this.lblSnack_Sale_ID.Name = "lblSnack_Sale_ID";
-            this.lblSnack_Sale_ID.Size = new System.Drawing.Size(108, 17);
-            this.lblSnack_Sale_ID.TabIndex = 0;
-            this.lblSnack_Sale_ID.Text = "Snack_Sale_ID:";
-            // 
-            // dbTransaction_Details
-            // 
-            this.dbTransaction_Details.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbTransaction_Details.Location = new System.Drawing.Point(27, 37);
-            this.dbTransaction_Details.Name = "dbTransaction_Details";
-            this.dbTransaction_Details.RowTemplate.Height = 24;
-            this.dbTransaction_Details.Size = new System.Drawing.Size(440, 202);
-            this.dbTransaction_Details.TabIndex = 2;
             // 
             // groupDate
             // 
@@ -540,21 +521,20 @@
             this.Text = "Main_Snacks";
             this.Load += new System.EventHandler(this.Main_Snacks_Load);
             this.groupSnacks.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).EndInit();
             this.groupMaintain_Snacks.ResumeLayout(false);
             this.groupMaintain_Snacks.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinFill_SnackID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).EndInit();
             this.groupTransact_Detail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dbTransaction_Details)).EndInit();
             this.groupTransact_Details.ResumeLayout(false);
             this.groupTransact_Details.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spinSnack_Sale_ID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinSnack_ID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinFill_SnackSaleID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinDelete_TransactID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity_Ordered)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbTransaction_Details)).EndInit();
             this.groupDate.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dbGridTransact_Dates)).EndInit();
             this.ResumeLayout(false);
@@ -596,17 +576,15 @@
         private System.Windows.Forms.Label lblDelete_Transact;
         private System.Windows.Forms.NumericUpDown spinDelete_TransactID;
         private System.Windows.Forms.Label lblDelete_TransactID;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdate_Transact;
         private System.Windows.Forms.Button btnFill_Transact;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAdd_Transact;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.NumericUpDown spinQuantity_Ordered;
         private System.Windows.Forms.Label lblQuantity_Ordered;
         private System.Windows.Forms.Label lblSnack_ID;
-        private System.Windows.Forms.Label lblSnack_Sale_ID;
         private System.Windows.Forms.DataGridView dbTransaction_Details;
-        private System.Windows.Forms.NumericUpDown spinSnack_Sale_ID;
         private System.Windows.Forms.NumericUpDown spinSnack_ID;
         private System.Windows.Forms.DataGridView dbGridTransact_Dates;
     }

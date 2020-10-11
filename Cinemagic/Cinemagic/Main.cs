@@ -20,7 +20,7 @@ namespace RandomProj
         public SqlConnection conn;
         public DataSet ds;
         public SqlDataAdapter adap;
-        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CinemagicDB.mdf;Integrated Security=True;";
+        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CinemagicDB.mdf;Integrated Security=True;MultipleActiveResultSets=true;";
 
         public Main()
         {

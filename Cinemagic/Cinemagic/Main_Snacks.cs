@@ -17,6 +17,7 @@ namespace RandomProj
         private string connection;
         private SqlCommand command;
         private DataTable dt = new DataTable();
+        private SqlDataReader dr;
 
         public Main_Snacks()
         {
@@ -117,6 +118,48 @@ namespace RandomProj
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + " Failed to add snack... try again please", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AddTransaction()
+        {
+            // SELECT* FROM Table ORDER BY ID DESC LIMIT 1
+            Main cinema = new Main();
+            connection = cinema.constr;
+            SqlCommand cmd;
+            SqlCommand comm;
+            try
+            {
+                string insert_date = $"INSERT INTO SNACK_SALE VALUES('{System.DateTime.Now.ToString("yyyy/MM/dd")}')";
+                string select_date = @"SELECT TOP 1 * FROM SNACK_SALE ORDER BY Snack_Sale_ID DESC";
+                string insert_transaction = @"INSERT INTO SNACK_TRANSACTION VALUES(@Snack_Sale_ID,@Snack_ID,@Quantity_Ordered,@Unit_Price)";
+                cinema.conn = new SqlConnection(connection);
+                cinema.conn.Open();
+                cinema.com = new SqlCommand(insert_transaction, cinema.conn);
+                cmd = new SqlCommand(insert_date, cinema.conn);
+                cmd.ExecuteNonQuery();
+                comm = new SqlCommand(select_date, cinema.conn);
+                dr = comm.ExecuteReader();
+                if (dr.Read())
+                {
+                    cinema.com.Parameters.AddWithValue("@Snack_Sale_ID", dr.GetValue(0));
+                    cinema.com.Parameters.AddWithValue("@Snack_ID", spinSnack_ID.Value);
+                    cinema.com.Parameters.AddWithValue("@Quantity_Ordered", spinQuantity_Ordered.Value);
+                    cinema.com.Parameters.AddWithValue("@Unit_Price", decimal.Parse(txtTotal.Text));
+                    cinema.com.ExecuteNonQuery();
+                    cinema.conn.Close();
+                    MessageBox.Show("The transaction have been added successfully!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DisplayTransact_Details();
+                    DisplayDates();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Transaction Date", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Failed to add transaction... try again please", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -231,6 +274,44 @@ namespace RandomProj
         private void btnUpdate_Snacks_Click(object sender, EventArgs e)
         {
             UpdateSnacks();
+        }
+
+        private void btnDelete_Snack_Click(object sender, EventArgs e)
+        {
+            Main cinema = new Main();
+            string select_snacks = "SELECT * FROM SNACK WHERE Snack_ID = "+ spinID.Value.ToString() + ";";
+            SqlCommand cmd;
+            try
+            {
+                string delete_snack = "DELETE FROM SNACK WHERE Snack_Id = " + spinID.Value.ToString();
+                cinema.conn = new SqlConnection(cinema.constr);
+                cinema.conn.Open();
+                cinema.com = new SqlCommand(select_snacks, cinema.conn);
+                cmd = new SqlCommand(delete_snack, cinema.conn);
+                cinema.adap = new SqlDataAdapter();
+                cinema.adap.SelectCommand = cinema.com;
+                cinema.adap.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    cmd.ExecuteNonQuery();
+                    cinema.conn.Close();
+                    MessageBox.Show("Snack was deleted successfully!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DisplaySnacks();
+                }
+                else
+                {
+                    MessageBox.Show("Snack_ID does not exist", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message+" Failed to delete record...", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAdd_Transact_Click(object sender, EventArgs e)
+        {
+            AddTransaction();
         }
     }
 }
