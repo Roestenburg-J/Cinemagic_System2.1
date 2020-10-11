@@ -34,7 +34,9 @@ namespace RandomProj
         private void Main_Snacks_Load(object sender, EventArgs e)
         {
             spinID.Maximum = Int32.MaxValue;
-            spinQuantity.Maximum = 300; 
+            spinQuantity.Maximum = 300;
+            spinSnack_ID.Maximum = Int32.MaxValue;
+            spinDeleteAll.Maximum = Int32.MaxValue;
             DisplayDates();
             DisplaySnacks();
             DisplayTransact_Details();
@@ -43,7 +45,6 @@ namespace RandomProj
         private void DisplaySnacks()
         {
             dbGridSnacks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
@@ -324,10 +325,43 @@ namespace RandomProj
             }
         }
 
+        private void DeleteAllTransactions()
+        {
+            Main cinema = new Main();
+            string select_transactions = "SELECT * FROM SNACK_TRANSACTION WHERE Snack_ID = " + spinDeleteAll.Value.ToString() + ";";
+            SqlCommand cmd;
+            try
+            {
+                string delete_all = "DELETE FROM SNACK_TRANSACTION WHERE Snack_Id = " + spinDeleteAll.Value.ToString();
+                cinema.conn = new SqlConnection(cinema.constr);
+                cinema.conn.Open();
+                cinema.com = new SqlCommand(select_transactions, cinema.conn);
+                cmd = new SqlCommand(delete_all, cinema.conn);
+                cinema.adap = new SqlDataAdapter();
+                cinema.adap.SelectCommand = cinema.com;
+                cinema.adap.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    cmd.ExecuteNonQuery();
+                    cinema.conn.Close();
+                    MessageBox.Show($"Transactions with Snack_ID {spinDeleteAll.Value} deleted successfully!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DisplayTransact_Details();
+                }
+                else
+                {
+                    MessageBox.Show("Snack_ID does not exist", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message + " Failed to delete selected records...", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void DeleteTransactions()
         {
             Main cinema = new Main();
-            string select_transactions = "SELECT * FROM SNACK_TRANSACTION WHERE Snack_Sale_ID = " + spinDelete_TransactID.Value.ToString() + ";";
+            string select_transactions = "SELECT * FROM SNACK_TRANSACTION WHERE Snack_ID = " + spinDelete_TransactID.Value.ToString() + ";";
             SqlCommand cmd;
             try
             {
@@ -427,6 +461,27 @@ namespace RandomProj
         private void btnDelete_Transaction_Click(object sender, EventArgs e)
         {
             DeleteTransactions();
+        }
+
+        private void btnDelete_All_Click(object sender, EventArgs e)
+        {
+            DeleteAllTransactions();
+        }
+
+        private void txtTotal_Validating(object sender, CancelEventArgs e)
+        {
+            decimal total;
+            if (String.IsNullOrEmpty(txtPrice.Text))
+            {
+                MessageBox.Show("Please enter a value!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (!decimal.TryParse(txtPrice.Text, out total))
+                {
+                    MessageBox.Show("Must enter a decimal value", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

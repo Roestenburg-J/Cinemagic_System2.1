@@ -72,6 +72,11 @@
             this.lblSnack_ID = new System.Windows.Forms.Label();
             this.groupDate = new System.Windows.Forms.GroupBox();
             this.dbGridTransact_Dates = new System.Windows.Forms.DataGridView();
+            this.groupDeleteTransacts = new System.Windows.Forms.GroupBox();
+            this.btnDelete_All = new System.Windows.Forms.Button();
+            this.lblDeleteAllTransactions = new System.Windows.Forms.Label();
+            this.spinDeleteAll = new System.Windows.Forms.NumericUpDown();
+            this.lblDeleteAll = new System.Windows.Forms.Label();
             this.groupSnacks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).BeginInit();
             this.groupMaintain_Snacks.SuspendLayout();
@@ -87,6 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity_Ordered)).BeginInit();
             this.groupDate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridTransact_Dates)).BeginInit();
+            this.groupDeleteTransacts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinDeleteAll)).BeginInit();
             this.SuspendLayout();
             // 
             // groupSnacks
@@ -458,6 +465,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 22);
             this.txtTotal.TabIndex = 7;
+            this.txtTotal.Validating += new System.ComponentModel.CancelEventHandler(this.txtTotal_Validating);
             // 
             // lblTotal
             // 
@@ -512,11 +520,60 @@
             this.dbGridTransact_Dates.Size = new System.Drawing.Size(359, 202);
             this.dbGridTransact_Dates.TabIndex = 3;
             // 
+            // groupDeleteTransacts
+            // 
+            this.groupDeleteTransacts.Controls.Add(this.btnDelete_All);
+            this.groupDeleteTransacts.Controls.Add(this.lblDeleteAllTransactions);
+            this.groupDeleteTransacts.Controls.Add(this.spinDeleteAll);
+            this.groupDeleteTransacts.Controls.Add(this.lblDeleteAll);
+            this.groupDeleteTransacts.Location = new System.Drawing.Point(1041, 377);
+            this.groupDeleteTransacts.Name = "groupDeleteTransacts";
+            this.groupDeleteTransacts.Size = new System.Drawing.Size(365, 180);
+            this.groupDeleteTransacts.TabIndex = 21;
+            this.groupDeleteTransacts.TabStop = false;
+            this.groupDeleteTransacts.Text = "DELETE ALL TRANSACTIONS";
+            // 
+            // btnDelete_All
+            // 
+            this.btnDelete_All.Location = new System.Drawing.Point(34, 125);
+            this.btnDelete_All.Name = "btnDelete_All";
+            this.btnDelete_All.Size = new System.Drawing.Size(102, 23);
+            this.btnDelete_All.TabIndex = 23;
+            this.btnDelete_All.Text = "DELETE";
+            this.btnDelete_All.UseVisualStyleBackColor = true;
+            this.btnDelete_All.Click += new System.EventHandler(this.btnDelete_All_Click);
+            // 
+            // lblDeleteAllTransactions
+            // 
+            this.lblDeleteAllTransactions.AutoSize = true;
+            this.lblDeleteAllTransactions.Location = new System.Drawing.Point(31, 55);
+            this.lblDeleteAllTransactions.Name = "lblDeleteAllTransactions";
+            this.lblDeleteAllTransactions.Size = new System.Drawing.Size(316, 17);
+            this.lblDeleteAllTransactions.TabIndex = 22;
+            this.lblDeleteAllTransactions.Text = "DELETE ALL TRANSACTIONS WITH SNACK_ID:";
+            // 
+            // spinDeleteAll
+            // 
+            this.spinDeleteAll.Location = new System.Drawing.Point(122, 84);
+            this.spinDeleteAll.Name = "spinDeleteAll";
+            this.spinDeleteAll.Size = new System.Drawing.Size(100, 22);
+            this.spinDeleteAll.TabIndex = 21;
+            // 
+            // lblDeleteAll
+            // 
+            this.lblDeleteAll.AutoSize = true;
+            this.lblDeleteAll.Location = new System.Drawing.Point(31, 86);
+            this.lblDeleteAll.Name = "lblDeleteAll";
+            this.lblDeleteAll.Size = new System.Drawing.Size(72, 17);
+            this.lblDeleteAll.TabIndex = 20;
+            this.lblDeleteAll.Text = "Snack_ID:";
+            // 
             // Main_Snacks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1539, 779);
+            this.Controls.Add(this.groupDeleteTransacts);
             this.Controls.Add(this.groupDate);
             this.Controls.Add(this.groupTransact_Detail);
             this.Controls.Add(this.groupSnacks);
@@ -540,6 +597,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity_Ordered)).EndInit();
             this.groupDate.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dbGridTransact_Dates)).EndInit();
+            this.groupDeleteTransacts.ResumeLayout(false);
+            this.groupDeleteTransacts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinDeleteAll)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -590,5 +650,10 @@
         private System.Windows.Forms.DataGridView dbTransaction_Details;
         private System.Windows.Forms.NumericUpDown spinSnack_ID;
         private System.Windows.Forms.DataGridView dbGridTransact_Dates;
+        private System.Windows.Forms.GroupBox groupDeleteTransacts;
+        private System.Windows.Forms.Button btnDelete_All;
+        private System.Windows.Forms.Label lblDeleteAllTransactions;
+        private System.Windows.Forms.NumericUpDown spinDeleteAll;
+        private System.Windows.Forms.Label lblDeleteAll;
     }
 }
