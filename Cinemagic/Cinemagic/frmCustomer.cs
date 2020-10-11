@@ -162,5 +162,10 @@ namespace Cinemagic
         {
 
         }
+
+        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
