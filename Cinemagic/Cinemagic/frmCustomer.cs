@@ -185,12 +185,64 @@ namespace Cinemagic
             cinema.adap.Fill(cinema.ds, "Customers");
             dgCustomers.DataSource = cinema.ds;
             dgCustomers.DataMember = "Customers";
-            cinema.conn.Close();
-
-                
+            cinema.conn.Close();    
         }
 
-       
+        private void EditName(string newName)
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string update_Name = "UPDATE CUSTOMERS SET Name=@name";
+            cinema.com = new SqlCommand(update_Name, cinema.conn);
+            command.Parameters.AddWithValue("@Name", newName);
+            command.ExecuteNonQuery();                     
+            cinema.conn.Close();
+            MessageBox.Show("Record Updated Successfully");
+        }
+
+        private void EditSurname(string newSurname)
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string update_Surname = "UPDATE CUSTOMERS SET Customer_Surname=@Surname";
+            cinema.com = new SqlCommand(update_Surname, cinema.conn);
+            command.Parameters.AddWithValue("@Surname", surname);
+            command.ExecuteNonQuery();
+            cinema.conn.Close();
+            MessageBox.Show("Record Updated Successfully");
+        }
+
+        private void EditPhone(string newPhone)
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string update_Phone = "UPDATE CUSTOMERS SET Customer_Phone=@Phone";
+            cinema.com = new SqlCommand(update_Phone, cinema.conn);
+            command.Parameters.AddWithValue("@Phone", phone);
+            command.ExecuteNonQuery();
+            cinema.conn.Close();
+            MessageBox.Show("Record Updated Successfully");
+        }
+
+        private void EditEmail(string newEmail)
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string update_Email = "UPDATE CUSTOMERS SET Customer_Email=@Email";
+            cinema.com = new SqlCommand(update_Email, cinema.conn);
+            command.Parameters.AddWithValue("@Email", email);
+            command.ExecuteNonQuery();
+            cinema.conn.Close();
+            MessageBox.Show("Record Updated Successfully");
+        }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
@@ -231,6 +283,60 @@ namespace Cinemagic
         private void dgCustomers_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (cbName.Checked == true)
+            {
+                try
+                {
+                    EditName(txtEditEmail.Text);
+                }
+                catch
+                {
+
+                }
+
+            }
+            if (cbSurname.Checked == true)
+            {
+                try
+                {
+                    EditSurname(txtEditSurname.Text);
+                }
+                catch
+                {
+
+                }
+            }
+            if (cbPhone.Checked == true)
+            {
+                try
+                {
+                    EditPhone(txtEditPhone.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Phone entered is invalid!", "Invalid Phone");
+                }
+            }
+            if (cbEmail.Checked == true)
+            {
+                try
+                {
+                    EditEmail(txtEditEmail.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("E-Mail Entered is invalid!", "Invalid Email");
+                }
+            }
         }
     }
 }
