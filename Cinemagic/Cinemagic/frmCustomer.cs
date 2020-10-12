@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Data.SqlClient;
+using RandomProj;
 
 namespace Cinemagic
 {
@@ -20,6 +22,11 @@ namespace Cinemagic
         private string phone;
         private string email;
 
+        private string connection;
+        private SqlCommand command;
+        private DataTable dt = new DataTable();
+        private SqlDataReader dr;
+
 
         public frmCustomer()
         {
@@ -27,7 +34,7 @@ namespace Cinemagic
         }
 
 
-        public DialogResult AddCustomer()
+        public DialogResult AddCustomerFrom()
         {
             Form form = new Form();        
 
@@ -143,27 +150,44 @@ namespace Cinemagic
             if (dialogResult == DialogResult.Cancel)
             {
                 form.Close();
-            }
-            
-
+            }           
             return dialogResult;
+        }
+
+        private void DisplayCustomers()
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string select_Customers = "SELECT * FROM CUSTOMER";
+            cinema.com = new SqlCommand(select_Customers, cinema.conn);
+            cinema.adap = new SqlDataAdapter();
+            cinema.ds = new DataSet();
+            cinema.adap = new SqlDataAdapter(select_Customers, cinema.conn);
+            cinema.adap.Fill(cinema.ds, "Customers");
+            dgCustomers.DataSource = cinema.ds;
+            dgCustomers.DataMember = "Customers";
+            cinema.conn.Close();
         }
 
        
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            AddCustomer();
+            AddCustomerFrom();
            
         }
 
         private void Customer_Load(object sender, EventArgs e)
         {
-
+            DisplayCustomers();
         }
 
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
+            string customerDetail = "";
+            customerDetail = txtSearchCustomer.Text;
 
         }
     }
