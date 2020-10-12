@@ -209,6 +209,9 @@
             this.dgCustomers.Name = "dgCustomers";
             this.dgCustomers.Size = new System.Drawing.Size(635, 142);
             this.dgCustomers.TabIndex = 7;
+            this.dgCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCustomers_CellContentClick);
+            this.dgCustomers.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCustomers_CellValueChanged);
+            this.dgCustomers.SizeChanged += new System.EventHandler(this.dgCustomers_SizeChanged);
             // 
             // frmCustomer
             // 

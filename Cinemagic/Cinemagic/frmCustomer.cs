@@ -186,6 +186,8 @@ namespace Cinemagic
             dgCustomers.DataSource = cinema.ds;
             dgCustomers.DataMember = "Customers";
             cinema.conn.Close();
+
+                
         }
 
        
@@ -205,8 +207,30 @@ namespace Cinemagic
         {
             string customerDetail = "";
             customerDetail = txtSearchCustomer.Text;
-            SearchCustomer(customerDetail);
 
+            try
+            {
+                SearchCustomer(customerDetail);
+            }
+            catch
+            {              
+                
+            }                 
+        }
+
+        private void dgCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgCustomers_SizeChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgCustomers_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
