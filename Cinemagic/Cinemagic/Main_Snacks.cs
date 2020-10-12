@@ -446,9 +446,16 @@ namespace RandomProj
         private void txtUnit_Cost_Validating(object sender, CancelEventArgs e)
         {
             decimal unit_cost;
-            if (!decimal.TryParse(txtUnit_Cost.Text,out unit_cost))
+            if (String.IsNullOrEmpty(txtUnit_Cost.Text))
             {
-                MessageBox.Show("Must enter a decimal value", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a value!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (!decimal.TryParse(txtUnit_Cost.Text,out unit_cost))
+                {
+                    MessageBox.Show("Must enter a decimal value", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -460,9 +467,16 @@ namespace RandomProj
         private void txtPrice_Validating(object sender, CancelEventArgs e)
         {
             decimal price;
-            if (!decimal.TryParse(txtPrice.Text, out price))
+            if (String.IsNullOrEmpty(txtPrice.Text))
             {
-                MessageBox.Show("Must enter a decimal value", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a value!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (!decimal.TryParse(txtPrice.Text, out price))
+                {
+                    MessageBox.Show("Must enter a decimal value", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -504,9 +518,16 @@ namespace RandomProj
         private void txtTotal_Validating(object sender, CancelEventArgs e)
         {
             decimal total;
-            if (!decimal.TryParse(txtTotal.Text, out total))
+            if (String.IsNullOrEmpty(txtPrice.Text))
             {
-                MessageBox.Show("Must enter a decimal value", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a value!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (!decimal.TryParse(txtPrice.Text, out total))
+                {
+                    MessageBox.Show("Must enter a decimal value", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
