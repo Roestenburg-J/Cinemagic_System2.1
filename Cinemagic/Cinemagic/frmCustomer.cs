@@ -171,6 +171,23 @@ namespace Cinemagic
             cinema.conn.Close();
         }
 
+        private void SearchCustomer(string detail)
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string select_Customers = "SELECT * FROM CUSTOMER WHERE Customer_Name LIKE '%" + detail + "%' OR Customer_Surname LIKE '%"+ detail + "%' OR Customer_Phone LIKE '%" + detail + "%' OR Customer_Email LIKE '%" + detail + "%'" ;
+            cinema.com = new SqlCommand(select_Customers, cinema.conn);
+            cinema.adap = new SqlDataAdapter();
+            cinema.ds = new DataSet();
+            cinema.adap = new SqlDataAdapter(select_Customers, cinema.conn);
+            cinema.adap.Fill(cinema.ds, "Customers");
+            dgCustomers.DataSource = cinema.ds;
+            dgCustomers.DataMember = "Customers";
+            cinema.conn.Close();
+        }
+
        
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
@@ -188,6 +205,7 @@ namespace Cinemagic
         {
             string customerDetail = "";
             customerDetail = txtSearchCustomer.Text;
+            SearchCustomer(customerDetail);
 
         }
     }
