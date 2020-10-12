@@ -194,10 +194,10 @@ namespace Cinemagic
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string update_Name = "UPDATE CUSTOMERS SET Name=@name";
+            string update_Name = "UPDATE CUSTOMER SET Customer_Name=@name";
             cinema.com = new SqlCommand(update_Name, cinema.conn);
-            command.Parameters.AddWithValue("@Name", newName);
-            command.ExecuteNonQuery();                     
+            cinema.com.Parameters.AddWithValue("@Name", newName);
+            cinema.com.ExecuteNonQuery();                     
             cinema.conn.Close();
             MessageBox.Show("Record Updated Successfully");
         }
@@ -208,10 +208,10 @@ namespace Cinemagic
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string update_Surname = "UPDATE CUSTOMERS SET Customer_Surname=@Surname";
+            string update_Surname = "UPDATE CUSTOMER SET Customer_Surname=@Surname";
             cinema.com = new SqlCommand(update_Surname, cinema.conn);
-            command.Parameters.AddWithValue("@Surname", surname);
-            command.ExecuteNonQuery();
+            cinema.com.Parameters.AddWithValue("@Surname", surname);
+            cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
             MessageBox.Show("Record Updated Successfully");
         }
@@ -222,10 +222,10 @@ namespace Cinemagic
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string update_Phone = "UPDATE CUSTOMERS SET Customer_Phone=@Phone";
+            string update_Phone = "UPDATE CUSTOMER SET Customer_Phone=@Phone";
             cinema.com = new SqlCommand(update_Phone, cinema.conn);
-            command.Parameters.AddWithValue("@Phone", phone);
-            command.ExecuteNonQuery();
+            cinema.com.Parameters.AddWithValue("@Phone", phone);
+            cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
             MessageBox.Show("Record Updated Successfully");
         }
@@ -236,10 +236,10 @@ namespace Cinemagic
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string update_Email = "UPDATE CUSTOMERS SET Customer_Email=@Email";
+            string update_Email = "UPDATE CUSTOMER SET Customer_Email=@Email";
             cinema.com = new SqlCommand(update_Email, cinema.conn);
-            command.Parameters.AddWithValue("@Email", email);
-            command.ExecuteNonQuery();
+            cinema.com.Parameters.AddWithValue("@Email", email);
+            cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
             MessageBox.Show("Record Updated Successfully");
         }
@@ -287,16 +287,17 @@ namespace Cinemagic
 
         private void btnEditCustomer_Click(object sender, EventArgs e)
         {
-
+            gbCustomerFields.Enabled = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (cbName.Checked == true)
             {
+                EditName(txtEditName.Text);
                 try
                 {
-                    EditName(txtEditEmail.Text);
+                    
                 }
                 catch
                 {
@@ -337,6 +338,26 @@ namespace Cinemagic
                     MessageBox.Show("E-Mail Entered is invalid!", "Invalid Email");
                 }
             }
+        }
+
+        private void cbName_CheckedChanged(object sender, EventArgs e)
+        {
+            txtEditName.Enabled = true;
+        }
+
+        private void cbSurname_CheckedChanged(object sender, EventArgs e)
+        {
+            txtEditSurname.Enabled = true;
+        }
+
+        private void cbPhone_CheckedChanged(object sender, EventArgs e)
+        {
+            txtEditPhone.Enabled = true;
+        }
+
+        private void cbEmail_CheckedChanged(object sender, EventArgs e)
+        {
+            txtEditEmail.Enabled = true;
         }
     }
 }

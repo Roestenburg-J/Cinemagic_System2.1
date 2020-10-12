@@ -107,6 +107,7 @@
             this.gbCustomerFields.Controls.Add(this.txtEditName);
             this.gbCustomerFields.Controls.Add(this.txtEditPhone);
             this.gbCustomerFields.Controls.Add(this.txtEditEmail);
+            this.gbCustomerFields.Enabled = false;
             this.gbCustomerFields.Location = new System.Drawing.Point(372, 12);
             this.gbCustomerFields.Name = "gbCustomerFields";
             this.gbCustomerFields.Size = new System.Drawing.Size(355, 268);
@@ -132,6 +133,7 @@
             this.cbName.TabIndex = 6;
             this.cbName.Text = "Name";
             this.cbName.UseVisualStyleBackColor = true;
+            this.cbName.CheckedChanged += new System.EventHandler(this.cbName_CheckedChanged);
             // 
             // cbSurname
             // 
@@ -142,6 +144,7 @@
             this.cbSurname.TabIndex = 7;
             this.cbSurname.Text = "Surname";
             this.cbSurname.UseVisualStyleBackColor = true;
+            this.cbSurname.CheckedChanged += new System.EventHandler(this.cbSurname_CheckedChanged);
             // 
             // cbPhone
             // 
@@ -152,6 +155,7 @@
             this.cbPhone.TabIndex = 8;
             this.cbPhone.Text = "Phone";
             this.cbPhone.UseVisualStyleBackColor = true;
+            this.cbPhone.CheckedChanged += new System.EventHandler(this.cbPhone_CheckedChanged);
             // 
             // cbEmail
             // 
@@ -162,9 +166,11 @@
             this.cbEmail.TabIndex = 9;
             this.cbEmail.Text = "E-Mail";
             this.cbEmail.UseVisualStyleBackColor = true;
+            this.cbEmail.CheckedChanged += new System.EventHandler(this.cbEmail_CheckedChanged);
             // 
             // txtEditSurname
             // 
+            this.txtEditSurname.Enabled = false;
             this.txtEditSurname.Location = new System.Drawing.Point(163, 52);
             this.txtEditSurname.Name = "txtEditSurname";
             this.txtEditSurname.Size = new System.Drawing.Size(133, 20);
@@ -172,6 +178,7 @@
             // 
             // txtEditName
             // 
+            this.txtEditName.Enabled = false;
             this.txtEditName.Location = new System.Drawing.Point(163, 19);
             this.txtEditName.Name = "txtEditName";
             this.txtEditName.Size = new System.Drawing.Size(133, 20);
@@ -179,6 +186,7 @@
             // 
             // txtEditPhone
             // 
+            this.txtEditPhone.Enabled = false;
             this.txtEditPhone.Location = new System.Drawing.Point(163, 91);
             this.txtEditPhone.Name = "txtEditPhone";
             this.txtEditPhone.Size = new System.Drawing.Size(133, 20);
@@ -186,6 +194,7 @@
             // 
             // txtEditEmail
             // 
+            this.txtEditEmail.Enabled = false;
             this.txtEditEmail.Location = new System.Drawing.Point(163, 129);
             this.txtEditEmail.Name = "txtEditEmail";
             this.txtEditEmail.Size = new System.Drawing.Size(133, 20);
