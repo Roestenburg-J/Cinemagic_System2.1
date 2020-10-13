@@ -300,7 +300,6 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 22);
             this.textBox7.TabIndex = 1;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // textBox5
             // 
@@ -366,7 +365,6 @@
             this.label3.Size = new System.Drawing.Size(66, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Duration:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
