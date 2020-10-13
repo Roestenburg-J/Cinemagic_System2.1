@@ -62,5 +62,12 @@ namespace RandomProj
             Booking frm = new Booking();
             frm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Movie movie = new Movie();
+            movie.Show();
+        }
     }
 }

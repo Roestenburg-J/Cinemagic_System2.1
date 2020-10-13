@@ -106,3 +106,15 @@ C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagi
 C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CopyComplete
 C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.exe
 C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.pdb
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csprojAssemblyReference.cache
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Booking.resources
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Form1.resources
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\RandomProj.Main.resources
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\RandomProj.Main_Snacks.resources
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Movie.resources
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Properties.Resources.resources
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\RandomProj.Snack_Sale.resources
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.GenerateResource.cache
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CoreCompileInputs.cache
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.exe
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.pdb
