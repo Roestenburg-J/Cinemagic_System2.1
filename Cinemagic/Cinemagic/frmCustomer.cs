@@ -154,6 +154,24 @@ namespace Cinemagic
             return dialogResult;
         }
 
+        private void AddCustomer(string name, string surname, string phone, string email)
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string select_Customers = "SELECT * FROM CUSTOMER";
+            cinema.com = new SqlCommand(select_Customers, cinema.conn);
+            cinema.adap = new SqlDataAdapter();
+            cinema.ds = new DataSet();
+            cinema.adap = new SqlDataAdapter(select_Customers, cinema.conn);
+            cinema.adap.Fill(cinema.ds, "Customers");
+            dgCustomers.DataSource = cinema.ds;
+            dgCustomers.DataMember = "Customers";
+            cinema.conn.Close();
+        }
+
+
         private void DisplayCustomers()
         {
             Main cinema = new Main();
@@ -244,18 +262,17 @@ namespace Cinemagic
             MessageBox.Show("Record Updated Successfully");
         }
 
-        private void DeleteCustomer(string detail)
+        private void DeleteCustomer(string id)
         {
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string delete_Customer = "DELETE CUSTOMER WHERE Customer_Email";
+            string delete_Customer = "DELETE CUSTOMER WHERE Customer_ID = '" + id + "'";
             cinema.com = new SqlCommand(delete_Customer, cinema.conn);
             cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
             MessageBox.Show("Record Deleted Successfully");
-
         }
 
         private Boolean TestValidSearch(string id)
@@ -342,10 +359,10 @@ namespace Cinemagic
         {
             if (cbName.Checked == true)
             {
-                EditName(txtEditName.Text);
+                
                 try
                 {
-                    
+                    EditName(txtEditName.Text);
                 }
                 catch
                 {
@@ -410,7 +427,9 @@ namespace Cinemagic
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-
+            string customerID = "" ;
+            customerID = udCustomerID.Text;
+            DeleteCustomer(customerID);
         }
 
         private void dgCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
