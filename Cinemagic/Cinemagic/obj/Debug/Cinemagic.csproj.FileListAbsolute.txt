@@ -83,48 +83,25 @@ C:\Users\Derick\Desktop\GIT\New CIN\Cinemagic_System\Cinemagic\Cinemagic\obj\Deb
 C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Booking.resources
 C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\CinemagicDB.mdf
 C:\Users\User\Desktop\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\CinemagicDB_log.ldf
-C:\Users\Janus\Source\Repos\PleaBanshee\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Booking.resources
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\CinemagicDB.mdf
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\CinemagicDB_log.ldf
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\Cinemagic.exe.config
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\Cinemagic.exe
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\Cinemagic.pdb
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\EntityFramework.dll
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\EntityFramework.xml
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csprojAssemblyReference.cache
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Booking.resources
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.frmCustomer.resources
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Form1.resources
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\RandomProj.Main.resources
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\RandomProj.Main_Snacks.resources
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Properties.Resources.resources
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\RandomProj.Snack_Sale.resources
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.GenerateResource.cache
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CoreCompileInputs.cache
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CopyComplete
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.exe
-C:\Users\Janus\Source\Repos\Roestenburg-J\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.pdb
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\CinemagicDB.mdf
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\CinemagicDB_log.ldf
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\Cinemagic.exe.config
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\Cinemagic.exe
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\Cinemagic.pdb
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\EntityFramework.dll
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\EntityFramework.xml
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csprojAssemblyReference.cache
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Booking.resources
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.frmCustomer.resources
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Form1.resources
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\RandomProj.Main.resources
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\RandomProj.Main_Snacks.resources
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Properties.Resources.resources
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\RandomProj.Snack_Sale.resources
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.GenerateResource.cache
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CoreCompileInputs.cache
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CopyComplete
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.exe
-C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.pdb
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\CinemagicDB.mdf
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\CinemagicDB_log.ldf
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\Cinemagic.exe.config
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\Cinemagic.exe
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\Cinemagic.pdb
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFramework.dll
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFramework.xml
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csprojAssemblyReference.cache
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Booking.resources
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.frmCustomer.resources
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Form1.resources
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\RandomProj.Main.resources
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\RandomProj.Main_Snacks.resources
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Properties.Resources.resources
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\RandomProj.Snack_Sale.resources
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.GenerateResource.cache
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CoreCompileInputs.cache
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CopyComplete
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.exe
+C:\Users\DCSteyn\Documents\GitHub - Backup\last\Cinemagic_System\Cinemagic\Cinemagic\obj\Debug\Cinemagic.pdb
