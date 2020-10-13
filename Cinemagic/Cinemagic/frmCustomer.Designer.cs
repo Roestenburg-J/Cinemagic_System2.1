@@ -30,7 +30,6 @@
         {
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
-            this.txtSearchCustomer = new System.Windows.Forms.TextBox();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.gbCustomerFields = new System.Windows.Forms.GroupBox();
@@ -44,8 +43,12 @@
             this.txtEditPhone = new System.Windows.Forms.TextBox();
             this.txtEditEmail = new System.Windows.Forms.TextBox();
             this.gbControls = new System.Windows.Forms.GroupBox();
+            this.udCustomerID = new System.Windows.Forms.NumericUpDown();
+            this.dgCustomers = new System.Windows.Forms.DataGridView();
             this.gbCustomerFields.SuspendLayout();
             this.gbControls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddCustomer
@@ -66,13 +69,6 @@
             this.btnEditCustomer.TabIndex = 1;
             this.btnEditCustomer.Text = "Edit Customer";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
-            // 
-            // txtSearchCustomer
-            // 
-            this.txtSearchCustomer.Location = new System.Drawing.Point(29, 19);
-            this.txtSearchCustomer.Name = "txtSearchCustomer";
-            this.txtSearchCustomer.Size = new System.Drawing.Size(172, 20);
-            this.txtSearchCustomer.TabIndex = 2;
             // 
             // btnDeleteCustomer
             // 
@@ -104,7 +100,7 @@
             this.gbCustomerFields.Controls.Add(this.txtEditName);
             this.gbCustomerFields.Controls.Add(this.txtEditPhone);
             this.gbCustomerFields.Controls.Add(this.txtEditEmail);
-            this.gbCustomerFields.Location = new System.Drawing.Point(372, 50);
+            this.gbCustomerFields.Location = new System.Drawing.Point(372, 23);
             this.gbCustomerFields.Name = "gbCustomerFields";
             this.gbCustomerFields.Size = new System.Drawing.Size(355, 268);
             this.gbCustomerFields.TabIndex = 5;
@@ -190,22 +186,38 @@
             // 
             // gbControls
             // 
-            this.gbControls.Controls.Add(this.txtSearchCustomer);
+            this.gbControls.Controls.Add(this.udCustomerID);
             this.gbControls.Controls.Add(this.btnAddCustomer);
             this.gbControls.Controls.Add(this.btnSearchCustomer);
             this.gbControls.Controls.Add(this.btnEditCustomer);
             this.gbControls.Controls.Add(this.btnDeleteCustomer);
-            this.gbControls.Location = new System.Drawing.Point(92, 50);
+            this.gbControls.Location = new System.Drawing.Point(92, 23);
             this.gbControls.Name = "gbControls";
             this.gbControls.Size = new System.Drawing.Size(225, 268);
             this.gbControls.TabIndex = 6;
             this.gbControls.TabStop = false;
+            // 
+            // udCustomerID
+            // 
+            this.udCustomerID.Location = new System.Drawing.Point(29, 18);
+            this.udCustomerID.Name = "udCustomerID";
+            this.udCustomerID.Size = new System.Drawing.Size(172, 20);
+            this.udCustomerID.TabIndex = 7;
+            // 
+            // dgCustomers
+            // 
+            this.dgCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCustomers.Location = new System.Drawing.Point(92, 297);
+            this.dgCustomers.Name = "dgCustomers";
+            this.dgCustomers.Size = new System.Drawing.Size(635, 150);
+            this.dgCustomers.TabIndex = 7;
             // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgCustomers);
             this.Controls.Add(this.gbControls);
             this.Controls.Add(this.gbCustomerFields);
             this.Name = "frmCustomer";
@@ -214,7 +226,8 @@
             this.gbCustomerFields.ResumeLayout(false);
             this.gbCustomerFields.PerformLayout();
             this.gbControls.ResumeLayout(false);
-            this.gbControls.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,7 +236,6 @@
 
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnEditCustomer;
-        private System.Windows.Forms.TextBox txtSearchCustomer;
         private System.Windows.Forms.Button btnDeleteCustomer;
         private System.Windows.Forms.Button btnSearchCustomer;
         private System.Windows.Forms.GroupBox gbCustomerFields;
@@ -237,5 +249,7 @@
         private System.Windows.Forms.TextBox txtEditPhone;
         private System.Windows.Forms.TextBox txtEditEmail;
         private System.Windows.Forms.GroupBox gbControls;
+        private System.Windows.Forms.NumericUpDown udCustomerID;
+        private System.Windows.Forms.DataGridView dgCustomers;
     }
 }
