@@ -1,0 +1,198 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace RandomProj
+{
+    // NB! Make use of the sql objects on the main form by calling them in your form. Don't create your own unless it's necessary
+    public partial class Snack_Sale : Form
+    {
+        private string connection;
+        private SqlCommand command;
+        private DataTable dt = new DataTable();
+
+        public Snack_Sale()
+        {
+            InitializeComponent();
+        }
+
+        private void DisplayDates()
+        {
+            dbGrid_Dates.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string select = "SELECT * FROM SNACK_SALE";
+            cinema.com = new SqlCommand(select, cinema.conn);
+            cinema.adap = new SqlDataAdapter();
+            cinema.ds = new DataSet();
+            cinema.adap = new SqlDataAdapter(select, cinema.conn);
+            cinema.adap.Fill(cinema.ds, "Snack_Sale");
+            dbGrid_Dates.DataSource = cinema.ds;
+            dbGrid_Dates.DataMember = "Snack_Sale";
+            cinema.conn.Close();
+        }
+
+        private void AddDates()
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            try
+            {
+                string insert_query = @"INSERT INTO SNACK_SALE VALUES(@Snack_SaleDate)";
+                cinema.conn = new SqlConnection(connection);
+                cinema.conn.Open();
+                cinema.com = new SqlCommand(insert_query, cinema.conn);
+                cinema.com.Parameters.AddWithValue("@Snack_SaleDate", Transact_Date.Value.ToString("yyyy/MM/dd"));
+                cinema.com.ExecuteNonQuery();
+                MessageBox.Show("Transaction date added successfully!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cinema.conn.Close();
+                DisplayDates();
+            }
+            catch
+            {
+                MessageBox.Show("Failed to insert record... try again please", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UpdateDates()
+        {
+            Main cinema = new Main();
+            cinema.conn = new SqlConnection(connection);
+            string select_date = "SELECT * FROM SNACK_SALE WHERE Snack_Sale_ID = " + numDate_ID.Value.ToString() + ";";
+            string update_query = @"UPDATE SNACK_SALE SET Snack_SaleDate = '" + Transact_Date_Edit.Value.ToString("yyyy/MM/dd") + "' WHERE Snack_Sale_ID = "+ 
+            numDate_ID.Value.ToString();
+            cinema.com = new SqlCommand(update_query, cinema.conn);
+            command = new SqlCommand(select_date, cinema.conn);
+            cinema.adap = new SqlDataAdapter();
+            cinema.adap.SelectCommand = command;
+            cinema.adap.Fill(dt);
+            try
+            {
+                cinema.conn.Open();
+                if (dt.Rows.Count > 0)
+                {
+                    cinema.com.ExecuteNonQuery();
+                    cinema.conn.Close();
+                    DisplayDates();
+                    MessageBox.Show("Transaction date updated successfully!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Transaction Date ID does not exist!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message + ". Failed to update record...", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            numDate_ID.Value = 0;
+        }
+
+        // Base your own form's delete button on this
+        private void DeleteDates()
+        {
+            Main cinema = new Main();
+            string select_heroes = "SELECT * FROM Heroes_Table WHERE Hero_Id = " + txtDeleteID.Text + ";";
+            SqlCommand cmd;
+            try
+            {
+                string delete_hero = "DELETE FROM Heroes_Table WHERE Hero_Id = " + txtDeleteID.Text;
+                connection = new SqlConnection(log.constr);
+                connection.Open();
+                com = new SqlCommand(select_heroes, connection);
+                cmd = new SqlCommand(delete_hero, connection);
+                adap = new SqlDataAdapter();
+                adap.SelectCommand = com;
+                adap.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "delete_succcess", "alert('Your Hero has been successfully deleted!')", true);
+                    DisplayAll();
+                    setSessions();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "id_notexist", "alert('This Hero ID does not exist...')", true);
+                }
+            }
+            catch (Exception err)
+
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "id_delete", "alert('"+err.Message+" This Hero ID does not exist...')", true);
+            }
+        }
+
+        // Base your own form's fill button on this. use this method to fill textboxes/control objects with data for an update.
+        private void Fill()
+        {
+            Login log = new Login();
+            SqlCommand com;
+            string select_query = "SELECT * FROM Heroes_Table WHERE Hero_Id = " + txtID.Text;
+            try
+            {
+                connection = new SqlConnection(log.constr);
+                connection.Open();
+                com = new SqlCommand(select_query, connection);
+                SqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    // GetValue(int) works like array indexing, GetValue(0) returns value of first column etc.
+                    txtGender.Text = dr.GetValue(4).ToString();
+                    txtKillCount.Text = dr.GetValue(7).ToString();
+                    txtName.Text = dr.GetValue(1).ToString();
+                    txtPopularity.Text = dr.GetValue(5).ToString();
+                    txtRanking.Text = dr.GetValue(3).ToString();
+                    txtSkill.Text = dr.GetValue(6).ToString();
+                    txtWeapon.Text = dr.GetValue(8).ToString();
+                    txtUniverse.Text = dr.GetValue(2).ToString();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "id_fail", "alert('Please enter a valid Hero ID...')", true);
+                }
+                connection.Close();
+            }
+            catch (Exception err)
+
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "id_delete", "alert('" + err.Message + " This Hero ID does not exist...')", true);
+            }
+        }
+
+        private void Snack_Sale_Load(object sender, EventArgs e)
+        {
+            DisplayDates();
+        }
+
+        private void btnAdd_Date_Click(object sender, EventArgs e)
+        {
+            AddDates();
+        }
+        
+        private void btnEdit_Date_Click(object sender, EventArgs e)
+        {
+            UpdateDates();
+        }
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteDates();
+        }
+
+        protected void btnFill_Click(object sender, EventArgs e)
+        {
+            Fill();
+        }
+    }
+
+}
