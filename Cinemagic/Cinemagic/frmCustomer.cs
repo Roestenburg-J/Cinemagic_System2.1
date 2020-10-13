@@ -160,14 +160,15 @@ namespace Cinemagic
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string select_Customers = "SELECT * FROM CUSTOMER";
-            cinema.com = new SqlCommand(select_Customers, cinema.conn);
-            cinema.adap = new SqlDataAdapter();
-            cinema.ds = new DataSet();
-            cinema.adap = new SqlDataAdapter(select_Customers, cinema.conn);
-            cinema.adap.Fill(cinema.ds, "Customers");
-            dgCustomers.DataSource = cinema.ds;
-            dgCustomers.DataMember = "Customers";
+            string insert_Customer = "INSERT INTO CUSTOMER (Customer_Name,Customer_Surname,Customer_Phone,Customer_Email) values(@name,@surname,@phone,@email)";
+                                            
+            cinema.com = new SqlCommand(insert_Customer, cinema.conn);
+            cinema.com.Parameters.AddWithValue("@name", name);
+            cinema.com.Parameters.AddWithValue("@surname", surname);
+            cinema.com.Parameters.AddWithValue("@phone", phone);
+            cinema.com.Parameters.AddWithValue("@email", email);
+
+            cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
         }
 
@@ -307,6 +308,8 @@ namespace Cinemagic
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             AddCustomerFrom();
+            AddCustomer(name, surname, phone, email);
+            
            
         }
 
