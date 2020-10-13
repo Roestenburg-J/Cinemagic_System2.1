@@ -17,17 +17,7 @@ namespace Cinemagic
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            D
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e)
         {
 
         }
