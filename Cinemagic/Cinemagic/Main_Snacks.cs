@@ -509,5 +509,12 @@ namespace RandomProj
                 MessageBox.Show("Must enter a decimal value", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Main main = new Main();
+            main.ShowDialog();
+        }
     }
 }

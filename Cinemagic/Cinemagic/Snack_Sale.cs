@@ -96,6 +96,39 @@ namespace RandomProj
             numDate_ID.Value = 0;
         }
 
+        private void DeleteDate()
+        {
+            Main cinema = new Main();
+            string select_date = "SELECT * FROM SNACK_SALE WHERE Snack_Sale_ID = " + spinDeleteDate.Value.ToString() + ";";
+            SqlCommand cmd;
+            try
+            {
+                string delete_all = "DELETE FROM SNACK_SALE WHERE Snack_Sale_ID = " + spinDeleteDate.Value.ToString();
+                cinema.conn = new SqlConnection(cinema.constr);
+                cinema.conn.Open();
+                cinema.com = new SqlCommand(select_date, cinema.conn);
+                cmd = new SqlCommand(delete_all, cinema.conn);
+                cinema.adap = new SqlDataAdapter();
+                cinema.adap.SelectCommand = cinema.com;
+                cinema.adap.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    cmd.ExecuteNonQuery();
+                    cinema.conn.Close();
+                    MessageBox.Show($"Date with Snack_Sale_ID {spinDeleteDate.Value} deleted successfully!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DisplayDates();
+                }
+                else
+                {
+                    MessageBox.Show("Snack_Sale_ID does not exist", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message + " Failed to delete selected records...", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void Snack_Sale_Load(object sender, EventArgs e)
         {
             DisplayDates();
@@ -109,6 +142,11 @@ namespace RandomProj
         private void btnEdit_Date_Click(object sender, EventArgs e)
         {
             UpdateDates();
+        }
+
+        private void btnDelete_Date_Click(object sender, EventArgs e)
+        {
+            DeleteDate();
         }
     }
 }

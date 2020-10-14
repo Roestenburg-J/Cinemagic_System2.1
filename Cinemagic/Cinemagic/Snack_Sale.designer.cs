@@ -31,6 +31,8 @@
             this.groupBox_SnackSale = new System.Windows.Forms.GroupBox();
             this.groupBox_Delete = new System.Windows.Forms.GroupBox();
             this.groupBox_Edit = new System.Windows.Forms.GroupBox();
+            this.numDate_ID = new System.Windows.Forms.NumericUpDown();
+            this.lblFill_ID = new System.Windows.Forms.Label();
             this.btnEdit_Date = new System.Windows.Forms.Button();
             this.Transact_Date_Edit = new System.Windows.Forms.DateTimePicker();
             this.lblDate_Edit = new System.Windows.Forms.Label();
@@ -39,13 +41,17 @@
             this.Transact_Date = new System.Windows.Forms.DateTimePicker();
             this.lblAddDate = new System.Windows.Forms.Label();
             this.dbGrid_Dates = new System.Windows.Forms.DataGridView();
-            this.lblFill_ID = new System.Windows.Forms.Label();
-            this.numDate_ID = new System.Windows.Forms.NumericUpDown();
+            this.btnDelete_Date = new System.Windows.Forms.Button();
+            this.lblDeleteDate = new System.Windows.Forms.Label();
+            this.spinDeleteDate = new System.Windows.Forms.NumericUpDown();
+            this.lblDelete = new System.Windows.Forms.Label();
             this.groupBox_SnackSale.SuspendLayout();
+            this.groupBox_Delete.SuspendLayout();
             this.groupBox_Edit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDate_ID)).BeginInit();
             this.groupBox_Add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGrid_Dates)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDate_ID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinDeleteDate)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox_SnackSale
@@ -63,9 +69,13 @@
             // 
             // groupBox_Delete
             // 
-            this.groupBox_Delete.Location = new System.Drawing.Point(720, 335);
+            this.groupBox_Delete.Controls.Add(this.btnDelete_Date);
+            this.groupBox_Delete.Controls.Add(this.lblDeleteDate);
+            this.groupBox_Delete.Controls.Add(this.spinDeleteDate);
+            this.groupBox_Delete.Controls.Add(this.lblDelete);
+            this.groupBox_Delete.Location = new System.Drawing.Point(415, 317);
             this.groupBox_Delete.Name = "groupBox_Delete";
-            this.groupBox_Delete.Size = new System.Drawing.Size(200, 100);
+            this.groupBox_Delete.Size = new System.Drawing.Size(277, 136);
             this.groupBox_Delete.TabIndex = 0;
             this.groupBox_Delete.TabStop = false;
             this.groupBox_Delete.Text = "DELETE DATE";
@@ -83,6 +93,22 @@
             this.groupBox_Edit.TabIndex = 0;
             this.groupBox_Edit.TabStop = false;
             this.groupBox_Edit.Text = "EDIT DATE";
+            // 
+            // numDate_ID
+            // 
+            this.numDate_ID.Location = new System.Drawing.Point(81, 59);
+            this.numDate_ID.Name = "numDate_ID";
+            this.numDate_ID.Size = new System.Drawing.Size(120, 22);
+            this.numDate_ID.TabIndex = 2;
+            // 
+            // lblFill_ID
+            // 
+            this.lblFill_ID.AutoSize = true;
+            this.lblFill_ID.Location = new System.Drawing.Point(96, 39);
+            this.lblFill_ID.Name = "lblFill_ID";
+            this.lblFill_ID.Size = new System.Drawing.Size(97, 17);
+            this.lblFill_ID.TabIndex = 6;
+            this.lblFill_ID.Text = "Enter Date ID:";
             // 
             // btnEdit_Date
             // 
@@ -157,21 +183,40 @@
             this.dbGrid_Dates.Size = new System.Drawing.Size(556, 247);
             this.dbGrid_Dates.TabIndex = 0;
             // 
-            // lblFill_ID
+            // btnDelete_Date
             // 
-            this.lblFill_ID.AutoSize = true;
-            this.lblFill_ID.Location = new System.Drawing.Point(96, 39);
-            this.lblFill_ID.Name = "lblFill_ID";
-            this.lblFill_ID.Size = new System.Drawing.Size(97, 17);
-            this.lblFill_ID.TabIndex = 6;
-            this.lblFill_ID.Text = "Enter Date ID:";
+            this.btnDelete_Date.Location = new System.Drawing.Point(9, 95);
+            this.btnDelete_Date.Name = "btnDelete_Date";
+            this.btnDelete_Date.Size = new System.Drawing.Size(102, 23);
+            this.btnDelete_Date.TabIndex = 27;
+            this.btnDelete_Date.Text = "DELETE";
+            this.btnDelete_Date.UseVisualStyleBackColor = true;
+            this.btnDelete_Date.Click += new System.EventHandler(this.btnDelete_Date_Click);
             // 
-            // numDate_ID
+            // lblDeleteDate
             // 
-            this.numDate_ID.Location = new System.Drawing.Point(81, 59);
-            this.numDate_ID.Name = "numDate_ID";
-            this.numDate_ID.Size = new System.Drawing.Size(120, 22);
-            this.numDate_ID.TabIndex = 2;
+            this.lblDeleteDate.AutoSize = true;
+            this.lblDeleteDate.Location = new System.Drawing.Point(6, 25);
+            this.lblDeleteDate.Name = "lblDeleteDate";
+            this.lblDeleteDate.Size = new System.Drawing.Size(247, 17);
+            this.lblDeleteDate.TabIndex = 26;
+            this.lblDeleteDate.Text = "DELETE SALE DATE WITH DATE_ID:";
+            // 
+            // spinDeleteDate
+            // 
+            this.spinDeleteDate.Location = new System.Drawing.Point(97, 54);
+            this.spinDeleteDate.Name = "spinDeleteDate";
+            this.spinDeleteDate.Size = new System.Drawing.Size(100, 22);
+            this.spinDeleteDate.TabIndex = 25;
+            // 
+            // lblDelete
+            // 
+            this.lblDelete.AutoSize = true;
+            this.lblDelete.Location = new System.Drawing.Point(6, 56);
+            this.lblDelete.Name = "lblDelete";
+            this.lblDelete.Size = new System.Drawing.Size(63, 17);
+            this.lblDelete.TabIndex = 24;
+            this.lblDelete.Text = "Date_ID:";
             // 
             // Snack_Sale
             // 
@@ -183,12 +228,15 @@
             this.Text = "Snack_Sale";
             this.Load += new System.EventHandler(this.Snack_Sale_Load);
             this.groupBox_SnackSale.ResumeLayout(false);
+            this.groupBox_Delete.ResumeLayout(false);
+            this.groupBox_Delete.PerformLayout();
             this.groupBox_Edit.ResumeLayout(false);
             this.groupBox_Edit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDate_ID)).EndInit();
             this.groupBox_Add.ResumeLayout(false);
             this.groupBox_Add.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGrid_Dates)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDate_ID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinDeleteDate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,5 +256,9 @@
         private System.Windows.Forms.Label lblDate_Edit;
         private System.Windows.Forms.Label lblFill_ID;
         private System.Windows.Forms.NumericUpDown numDate_ID;
+        private System.Windows.Forms.Button btnDelete_Date;
+        private System.Windows.Forms.Label lblDeleteDate;
+        private System.Windows.Forms.NumericUpDown spinDeleteDate;
+        private System.Windows.Forms.Label lblDelete;
     }
 }

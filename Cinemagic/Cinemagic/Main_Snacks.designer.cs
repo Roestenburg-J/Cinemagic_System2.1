@@ -77,6 +77,7 @@
             this.lblDeleteAllTransactions = new System.Windows.Forms.Label();
             this.spinDeleteAll = new System.Windows.Forms.NumericUpDown();
             this.lblDeleteAll = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupSnacks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).BeginInit();
             this.groupMaintain_Snacks.SuspendLayout();
@@ -568,11 +569,22 @@
             this.lblDeleteAll.TabIndex = 20;
             this.lblDeleteAll.Text = "Snack_ID:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1116, 595);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(238, 35);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "BACK TO START PAGE";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Main_Snacks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1539, 779);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupDeleteTransacts);
             this.Controls.Add(this.groupDate);
             this.Controls.Add(this.groupTransact_Detail);
@@ -655,5 +667,6 @@
         private System.Windows.Forms.Label lblDeleteAllTransactions;
         private System.Windows.Forms.NumericUpDown spinDeleteAll;
         private System.Windows.Forms.Label lblDeleteAll;
+        private System.Windows.Forms.Button button1;
     }
 }
