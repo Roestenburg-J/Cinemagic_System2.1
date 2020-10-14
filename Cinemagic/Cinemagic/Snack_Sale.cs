@@ -110,5 +110,15 @@ namespace RandomProj
         {
             UpdateDates();
         }
+
+        private void groupBox_Delete_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox_SnackSale_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
