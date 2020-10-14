@@ -77,6 +77,8 @@
             this.lblDeleteAllTransactions = new System.Windows.Forms.Label();
             this.spinDeleteAll = new System.Windows.Forms.NumericUpDown();
             this.lblDeleteAll = new System.Windows.Forms.Label();
+            this.lblBack = new System.Windows.Forms.Button();
+            this.lblDates = new System.Windows.Forms.Button();
             this.groupSnacks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).BeginInit();
             this.groupMaintain_Snacks.SuspendLayout();
@@ -568,11 +570,33 @@
             this.lblDeleteAll.TabIndex = 20;
             this.lblDeleteAll.Text = "Snack_ID:";
             // 
+            // lblBack
+            // 
+            this.lblBack.Location = new System.Drawing.Point(1109, 674);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(238, 50);
+            this.lblBack.TabIndex = 24;
+            this.lblBack.Text = "BACK TO START PAGE";
+            this.lblBack.UseVisualStyleBackColor = true;
+            this.lblBack.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblDates
+            // 
+            this.lblDates.Location = new System.Drawing.Point(1109, 595);
+            this.lblDates.Name = "lblDates";
+            this.lblDates.Size = new System.Drawing.Size(238, 55);
+            this.lblDates.TabIndex = 25;
+            this.lblDates.Text = "ADD DATES TO SALES";
+            this.lblDates.UseVisualStyleBackColor = true;
+            this.lblDates.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Main_Snacks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1539, 779);
+            this.Controls.Add(this.lblDates);
+            this.Controls.Add(this.lblBack);
             this.Controls.Add(this.groupDeleteTransacts);
             this.Controls.Add(this.groupDate);
             this.Controls.Add(this.groupTransact_Detail);
@@ -655,5 +679,7 @@
         private System.Windows.Forms.Label lblDeleteAllTransactions;
         private System.Windows.Forms.NumericUpDown spinDeleteAll;
         private System.Windows.Forms.Label lblDeleteAll;
+        private System.Windows.Forms.Button lblBack;
+        private System.Windows.Forms.Button lblDates;
     }
 }
