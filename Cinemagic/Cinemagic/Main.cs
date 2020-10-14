@@ -62,5 +62,15 @@ namespace RandomProj
             Booking frm = new Booking();
             frm.Show();
         }
+
+       
+
+        private void btnGenre_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Genre genre = new Genre();
+            genre.ShowDialog();
+
+        }
     }
 }

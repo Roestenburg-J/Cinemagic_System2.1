@@ -31,6 +31,7 @@
             this.btnCommitSale = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnGenre = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCommitSale
@@ -64,11 +65,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnGenre
+            // 
+            this.btnGenre.Location = new System.Drawing.Point(113, 313);
+            this.btnGenre.Name = "btnGenre";
+            this.btnGenre.Size = new System.Drawing.Size(88, 53);
+            this.btnGenre.TabIndex = 3;
+            this.btnGenre.Text = "GENRE";
+            this.btnGenre.UseVisualStyleBackColor = true;
+            this.btnGenre.Click += new System.EventHandler(this.btnGenre_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 409);
+            this.Controls.Add(this.btnGenre);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCustomers);
             this.Controls.Add(this.btnCommitSale);
@@ -85,5 +97,6 @@
         private System.Windows.Forms.Button btnCommitSale;
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGenre;
     }
 }
