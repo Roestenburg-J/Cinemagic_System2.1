@@ -516,5 +516,12 @@ namespace RandomProj
             Main main = new Main();
             main.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Snack_Sale Snack_Sale = new Snack_Sale();
+            Snack_Sale.ShowDialog();
+        }
     }
 }

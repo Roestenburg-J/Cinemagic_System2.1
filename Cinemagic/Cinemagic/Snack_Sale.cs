@@ -148,5 +148,12 @@ namespace RandomProj
         {
             DeleteDate();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Main_Snacks main_snacks = new Main_Snacks();
+            main_snacks.ShowDialog();
+        }
     }
 }
