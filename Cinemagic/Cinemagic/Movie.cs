@@ -62,30 +62,38 @@ namespace Cinemagic
 
         private void AddMovie(string name, string genre, string duration, string ageRes, string relDate, string withdrawDate)
         {
-            if (CheckEmptyAddInputs())
+            try
             {
-                MessageBox.Show("Please ensure all inputs contain a value", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (CheckEmptyAddInputs())
+                {
+                    MessageBox.Show("Please ensure all inputs contain a value", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Main cinema = new Main();
+                    connection = cinema.constr;
+                    cinema.conn = new SqlConnection(connection);
+                    cinema.conn.Open();
+                    string insert_Movie = "INSERT INTO MOVIE (Movie_Name,Genre_ID,Movie_Duration,Age_Restriction,Release_Date, Withdrawal_Date) values(@name,@genre,@duration,@ageRes,@relDate,@withdrawDate)";
+
+                    cinema.com = new SqlCommand(insert_Movie, cinema.conn);
+                    cinema.com.Parameters.AddWithValue("@name", name);
+                    cinema.com.Parameters.AddWithValue("@genre", genre);
+                    cinema.com.Parameters.AddWithValue("@duration", duration);
+                    cinema.com.Parameters.AddWithValue("@ageRes", ageRes);
+                    cinema.com.Parameters.AddWithValue("@relDate", relDate);
+                    cinema.com.Parameters.AddWithValue("@withdrawDate", withdrawDate);
+
+                    cinema.com.ExecuteNonQuery();
+                    cinema.conn.Close();
+
+                    MessageBox.Show("Movie Added Successfully!");
+                }
             }
-            else
-            {
-                Main cinema = new Main();
-                connection = cinema.constr;
-                cinema.conn = new SqlConnection(connection);
-                cinema.conn.Open();
-                string insert_Movie = "INSERT INTO MOVIE (Movie_Name,Genre_ID,Movie_Duration,Age_Restriction,Release_Date, Withdrawal_Date) values(@name,@genre,@duration,@ageRes,@relDate,@withdrawDate)";
 
-                cinema.com = new SqlCommand(insert_Movie, cinema.conn);
-                cinema.com.Parameters.AddWithValue("@name", name);
-                cinema.com.Parameters.AddWithValue("@genre", genre);
-                cinema.com.Parameters.AddWithValue("@duration", duration);
-                cinema.com.Parameters.AddWithValue("@ageRes", ageRes);
-                cinema.com.Parameters.AddWithValue("@relDate", relDate);
-                cinema.com.Parameters.AddWithValue("@withdrawDate", withdrawDate);
-
-                cinema.com.ExecuteNonQuery();
-                cinema.conn.Close();
-
-                MessageBox.Show("Movie Added Successfully!");
+            catch
+            { 
+                MessageBox.Show("Ensure that you have entered valid values.");
             }
 
         }
@@ -103,21 +111,29 @@ namespace Cinemagic
 
         private void DeleteMovie(string id)
         {
-            if (CheckEmptyDeleteInputs())
+            try
             {
-                MessageBox.Show("Please ensure all inputs contain a value", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (CheckEmptyDeleteInputs())
+                {
+                    MessageBox.Show("Please ensure all inputs contain a value", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Main cinema = new Main();
+                    connection = cinema.constr;
+                    cinema.conn = new SqlConnection(connection);
+                    cinema.conn.Open();
+                    string delete_Movie = "DELETE MOVIE WHERE Movie_ID = '" + id + "'";
+                    cinema.com = new SqlCommand(delete_Movie, cinema.conn);
+                    cinema.com.ExecuteNonQuery();
+                    cinema.conn.Close();
+                    MessageBox.Show("Movie Deleted Successfully");
+                }
             }
-            else
+
+            catch
             {
-                Main cinema = new Main();
-                connection = cinema.constr;
-                cinema.conn = new SqlConnection(connection);
-                cinema.conn.Open();
-                string delete_Movie = "DELETE MOVIE WHERE Movie_ID = '" + id + "'";
-                cinema.com = new SqlCommand(delete_Movie, cinema.conn);
-                cinema.com.ExecuteNonQuery();
-                cinema.conn.Close();
-                MessageBox.Show("Movie Deleted Successfully");
+                MessageBox.Show("Ensure that you have entered valid values.");
             }
         }
 
@@ -225,94 +241,103 @@ namespace Cinemagic
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            id = uIDBox.Text;
-            if (nameCB.Checked == true)
+            try
             {
-
-                try
+                id = uIDBox.Text;
+                if (nameCB.Checked == true)
                 {
-                    EditName(uNameBox.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Please enter a value.");
+
+                    try
+                    {
+                        EditName(uNameBox.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Please enter a value.");
+                    }
+
                 }
 
+                if (genreCB.Checked == true)
+                {
+
+                    try
+                    {
+                        EditGenre(uGenreBox.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Please enter a value.");
+                    }
+
+                }
+
+                if (durationCB.Checked == true)
+                {
+
+                    try
+                    {
+                        EditDuration(uDurationBox.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Please enter a value.");
+                    }
+
+                }
+
+                if (ageCB.Checked == true)
+                {
+
+                    try
+                    {
+                        EditAge(uAgeBox.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Please enter a value.");
+                    }
+
+                }
+
+                if (releaseCB.Checked == true)
+                {
+
+                    try
+                    {
+                        EditRelease(uReleaseBox.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Please enter a value.");
+                    }
+
+                }
+
+                if (withdrawCB.Checked == true)
+                {
+
+                    try
+                    {
+                        EditWithdraw(uWithdrawBox.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Please enter a value.");
+                    }
+
+                }
+
+                MessageBox.Show("Movie Updated Successfully.");
+                DisplayMovies();
             }
 
-            if (genreCB.Checked == true)
+            catch
             {
-
-                try
-                {
-                    EditGenre(uGenreBox.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Please enter a value.");
-                }
-
+                MessageBox.Show("Ensure that you have entered valid values.");
             }
-
-            if (durationCB.Checked == true)
-            {
-
-                try
-                {
-                    EditDuration(uDurationBox.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Please enter a value.");
-                }
-
-            }
-
-            if (ageCB.Checked == true)
-            {
-
-                try
-                {
-                    EditAge(uAgeBox.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Please enter a value.");
-                }
-
-            }
-
-            if (releaseCB.Checked == true)
-            {
-
-                try
-                {
-                    EditRelease(uReleaseBox.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Please enter a value.");
-                }
-
-            }
-
-            if (withdrawCB.Checked == true)
-            {
-
-                try
-                {
-                    EditWithdraw(uWithdrawBox.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Please enter a value.");
-                }
-
-            }
-
-            MessageBox.Show("Movie Updated Successfully.");
-            DisplayMovies();
         }
+
 
         private void delBtn_Click(object sender, EventArgs e)
         {
