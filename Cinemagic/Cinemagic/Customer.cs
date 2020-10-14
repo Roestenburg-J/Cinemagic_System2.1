@@ -439,5 +439,10 @@ namespace Cinemagic
         {
             MessageBox.Show("Cell Clicked: " + dgCustomers.SelectedCells.ToString());
         }
+
+        private void frmCustomer_Load(object sender, EventArgs e)
+        {
+            DisplayCustomers();
+        }
     }
 }

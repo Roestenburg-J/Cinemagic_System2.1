@@ -209,6 +209,7 @@
             this.Controls.Add(this.dgCustomers);
             this.Name = "frmCustomer";
             this.Text = "Customer";
+            this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).EndInit();
