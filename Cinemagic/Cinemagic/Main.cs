@@ -53,8 +53,8 @@ namespace RandomProj
         private void btnCustomers_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Cinemagic.Customer customer = new Cinemagic.Customer();
-            
+            Cinemagic.frmCustomer movie = new Cinemagic.frmCustomer();
+            movie.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
