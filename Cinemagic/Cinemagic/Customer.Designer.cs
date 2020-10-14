@@ -36,6 +36,7 @@
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.udCustomerID = new System.Windows.Forms.NumericUpDown();
             this.gbCustomerFields = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.txtEditEmail = new System.Windows.Forms.TextBox();
             this.txtEditPhone = new System.Windows.Forms.TextBox();
             this.txtEditSurname = new System.Windows.Forms.TextBox();
@@ -79,6 +80,7 @@
             this.btnDeleteCustomer.TabIndex = 4;
             this.btnDeleteCustomer.Text = "Delete Customer";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnAddCustomer
             // 
@@ -92,12 +94,14 @@
             // 
             // btnEditCustomer
             // 
+            this.btnEditCustomer.Enabled = false;
             this.btnEditCustomer.Location = new System.Drawing.Point(141, 99);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(75, 41);
             this.btnEditCustomer.TabIndex = 2;
             this.btnEditCustomer.Text = "Edit Customer";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // btnSearchCustomer
             // 
@@ -107,6 +111,7 @@
             this.btnSearchCustomer.TabIndex = 1;
             this.btnSearchCustomer.Text = "Search Customer";
             this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click_1);
             // 
             // udCustomerID
             // 
@@ -117,6 +122,7 @@
             // 
             // gbCustomerFields
             // 
+            this.gbCustomerFields.Controls.Add(this.btnUpdate);
             this.gbCustomerFields.Controls.Add(this.txtEditEmail);
             this.gbCustomerFields.Controls.Add(this.txtEditPhone);
             this.gbCustomerFields.Controls.Add(this.txtEditSurname);
@@ -125,36 +131,52 @@
             this.gbCustomerFields.Controls.Add(this.cbPhone);
             this.gbCustomerFields.Controls.Add(this.cbSurname);
             this.gbCustomerFields.Controls.Add(this.cbName);
+            this.gbCustomerFields.Enabled = false;
             this.gbCustomerFields.Location = new System.Drawing.Point(431, 35);
             this.gbCustomerFields.Name = "gbCustomerFields";
             this.gbCustomerFields.Size = new System.Drawing.Size(311, 222);
             this.gbCustomerFields.TabIndex = 2;
             this.gbCustomerFields.TabStop = false;
+            this.gbCustomerFields.Enter += new System.EventHandler(this.gbCustomerFields_Enter);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(43, 170);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(243, 43);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Update Record";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtEditEmail
             // 
-            this.txtEditEmail.Location = new System.Drawing.Point(125, 153);
+            this.txtEditEmail.Enabled = false;
+            this.txtEditEmail.Location = new System.Drawing.Point(125, 130);
             this.txtEditEmail.Name = "txtEditEmail";
             this.txtEditEmail.Size = new System.Drawing.Size(161, 20);
             this.txtEditEmail.TabIndex = 7;
             // 
             // txtEditPhone
             // 
-            this.txtEditPhone.Location = new System.Drawing.Point(125, 120);
+            this.txtEditPhone.Enabled = false;
+            this.txtEditPhone.Location = new System.Drawing.Point(125, 97);
             this.txtEditPhone.Name = "txtEditPhone";
             this.txtEditPhone.Size = new System.Drawing.Size(161, 20);
             this.txtEditPhone.TabIndex = 6;
             // 
             // txtEditSurname
             // 
-            this.txtEditSurname.Location = new System.Drawing.Point(125, 88);
+            this.txtEditSurname.Enabled = false;
+            this.txtEditSurname.Location = new System.Drawing.Point(125, 65);
             this.txtEditSurname.Name = "txtEditSurname";
             this.txtEditSurname.Size = new System.Drawing.Size(161, 20);
             this.txtEditSurname.TabIndex = 5;
             // 
             // txtEditName
             // 
-            this.txtEditName.Location = new System.Drawing.Point(125, 53);
+            this.txtEditName.Enabled = false;
+            this.txtEditName.Location = new System.Drawing.Point(125, 30);
             this.txtEditName.Name = "txtEditName";
             this.txtEditName.Size = new System.Drawing.Size(161, 20);
             this.txtEditName.TabIndex = 4;
@@ -162,42 +184,46 @@
             // cbEmail
             // 
             this.cbEmail.AutoSize = true;
-            this.cbEmail.Location = new System.Drawing.Point(43, 155);
+            this.cbEmail.Location = new System.Drawing.Point(43, 132);
             this.cbEmail.Name = "cbEmail";
             this.cbEmail.Size = new System.Drawing.Size(55, 17);
             this.cbEmail.TabIndex = 3;
             this.cbEmail.Text = "E-Mail";
             this.cbEmail.UseVisualStyleBackColor = true;
+            this.cbEmail.CheckedChanged += new System.EventHandler(this.cbEmail_CheckedChanged);
             // 
             // cbPhone
             // 
             this.cbPhone.AutoSize = true;
-            this.cbPhone.Location = new System.Drawing.Point(43, 122);
+            this.cbPhone.Location = new System.Drawing.Point(43, 99);
             this.cbPhone.Name = "cbPhone";
             this.cbPhone.Size = new System.Drawing.Size(57, 17);
             this.cbPhone.TabIndex = 2;
             this.cbPhone.Text = "Phone";
             this.cbPhone.UseVisualStyleBackColor = true;
+            this.cbPhone.CheckedChanged += new System.EventHandler(this.cbPhone_CheckedChanged);
             // 
             // cbSurname
             // 
             this.cbSurname.AutoSize = true;
-            this.cbSurname.Location = new System.Drawing.Point(43, 90);
+            this.cbSurname.Location = new System.Drawing.Point(43, 67);
             this.cbSurname.Name = "cbSurname";
             this.cbSurname.Size = new System.Drawing.Size(68, 17);
             this.cbSurname.TabIndex = 1;
             this.cbSurname.Text = "Surname";
             this.cbSurname.UseVisualStyleBackColor = true;
+            this.cbSurname.CheckedChanged += new System.EventHandler(this.cbSurname_CheckedChanged_1);
             // 
             // cbName
             // 
             this.cbName.AutoSize = true;
-            this.cbName.Location = new System.Drawing.Point(43, 55);
+            this.cbName.Location = new System.Drawing.Point(43, 32);
             this.cbName.Name = "cbName";
             this.cbName.Size = new System.Drawing.Size(54, 17);
             this.cbName.TabIndex = 0;
             this.cbName.Text = "Name";
             this.cbName.UseVisualStyleBackColor = true;
+            this.cbName.CheckedChanged += new System.EventHandler(this.cbName_CheckedChanged);
             // 
             // frmCustomer
             // 
@@ -237,5 +263,6 @@
         private System.Windows.Forms.CheckBox cbPhone;
         private System.Windows.Forms.CheckBox cbSurname;
         private System.Windows.Forms.CheckBox cbName;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
