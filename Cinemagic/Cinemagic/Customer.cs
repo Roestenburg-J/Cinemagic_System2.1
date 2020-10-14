@@ -36,14 +36,14 @@ namespace Cinemagic
 
         public DialogResult AddCustomerFrom()
         {
-            Form form = new Form();        
+            Form form = new Form();
 
             Label lblName = new Label();
             Label lblSurname = new Label();
             Label lblEmail = new Label();
             Label lblPhone = new Label();
 
-           
+
             lblName.Text = "Name:";
             lblSurname.Text = "Surname:";
             lblPhone.Text = "Phone:";
@@ -51,7 +51,7 @@ namespace Cinemagic
 
             TextBox txtName = new TextBox();
             TextBox txtSurname = new TextBox();
-         
+
             TextBox txtEmail = new TextBox();
             TextBox txtPhone = new TextBox();
 
@@ -69,7 +69,7 @@ namespace Cinemagic
             lblSurname.Size = new Size(80, 20);
             lblPhone.Size = new Size(80, 20);
             lblEmail.Size = new Size(80, 20);
-            
+
             txtName.Location = new Point(150, 75);
             txtSurname.Location = new Point(150, 115);
             txtPhone.Location = new Point(150, 155);
@@ -80,7 +80,7 @@ namespace Cinemagic
             txtPhone.Size = new Size(140, 20);
             txtEmail.Size = new Size(140, 20);
 
-            btnAdd.Size = new Size(80,40);
+            btnAdd.Size = new Size(80, 40);
             btnCancel.Size = new Size(80, 40);
             btnAdd.Location = new Point(60, 300);
             btnCancel.Location = new Point(200, 300);
@@ -89,7 +89,7 @@ namespace Cinemagic
 
             form.Text = "Add Customer";
             form.ClientSize = new Size(500, 500);
-            form.Controls.AddRange(new Control[] { lblName, lblSurname, lblPhone, lblEmail, txtName, txtSurname, txtPhone, txtEmail,btnAdd, btnCancel });
+            form.Controls.AddRange(new Control[] { lblName, lblSurname, lblPhone, lblEmail, txtName, txtSurname, txtPhone, txtEmail, btnAdd, btnCancel });
 
             form.FormBorderStyle = FormBorderStyle.FixedDialog;
             form.MinimizeBox = false;
@@ -98,7 +98,7 @@ namespace Cinemagic
             form.CancelButton = btnCancel;
 
             DialogResult dialogResult = form.ShowDialog();
-            
+
             name = txtName.Text;
             surname = txtSurname.Text;
             phone = txtPhone.Text;
@@ -109,7 +109,7 @@ namespace Cinemagic
                 form.Close();
             }
             else
-            {              
+            {
                 try
                 {
                     Convert.ToInt32(txtPhone.Text);
@@ -136,7 +136,7 @@ namespace Cinemagic
                     }
                     else
                     {
-                        MessageBox.Show("Phone number should be 10 digits", "Invalid Phone Number");                       
+                        MessageBox.Show("Phone number should be 10 digits", "Invalid Phone Number");
                         txtName.Enabled = false;
                         txtSurname.Enabled = false;
                         txtEmail.Enabled = false;
@@ -150,9 +150,28 @@ namespace Cinemagic
             if (dialogResult == DialogResult.Cancel)
             {
                 form.Close();
-            }           
+            }
             return dialogResult;
         }
+
+        private void AddCustomer(string name, string surname, string phone, string email)
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string insert_Customer = "INSERT INTO CUSTOMER (Customer_Name,Customer_Surname,Customer_Phone,Customer_Email) values(@name,@surname,@phone,@email)";
+
+            cinema.com = new SqlCommand(insert_Customer, cinema.conn);
+            cinema.com.Parameters.AddWithValue("@name", name);
+            cinema.com.Parameters.AddWithValue("@surname", surname);
+            cinema.com.Parameters.AddWithValue("@phone", phone);
+            cinema.com.Parameters.AddWithValue("@email", email);
+
+            cinema.com.ExecuteNonQuery();
+            cinema.conn.Close();
+        }
+
 
         private void DisplayCustomers()
         {
@@ -171,13 +190,13 @@ namespace Cinemagic
             cinema.conn.Close();
         }
 
-        private void SearchCustomer(string detail)
+        private void SearchCustomer(string id)
         {
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string select_Customers = "SELECT * FROM CUSTOMER WHERE Customer_Name LIKE '%" + detail + "%' OR Customer_Surname LIKE '%"+ detail + "%' OR Customer_Phone LIKE '%" + detail + "%' OR Customer_Email LIKE '%" + detail + "%'" ;
+            string select_Customers = "SELECT * FROM CUSTOMER WHERE Customer_ID = '" + id + "'";
             cinema.com = new SqlCommand(select_Customers, cinema.conn);
             cinema.adap = new SqlDataAdapter();
             cinema.ds = new DataSet();
@@ -185,7 +204,7 @@ namespace Cinemagic
             cinema.adap.Fill(cinema.ds, "Customers");
             dgCustomers.DataSource = cinema.ds;
             dgCustomers.DataMember = "Customers";
-            cinema.conn.Close();    
+            cinema.conn.Close();
         }
 
         private void EditName(string newName)
@@ -197,7 +216,7 @@ namespace Cinemagic
             string update_Name = "UPDATE CUSTOMER SET Customer_Name=@name";
             cinema.com = new SqlCommand(update_Name, cinema.conn);
             cinema.com.Parameters.AddWithValue("@Name", newName);
-            cinema.com.ExecuteNonQuery();                     
+            cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
             MessageBox.Show("Record Updated Successfully");
         }
@@ -210,7 +229,7 @@ namespace Cinemagic
             cinema.conn.Open();
             string update_Surname = "UPDATE CUSTOMER SET Customer_Surname=@Surname";
             cinema.com = new SqlCommand(update_Surname, cinema.conn);
-            cinema.com.Parameters.AddWithValue("@Surname", surname);
+            cinema.com.Parameters.AddWithValue("@Surname", newSurname);
             cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
             MessageBox.Show("Record Updated Successfully");
@@ -224,7 +243,7 @@ namespace Cinemagic
             cinema.conn.Open();
             string update_Phone = "UPDATE CUSTOMER SET Customer_Phone=@Phone";
             cinema.com = new SqlCommand(update_Phone, cinema.conn);
-            cinema.com.Parameters.AddWithValue("@Phone", phone);
+            cinema.com.Parameters.AddWithValue("@Phone", newPhone);
             cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
             MessageBox.Show("Record Updated Successfully");
@@ -238,16 +257,60 @@ namespace Cinemagic
             cinema.conn.Open();
             string update_Email = "UPDATE CUSTOMER SET Customer_Email=@Email";
             cinema.com = new SqlCommand(update_Email, cinema.conn);
-            cinema.com.Parameters.AddWithValue("@Email", email);
+            cinema.com.Parameters.AddWithValue("@Email", newEmail);
             cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
             MessageBox.Show("Record Updated Successfully");
         }
 
+        private void DeleteCustomer(string id)
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string delete_Customer = "DELETE CUSTOMER WHERE Customer_ID = '" + id + "'";
+            cinema.com = new SqlCommand(delete_Customer, cinema.conn);
+            cinema.com.ExecuteNonQuery();
+            cinema.conn.Close();
+            MessageBox.Show("Record Deleted Successfully");
+        }
+
+        private Boolean TestValidSearch(string id)
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string select_Customers = "SELECT * FROM CUSTOMER WHERE Customer_ID = '" + id + "'";
+            cinema.com = new SqlCommand(select_Customers, cinema.conn);
+            cinema.adap = new SqlDataAdapter();
+
+            SqlDataReader dr = cinema.com.ExecuteReader();
+            int count = 0;
+            while (dr.Read())
+            {
+                count++;
+            }
+            dr.Close();
+            cinema.conn.Close();
+
+            if (count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             AddCustomerFrom();
-           
+            AddCustomer(name, surname, phone, email);
+
+
         }
 
         private void Customer_Load(object sender, EventArgs e)
@@ -255,19 +318,28 @@ namespace Cinemagic
             DisplayCustomers();
         }
 
-        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        private void btnSearchCustomer_Click_1(object sender, EventArgs e)
         {
-            string customerDetail = "";
-            customerDetail = txtSearchCustomer.Text;
+            string customerID = "";
+            customerID = udCustomerID.Text;
 
             try
             {
-                SearchCustomer(customerDetail);
+                SearchCustomer(customerID);
             }
             catch
-            {              
-                
-            }                 
+            {
+
+            }
+            if (TestValidSearch(customerID) == false)
+            {
+                MessageBox.Show("Invalid Customer ID", "Invalid Search");
+            }
+            else
+            {
+                btnEditCustomer.Enabled = true;
+            }
+
         }
 
         private void dgCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -277,12 +349,12 @@ namespace Cinemagic
 
         private void dgCustomers_SizeChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dgCustomers_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void btnEditCustomer_Click(object sender, EventArgs e)
@@ -294,10 +366,10 @@ namespace Cinemagic
         {
             if (cbName.Checked == true)
             {
-                EditName(txtEditName.Text);
+
                 try
                 {
-                    
+                    EditName(txtEditName.Text);
                 }
                 catch
                 {
@@ -307,9 +379,10 @@ namespace Cinemagic
             }
             if (cbSurname.Checked == true)
             {
+                EditSurname(txtEditSurname.Text);
                 try
                 {
-                    EditSurname(txtEditSurname.Text);
+                    
                 }
                 catch
                 {
@@ -345,7 +418,7 @@ namespace Cinemagic
             txtEditName.Enabled = true;
         }
 
-        private void cbSurname_CheckedChanged(object sender, EventArgs e)
+        private void cbSurname_CheckedChanged_1(object sender, EventArgs e)
         {
             txtEditSurname.Enabled = true;
         }
@@ -359,5 +432,26 @@ namespace Cinemagic
         {
             txtEditEmail.Enabled = true;
         }
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            string customerID = "";
+            customerID = udCustomerID.Text;
+            DeleteCustomer(customerID);
+            DisplayCustomers();
+        }
+
+
+        private void frmCustomer_Load(object sender, EventArgs e)
+        {
+            DisplayCustomers();
+        }
+
+        private void gbCustomerFields_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
