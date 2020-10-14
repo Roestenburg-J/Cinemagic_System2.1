@@ -30,32 +30,32 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.withdrawCB = new System.Windows.Forms.CheckBox();
+            this.releaseCB = new System.Windows.Forms.CheckBox();
+            this.ageCB = new System.Windows.Forms.CheckBox();
+            this.durationCB = new System.Windows.Forms.CheckBox();
+            this.genreCB = new System.Windows.Forms.CheckBox();
+            this.nameCB = new System.Windows.Forms.CheckBox();
+            this.uWithdrawBox = new System.Windows.Forms.TextBox();
+            this.uReleaseBox = new System.Windows.Forms.TextBox();
+            this.uIDBox = new System.Windows.Forms.TextBox();
+            this.uNameBox = new System.Windows.Forms.TextBox();
+            this.uGenreBox = new System.Windows.Forms.TextBox();
+            this.uDurationBox = new System.Windows.Forms.TextBox();
+            this.uAgeBox = new System.Windows.Forms.TextBox();
             this.updateBtn = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dIDBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.delBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.aWithdrawBox = new System.Windows.Forms.TextBox();
+            this.aReleaseBox = new System.Windows.Forms.TextBox();
+            this.aAgeBox = new System.Windows.Forms.TextBox();
+            this.aDurationBox = new System.Windows.Forms.TextBox();
+            this.aGenreBox = new System.Windows.Forms.TextBox();
+            this.aNameBox = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.moviesGrid = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox1);
@@ -82,23 +84,24 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Maintain Movies";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.textBox11);
-            this.groupBox3.Controls.Add(this.textBox12);
-            this.groupBox3.Controls.Add(this.textBox13);
-            this.groupBox3.Controls.Add(this.textBox14);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.withdrawCB);
+            this.groupBox3.Controls.Add(this.releaseCB);
+            this.groupBox3.Controls.Add(this.ageCB);
+            this.groupBox3.Controls.Add(this.durationCB);
+            this.groupBox3.Controls.Add(this.genreCB);
+            this.groupBox3.Controls.Add(this.nameCB);
+            this.groupBox3.Controls.Add(this.uWithdrawBox);
+            this.groupBox3.Controls.Add(this.uReleaseBox);
+            this.groupBox3.Controls.Add(this.uIDBox);
+            this.groupBox3.Controls.Add(this.uNameBox);
+            this.groupBox3.Controls.Add(this.uGenreBox);
+            this.groupBox3.Controls.Add(this.uDurationBox);
+            this.groupBox3.Controls.Add(this.uAgeBox);
             this.groupBox3.Controls.Add(this.updateBtn);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Location = new System.Drawing.Point(373, 48);
             this.groupBox3.Name = "groupBox3";
@@ -107,63 +110,115 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Update Movie";
             // 
-            // textBox9
+            // withdrawCB
             // 
-            this.textBox9.Location = new System.Drawing.Point(151, 185);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 1;
+            this.withdrawCB.AutoSize = true;
+            this.withdrawCB.Location = new System.Drawing.Point(6, 185);
+            this.withdrawCB.Name = "withdrawCB";
+            this.withdrawCB.Size = new System.Drawing.Size(133, 21);
+            this.withdrawCB.TabIndex = 20;
+            this.withdrawCB.Text = "Withdrawal Date";
+            this.withdrawCB.UseVisualStyleBackColor = true;
             // 
-            // textBox10
+            // releaseCB
             // 
-            this.textBox10.Location = new System.Drawing.Point(151, 159);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
-            this.textBox10.TabIndex = 2;
+            this.releaseCB.AutoSize = true;
+            this.releaseCB.Location = new System.Drawing.Point(6, 161);
+            this.releaseCB.Name = "releaseCB";
+            this.releaseCB.Size = new System.Drawing.Size(120, 21);
+            this.releaseCB.TabIndex = 19;
+            this.releaseCB.Text = "Release Date:";
+            this.releaseCB.UseVisualStyleBackColor = true;
             // 
-            // textBox11
+            // ageCB
             // 
-            this.textBox11.Location = new System.Drawing.Point(151, 24);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 22);
-            this.textBox11.TabIndex = 3;
+            this.ageCB.AutoSize = true;
+            this.ageCB.Location = new System.Drawing.Point(6, 135);
+            this.ageCB.Name = "ageCB";
+            this.ageCB.Size = new System.Drawing.Size(130, 21);
+            this.ageCB.TabIndex = 18;
+            this.ageCB.Text = "Age Restriction:";
+            this.ageCB.UseVisualStyleBackColor = true;
             // 
-            // textBox12
+            // durationCB
             // 
-            this.textBox12.Location = new System.Drawing.Point(151, 50);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 22);
-            this.textBox12.TabIndex = 4;
+            this.durationCB.AutoSize = true;
+            this.durationCB.Location = new System.Drawing.Point(6, 107);
+            this.durationCB.Name = "durationCB";
+            this.durationCB.Size = new System.Drawing.Size(88, 21);
+            this.durationCB.TabIndex = 17;
+            this.durationCB.Text = "Duration:";
+            this.durationCB.UseVisualStyleBackColor = true;
+            this.durationCB.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox13
+            // genreCB
             // 
-            this.textBox13.Location = new System.Drawing.Point(151, 78);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 22);
-            this.textBox13.TabIndex = 5;
+            this.genreCB.AutoSize = true;
+            this.genreCB.Location = new System.Drawing.Point(6, 80);
+            this.genreCB.Name = "genreCB";
+            this.genreCB.Size = new System.Drawing.Size(74, 21);
+            this.genreCB.TabIndex = 16;
+            this.genreCB.Text = "Genre:";
+            this.genreCB.UseVisualStyleBackColor = true;
             // 
-            // textBox14
+            // nameCB
             // 
-            this.textBox14.Location = new System.Drawing.Point(151, 105);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 22);
-            this.textBox14.TabIndex = 6;
+            this.nameCB.AutoSize = true;
+            this.nameCB.Location = new System.Drawing.Point(6, 54);
+            this.nameCB.Name = "nameCB";
+            this.nameCB.Size = new System.Drawing.Size(71, 21);
+            this.nameCB.TabIndex = 15;
+            this.nameCB.Text = "Name:";
+            this.nameCB.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // uWithdrawBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(151, 133);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 14;
+            this.uWithdrawBox.Location = new System.Drawing.Point(151, 185);
+            this.uWithdrawBox.Name = "uWithdrawBox";
+            this.uWithdrawBox.Size = new System.Drawing.Size(100, 22);
+            this.uWithdrawBox.TabIndex = 1;
             // 
-            // label7
+            // uReleaseBox
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 55);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 17);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Name:";
+            this.uReleaseBox.Location = new System.Drawing.Point(151, 159);
+            this.uReleaseBox.Name = "uReleaseBox";
+            this.uReleaseBox.Size = new System.Drawing.Size(100, 22);
+            this.uReleaseBox.TabIndex = 2;
+            // 
+            // uIDBox
+            // 
+            this.uIDBox.Location = new System.Drawing.Point(151, 24);
+            this.uIDBox.Name = "uIDBox";
+            this.uIDBox.Size = new System.Drawing.Size(100, 22);
+            this.uIDBox.TabIndex = 3;
+            // 
+            // uNameBox
+            // 
+            this.uNameBox.Location = new System.Drawing.Point(151, 50);
+            this.uNameBox.Name = "uNameBox";
+            this.uNameBox.Size = new System.Drawing.Size(100, 22);
+            this.uNameBox.TabIndex = 4;
+            // 
+            // uGenreBox
+            // 
+            this.uGenreBox.Location = new System.Drawing.Point(151, 78);
+            this.uGenreBox.Name = "uGenreBox";
+            this.uGenreBox.Size = new System.Drawing.Size(100, 22);
+            this.uGenreBox.TabIndex = 5;
+            // 
+            // uDurationBox
+            // 
+            this.uDurationBox.Location = new System.Drawing.Point(151, 105);
+            this.uDurationBox.Name = "uDurationBox";
+            this.uDurationBox.Size = new System.Drawing.Size(100, 22);
+            this.uDurationBox.TabIndex = 6;
+            // 
+            // uAgeBox
+            // 
+            this.uAgeBox.Location = new System.Drawing.Point(151, 133);
+            this.uAgeBox.Name = "uAgeBox";
+            this.uAgeBox.Size = new System.Drawing.Size(100, 22);
+            this.uAgeBox.TabIndex = 14;
             // 
             // updateBtn
             // 
@@ -173,51 +228,7 @@
             this.updateBtn.TabIndex = 8;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 83);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 17);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Genre:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 110);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 17);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Duration:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 136);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 17);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Age Restriction:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 162);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 17);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Release Date:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 188);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 17);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Withdrawal Date:";
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // label13
             // 
@@ -230,7 +241,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.dIDBox);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.delBtn);
             this.groupBox4.Location = new System.Drawing.Point(730, 48);
@@ -240,12 +251,12 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Delete Movie";
             // 
-            // textBox4
+            // dIDBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(129, 26);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 1;
+            this.dIDBox.Location = new System.Drawing.Point(129, 26);
+            this.dIDBox.Name = "dIDBox";
+            this.dIDBox.Size = new System.Drawing.Size(100, 22);
+            this.dIDBox.TabIndex = 1;
             // 
             // label14
             // 
@@ -264,15 +275,16 @@
             this.delBtn.TabIndex = 7;
             this.delBtn.Text = "Delete";
             this.delBtn.UseVisualStyleBackColor = true;
+            this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.aWithdrawBox);
+            this.groupBox1.Controls.Add(this.aReleaseBox);
+            this.groupBox1.Controls.Add(this.aAgeBox);
+            this.groupBox1.Controls.Add(this.aDurationBox);
+            this.groupBox1.Controls.Add(this.aGenreBox);
+            this.groupBox1.Controls.Add(this.aNameBox);
             this.groupBox1.Controls.Add(this.addBtn);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -287,47 +299,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Movie";
             // 
-            // textBox8
+            // aWithdrawBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(152, 159);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 2;
+            this.aWithdrawBox.Location = new System.Drawing.Point(152, 159);
+            this.aWithdrawBox.Name = "aWithdrawBox";
+            this.aWithdrawBox.Size = new System.Drawing.Size(100, 22);
+            this.aWithdrawBox.TabIndex = 2;
             // 
-            // textBox7
+            // aReleaseBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(152, 133);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 1;
+            this.aReleaseBox.Location = new System.Drawing.Point(152, 133);
+            this.aReleaseBox.Name = "aReleaseBox";
+            this.aReleaseBox.Size = new System.Drawing.Size(100, 22);
+            this.aReleaseBox.TabIndex = 1;
             // 
-            // textBox5
+            // aAgeBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(152, 105);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 1;
+            this.aAgeBox.Location = new System.Drawing.Point(152, 105);
+            this.aAgeBox.Name = "aAgeBox";
+            this.aAgeBox.Size = new System.Drawing.Size(100, 22);
+            this.aAgeBox.TabIndex = 1;
             // 
-            // textBox3
+            // aDurationBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 78);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 1;
+            this.aDurationBox.Location = new System.Drawing.Point(152, 78);
+            this.aDurationBox.Name = "aDurationBox";
+            this.aDurationBox.Size = new System.Drawing.Size(100, 22);
+            this.aDurationBox.TabIndex = 1;
             // 
-            // textBox2
+            // aGenreBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 11;
+            this.aGenreBox.Location = new System.Drawing.Point(152, 50);
+            this.aGenreBox.Name = "aGenreBox";
+            this.aGenreBox.Size = new System.Drawing.Size(100, 22);
+            this.aGenreBox.TabIndex = 11;
             // 
-            // textBox1
+            // aNameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 10;
+            this.aNameBox.Location = new System.Drawing.Point(152, 24);
+            this.aNameBox.Name = "aNameBox";
+            this.aNameBox.Size = new System.Drawing.Size(100, 22);
+            this.aNameBox.TabIndex = 10;
             // 
             // addBtn
             // 
@@ -402,6 +414,16 @@
             this.moviesGrid.Size = new System.Drawing.Size(455, 485);
             this.moviesGrid.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(805, 270);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 47);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Return To Main";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Movie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -411,6 +433,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "Movie";
             this.Text = "Movie";
+            this.Load += new System.EventHandler(this.Movie_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -427,14 +450,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView moviesGrid;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button updateBtn;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button delBtn;
@@ -446,19 +462,27 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox aGenreBox;
+        private System.Windows.Forms.TextBox aNameBox;
+        private System.Windows.Forms.TextBox uAgeBox;
+        private System.Windows.Forms.TextBox dIDBox;
+        private System.Windows.Forms.TextBox aReleaseBox;
+        private System.Windows.Forms.TextBox aAgeBox;
+        private System.Windows.Forms.TextBox aDurationBox;
+        private System.Windows.Forms.TextBox aWithdrawBox;
+        private System.Windows.Forms.TextBox uWithdrawBox;
+        private System.Windows.Forms.TextBox uReleaseBox;
+        private System.Windows.Forms.TextBox uIDBox;
+        private System.Windows.Forms.TextBox uNameBox;
+        private System.Windows.Forms.TextBox uGenreBox;
+        private System.Windows.Forms.TextBox uDurationBox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox durationCB;
+        private System.Windows.Forms.CheckBox genreCB;
+        private System.Windows.Forms.CheckBox nameCB;
+        private System.Windows.Forms.CheckBox withdrawCB;
+        private System.Windows.Forms.CheckBox releaseCB;
+        private System.Windows.Forms.CheckBox ageCB;
+        private System.Windows.Forms.Button button1;
     }
 }

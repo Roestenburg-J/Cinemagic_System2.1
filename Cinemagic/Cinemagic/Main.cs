@@ -68,6 +68,16 @@ namespace RandomProj
             Cinemagic.Movie movie = new Cinemagic.Movie();
             movie.Show();
         }
+
+       
+
+        private void btnGenre_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Genre genre = new Genre();
+            genre.ShowDialog();
+
+        }
     }
 
  
