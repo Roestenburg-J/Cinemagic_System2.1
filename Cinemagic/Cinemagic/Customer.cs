@@ -273,7 +273,7 @@ namespace Cinemagic
             cinema.com = new SqlCommand(delete_Customer, cinema.conn);
             cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
-            MessageBox.Show("Record Deleted Successfully");
+            MessageBox.Show("Record Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private Boolean TestValidSearch(string id)
@@ -333,7 +333,7 @@ namespace Cinemagic
             }
             if (TestValidSearch(customerID) == false)
             {
-                MessageBox.Show("Invalid Customer ID", "Invalid Search");
+                MessageBox.Show("Invalid Customer ID", "Invalid Search", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -366,34 +366,47 @@ namespace Cinemagic
         {
             Boolean sucsess = true;
             if (cbName.Checked == true)
-            {        
-                try
+            {
+                if (txtEditName.Text == "")
                 {
-                    EditName(udCustomerID.Text,txtEditName.Text);
+                    MessageBox.Show("Name cannot be empty!", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch
+                else
                 {
-                    sucsess = false;
+                    try
+                    {
+                        EditName(udCustomerID.Text, txtEditName.Text);
+                    }
+                    catch
+                    {
+                        sucsess = false;
+                    }
                 }
 
             }
             if (cbSurname.Checked == true)
             {
-                
-                try
+                if (txtEditName.Text == "")
                 {
-                    EditSurname(udCustomerID.Text, txtEditSurname.Text);
+                    MessageBox.Show("Surname cannot be empty!", "Invalid Surname", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch
+                else
                 {
-                    sucsess = false;
+                    try
+                    {
+                        EditSurname(udCustomerID.Text, txtEditSurname.Text);
+                    }
+                    catch
+                    {
+                        sucsess = false;
+                    }
                 }
             }
             if (cbPhone.Checked == true)
             {
                 if (txtEditPhone.Text.Length != 10)
                 {
-                    MessageBox.Show("Phone number entered should be 10 characters!", "Invalid Phone");
+                    MessageBox.Show("Phone number entered should be 10 characters!", "Invalid Phone", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     sucsess = false;
                 }
                 else
@@ -404,7 +417,7 @@ namespace Cinemagic
                     }
                     catch
                     {
-                        MessageBox.Show("Phone entered is invalid!", "Invalid Phone");
+                        MessageBox.Show("Phone entered is invalid!", "Invalid Phone",MessageBoxButtons.OK, MessageBoxIcon.Error);
                         sucsess = false;
                     }
                 }
@@ -417,13 +430,13 @@ namespace Cinemagic
                 }
                 catch
                 {
-                    MessageBox.Show("E-Mail Entered is invalid!", "Invalid Email");
+                    MessageBox.Show("E-Mail Entered is invalid!", "Invalid Email",MessageBoxButtons.OK, MessageBoxIcon.Error);
                     sucsess = false;
                 }
             }
             if (sucsess == true)
             {
-                MessageBox.Show("Record Updated Successfully");
+                MessageBox.Show("Record Updated Successfully", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 gbCustomerFields.Enabled = false;
 
                 txtEditName.Text = "";
