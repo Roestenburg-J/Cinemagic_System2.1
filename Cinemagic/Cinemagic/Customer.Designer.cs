@@ -63,6 +63,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.btnDeleteCustomer);
             this.groupBox1.Controls.Add(this.btnAddCustomer);
@@ -125,6 +126,7 @@
             // 
             // gbCustomerFields
             // 
+            this.gbCustomerFields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.gbCustomerFields.Controls.Add(this.btnUpdate);
             this.gbCustomerFields.Controls.Add(this.txtEditEmail);
             this.gbCustomerFields.Controls.Add(this.txtEditPhone);
@@ -252,6 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(782, 507);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gbCustomerFields);
