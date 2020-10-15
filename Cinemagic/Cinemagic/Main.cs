@@ -74,8 +74,8 @@ namespace RandomProj
         private void btnGenre_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Genre genre = new Genre();
-            genre.ShowDialog();
+            //Genre genre = new Genre();
+          //  genre.ShowDialog();
 
         }
     }
