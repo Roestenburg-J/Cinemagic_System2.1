@@ -58,7 +58,7 @@
             this.dgCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCustomers.Location = new System.Drawing.Point(87, 278);
             this.dgCustomers.Name = "dgCustomers";
-            this.dgCustomers.Size = new System.Drawing.Size(655, 150);
+            this.dgCustomers.Size = new System.Drawing.Size(620, 150);
             this.dgCustomers.TabIndex = 0;
             // 
             // groupBox1
@@ -135,7 +135,7 @@
             this.gbCustomerFields.Controls.Add(this.cbSurname);
             this.gbCustomerFields.Controls.Add(this.cbName);
             this.gbCustomerFields.Enabled = false;
-            this.gbCustomerFields.Location = new System.Drawing.Point(431, 35);
+            this.gbCustomerFields.Location = new System.Drawing.Point(396, 35);
             this.gbCustomerFields.Name = "gbCustomerFields";
             this.gbCustomerFields.Size = new System.Drawing.Size(311, 237);
             this.gbCustomerFields.TabIndex = 2;
@@ -240,7 +240,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(646, 451);
+            this.btnBack.Location = new System.Drawing.Point(611, 450);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(96, 35);
             this.btnBack.TabIndex = 4;
@@ -252,12 +252,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 498);
+            this.ClientSize = new System.Drawing.Size(782, 507);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gbCustomerFields);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgCustomers);
             this.Name = "frmCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer";
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).EndInit();
