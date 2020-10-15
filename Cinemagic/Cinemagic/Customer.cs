@@ -90,7 +90,7 @@ namespace Cinemagic
             form.Text = "Add Customer";
             form.ClientSize = new Size(380, 380);
             form.Controls.AddRange(new Control[] { lblName, lblSurname, lblPhone, lblEmail, txtName, txtSurname, txtPhone, txtEmail, btnAdd, btnCancel });
-          
+
 
             form.FormBorderStyle = FormBorderStyle.FixedDialog;
             form.StartPosition = FormStartPosition.CenterScreen;
@@ -104,16 +104,87 @@ namespace Cinemagic
             name = txtName.Text;
             surname = txtSurname.Text;
             phone = txtPhone.Text;
-            email = txtEmail.Text;          
+            email = txtEmail.Text;
 
-          
-            return DialogResult;
+
+            if (dialogResult == DialogResult.OK)
+            {
+                if (txtName.Text.Length == 0)
+                {
+                   
+                        MessageBox.Show("Name cannot be empty", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);                       
+                        form.ShowDialog();
+                  
+
+                }
+                if (txtSurname.Text.Length == 0)
+                {
+                    if (dialogResult == DialogResult.Cancel)
+                    {
+                        form.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Surname cannot be empty", "Invalid Surame", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        form.ShowDialog();
+                    }
+
+                }
+                if (txtPhone.Text.Length != 10)
+                {
+                    if (dialogResult == DialogResult.Cancel)
+                    {
+                        form.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Phone number should be 10 digits", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        form.ShowDialog();
+                    }
+
+                }
+                if (txtEmail.Text.Length == 0)
+                {
+                    if (dialogResult == DialogResult.Cancel)
+                    {
+                        form.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("E-mail cannot be empty", "Invalid E-mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        form.ShowDialog();
+                    }
+
+                }
+
+                try
+                {
+                    Convert.ToInt32(txtPhone.Text);
+                }
+                catch
+                {
+                    if (dialogResult == DialogResult.Cancel)
+                    {
+                        form.Close();
+                    }
+                    MessageBox.Show("Phone number can only contain numbers");
+                    form.ShowDialog();
+                }
+                return dialogResult;
+
+            }
            
-            
-            
+            else
+            {
+                return dialogResult; 
+            }
+             
         }
+  
 
-        private void AddCustomer(string name, string surname, string phone, string email)
+    
+
+    private void AddCustomer(string name, string surname, string phone, string email)
         {
             Main cinema = new Main();
             connection = cinema.constr;
@@ -287,8 +358,12 @@ namespace Cinemagic
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            AddCustomerFrom();
-            AddCustomer(name, surname, phone, email);
+            if (AddCustomerFrom() == DialogResult.OK)
+            {
+                AddCustomer(name, surname, phone, email);
+            }
+            
+            
 
 
         }
