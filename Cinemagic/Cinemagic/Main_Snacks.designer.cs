@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Snacks));
             this.groupSnacks = new System.Windows.Forms.GroupBox();
             this.dbGridSnacks = new System.Windows.Forms.DataGridView();
             this.groupMaintain_Snacks = new System.Windows.Forms.GroupBox();
@@ -79,6 +80,7 @@
             this.lblDeleteAll = new System.Windows.Forms.Label();
             this.lblBack = new System.Windows.Forms.Button();
             this.lblDates = new System.Windows.Forms.Button();
+            this.pboxBackground = new System.Windows.Forms.PictureBox();
             this.groupSnacks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).BeginInit();
             this.groupMaintain_Snacks.SuspendLayout();
@@ -96,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbGridTransact_Dates)).BeginInit();
             this.groupDeleteTransacts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinDeleteAll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // groupSnacks
@@ -590,6 +593,16 @@
             this.lblDates.UseVisualStyleBackColor = true;
             this.lblDates.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pboxBackground
+            // 
+            this.pboxBackground.Image = ((System.Drawing.Image)(resources.GetObject("pboxBackground.Image")));
+            this.pboxBackground.Location = new System.Drawing.Point(-2, -3);
+            this.pboxBackground.Name = "pboxBackground";
+            this.pboxBackground.Size = new System.Drawing.Size(1552, 786);
+            this.pboxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxBackground.TabIndex = 26;
+            this.pboxBackground.TabStop = false;
+            // 
             // Main_Snacks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -601,7 +614,9 @@
             this.Controls.Add(this.groupDate);
             this.Controls.Add(this.groupTransact_Detail);
             this.Controls.Add(this.groupSnacks);
+            this.Controls.Add(this.pboxBackground);
             this.Name = "Main_Snacks";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main_Snacks";
             this.Load += new System.EventHandler(this.Main_Snacks_Load);
             this.groupSnacks.ResumeLayout(false);
@@ -624,6 +639,7 @@
             this.groupDeleteTransacts.ResumeLayout(false);
             this.groupDeleteTransacts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinDeleteAll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -681,5 +697,6 @@
         private System.Windows.Forms.Label lblDeleteAll;
         private System.Windows.Forms.Button lblBack;
         private System.Windows.Forms.Button lblDates;
+        private System.Windows.Forms.PictureBox pboxBackground;
     }
 }
