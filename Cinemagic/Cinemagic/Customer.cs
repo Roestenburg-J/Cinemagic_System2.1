@@ -207,60 +207,60 @@ namespace Cinemagic
             cinema.conn.Close();
         }
 
-        private void EditName(string newName)
+        private void EditName(string id, string newName)
         {
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string update_Name = "UPDATE CUSTOMER SET Customer_Name=@name";
+            string update_Name = "UPDATE CUSTOMER SET Customer_Name=@name WHERE Customer_ID = '"+id+"'";
             cinema.com = new SqlCommand(update_Name, cinema.conn);
             cinema.com.Parameters.AddWithValue("@Name", newName);
             cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
-            MessageBox.Show("Record Updated Successfully");
+          
         }
 
-        private void EditSurname(string newSurname)
+        private void EditSurname(string id, string newSurname)
         {
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string update_Surname = "UPDATE CUSTOMER SET Customer_Surname=@Surname";
+            string update_Surname = "UPDATE CUSTOMER SET Customer_Surname=@Surname WHERE Customer_ID = '" + id + "'";
             cinema.com = new SqlCommand(update_Surname, cinema.conn);
             cinema.com.Parameters.AddWithValue("@Surname", newSurname);
             cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
-            MessageBox.Show("Record Updated Successfully");
+            
         }
 
-        private void EditPhone(string newPhone)
+        private void EditPhone(string id, string newPhone)
         {
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string update_Phone = "UPDATE CUSTOMER SET Customer_Phone=@Phone";
+            string update_Phone = "UPDATE CUSTOMER SET Customer_Phone=@Phone WHERE Customer_ID = '" + id + "'";
             cinema.com = new SqlCommand(update_Phone, cinema.conn);
             cinema.com.Parameters.AddWithValue("@Phone", newPhone);
             cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
-            MessageBox.Show("Record Updated Successfully");
+          
         }
 
-        private void EditEmail(string newEmail)
+        private void EditEmail(string id, string newEmail)
         {
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
             cinema.conn.Open();
-            string update_Email = "UPDATE CUSTOMER SET Customer_Email=@Email";
+            string update_Email = "UPDATE CUSTOMER SET Customer_Email=@Email WHERE Customer_ID = '" + id + "'";
             cinema.com = new SqlCommand(update_Email, cinema.conn);
             cinema.com.Parameters.AddWithValue("@Email", newEmail);
             cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
-            MessageBox.Show("Record Updated Successfully");
+           
         }
 
         private void DeleteCustomer(string id)
@@ -322,7 +322,7 @@ namespace Cinemagic
         {
             string customerID = "";
             customerID = udCustomerID.Text;
-
+            id = udCustomerID.Text;
             try
             {
                 SearchCustomer(customerID);
@@ -364,73 +364,127 @@ namespace Cinemagic
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            Boolean sucsess = true;
             if (cbName.Checked == true)
-            {
-
+            {        
                 try
                 {
-                    EditName(txtEditName.Text);
+                    EditName(udCustomerID.Text,txtEditName.Text);
                 }
                 catch
                 {
-
+                    sucsess = false;
                 }
 
             }
             if (cbSurname.Checked == true)
             {
-                EditSurname(txtEditSurname.Text);
+                
                 try
                 {
-                    
+                    EditSurname(udCustomerID.Text, txtEditSurname.Text);
                 }
                 catch
                 {
-
+                    sucsess = false;
                 }
             }
             if (cbPhone.Checked == true)
             {
-                try
+                if (txtEditPhone.Text.Length != 10)
                 {
-                    EditPhone(txtEditPhone.Text);
+                    MessageBox.Show("Phone number entered should be 10 characters!", "Invalid Phone");
+                    sucsess = false;
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Phone entered is invalid!", "Invalid Phone");
+                    try
+                    {
+                        EditPhone(udCustomerID.Text, txtEditPhone.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Phone entered is invalid!", "Invalid Phone");
+                        sucsess = false;
+                    }
                 }
             }
             if (cbEmail.Checked == true)
             {
                 try
                 {
-                    EditEmail(txtEditEmail.Text);
+                    EditEmail(udCustomerID.Text, txtEditEmail.Text);
                 }
                 catch
                 {
                     MessageBox.Show("E-Mail Entered is invalid!", "Invalid Email");
+                    sucsess = false;
                 }
+            }
+            if (sucsess == true)
+            {
+                MessageBox.Show("Record Updated Successfully");
+                gbCustomerFields.Enabled = false;
+
+                txtEditName.Text = "";
+                txtEditSurname.Text = "";
+                txtEditPhone.Text = "";
+                txtEditSurname.Text = "";
+
+                SearchCustomer(id);
             }
         }
 
         private void cbName_CheckedChanged(object sender, EventArgs e)
         {
-            txtEditName.Enabled = true;
+            if(cbName.Checked == true)
+            {
+                txtEditName.Enabled = true;
+            }
+            else
+            {
+                txtEditName.Enabled = false;
+                txtEditName.Text = "";
+            }
         }
 
         private void cbSurname_CheckedChanged_1(object sender, EventArgs e)
         {
-            txtEditSurname.Enabled = true;
+            if (cbSurname.Checked == true)
+            {
+                txtEditSurname.Enabled = true;
+            }
+            else
+            {
+                txtEditSurname.Enabled = false;
+                txtEditSurname.Text = "";
+            }
         }
 
         private void cbPhone_CheckedChanged(object sender, EventArgs e)
         {
-            txtEditPhone.Enabled = true;
+            if (cbPhone.Checked == true)
+            {
+                txtEditPhone.Enabled = true;
+            }
+            else
+            {
+                txtEditPhone.Enabled = false;
+                txtEditPhone.Text = "";
+            }
         }
 
         private void cbEmail_CheckedChanged(object sender, EventArgs e)
         {
-            txtEditEmail.Enabled = true;
+            if (cbEmail.Checked == true)
+            {
+                txtEditEmail.Enabled = true;
+            }
+            else
+            {
+                txtEditEmail.Enabled = false;
+                txtEditEmail.Text = "";
+            }
         }
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
@@ -452,6 +506,9 @@ namespace Cinemagic
 
         }
 
-       
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            DisplayCustomers();
+        }
     }
 }

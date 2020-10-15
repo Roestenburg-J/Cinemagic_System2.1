@@ -45,6 +45,7 @@
             this.cbPhone = new System.Windows.Forms.CheckBox();
             this.cbSurname = new System.Windows.Forms.CheckBox();
             this.cbName = new System.Windows.Forms.CheckBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).BeginInit();
@@ -61,6 +62,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.btnDeleteCustomer);
             this.groupBox1.Controls.Add(this.btnAddCustomer);
             this.groupBox1.Controls.Add(this.btnEditCustomer);
@@ -68,13 +70,13 @@
             this.groupBox1.Controls.Add(this.udCustomerID);
             this.groupBox1.Location = new System.Drawing.Point(87, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 222);
+            this.groupBox1.Size = new System.Drawing.Size(259, 237);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
             // btnDeleteCustomer
             // 
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(45, 99);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(46, 91);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(75, 41);
             this.btnDeleteCustomer.TabIndex = 4;
@@ -84,7 +86,7 @@
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(45, 146);
+            this.btnAddCustomer.Location = new System.Drawing.Point(46, 138);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(171, 42);
             this.btnAddCustomer.TabIndex = 3;
@@ -95,7 +97,7 @@
             // btnEditCustomer
             // 
             this.btnEditCustomer.Enabled = false;
-            this.btnEditCustomer.Location = new System.Drawing.Point(141, 99);
+            this.btnEditCustomer.Location = new System.Drawing.Point(142, 91);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(75, 41);
             this.btnEditCustomer.TabIndex = 2;
@@ -105,7 +107,7 @@
             // 
             // btnSearchCustomer
             // 
-            this.btnSearchCustomer.Location = new System.Drawing.Point(45, 55);
+            this.btnSearchCustomer.Location = new System.Drawing.Point(46, 47);
             this.btnSearchCustomer.Name = "btnSearchCustomer";
             this.btnSearchCustomer.Size = new System.Drawing.Size(171, 38);
             this.btnSearchCustomer.TabIndex = 1;
@@ -115,7 +117,7 @@
             // 
             // udCustomerID
             // 
-            this.udCustomerID.Location = new System.Drawing.Point(45, 29);
+            this.udCustomerID.Location = new System.Drawing.Point(46, 21);
             this.udCustomerID.Name = "udCustomerID";
             this.udCustomerID.Size = new System.Drawing.Size(171, 20);
             this.udCustomerID.TabIndex = 0;
@@ -134,7 +136,7 @@
             this.gbCustomerFields.Enabled = false;
             this.gbCustomerFields.Location = new System.Drawing.Point(431, 35);
             this.gbCustomerFields.Name = "gbCustomerFields";
-            this.gbCustomerFields.Size = new System.Drawing.Size(311, 222);
+            this.gbCustomerFields.Size = new System.Drawing.Size(311, 237);
             this.gbCustomerFields.TabIndex = 2;
             this.gbCustomerFields.TabStop = false;
             this.gbCustomerFields.Enter += new System.EventHandler(this.gbCustomerFields_Enter);
@@ -225,6 +227,16 @@
             this.cbName.UseVisualStyleBackColor = true;
             this.cbName.CheckedChanged += new System.EventHandler(this.cbName_CheckedChanged);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(46, 186);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(171, 45);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Refresh Customers";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,5 +276,6 @@
         private System.Windows.Forms.CheckBox cbSurname;
         private System.Windows.Forms.CheckBox cbName;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
