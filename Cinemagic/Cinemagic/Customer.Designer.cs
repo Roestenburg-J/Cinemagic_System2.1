@@ -46,6 +46,7 @@
             this.cbSurname = new System.Windows.Forms.CheckBox();
             this.cbName = new System.Windows.Forms.CheckBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).BeginInit();
@@ -237,11 +238,22 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(646, 451);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(96, 35);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(839, 498);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gbCustomerFields);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgCustomers);
@@ -277,5 +289,6 @@
         private System.Windows.Forms.CheckBox cbName;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnBack;
     }
 }

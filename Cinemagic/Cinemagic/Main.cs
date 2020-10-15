@@ -34,7 +34,7 @@ namespace RandomProj
             {
                 conn = new SqlConnection(constr);
                 conn.Open();
-                MessageBox.Show("Connection Successfull");
+               // MessageBox.Show("Connection Successfull");
                 conn.Close();
             }
             catch
