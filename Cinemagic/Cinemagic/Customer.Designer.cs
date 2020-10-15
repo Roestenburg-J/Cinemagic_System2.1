@@ -30,6 +30,7 @@
         {
             this.dgCustomers = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.cbPhone = new System.Windows.Forms.CheckBox();
             this.cbSurname = new System.Windows.Forms.CheckBox();
             this.cbName = new System.Windows.Forms.CheckBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -76,8 +76,19 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(46, 186);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(171, 45);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Refresh Customers";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // btnDeleteCustomer
             // 
+            this.btnDeleteCustomer.Enabled = false;
             this.btnDeleteCustomer.Location = new System.Drawing.Point(46, 91);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(75, 41);
@@ -229,16 +240,6 @@
             this.cbName.Text = "Name";
             this.cbName.UseVisualStyleBackColor = true;
             this.cbName.CheckedChanged += new System.EventHandler(this.cbName_CheckedChanged);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(46, 186);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(171, 45);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Refresh Customers";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnBack
             // 

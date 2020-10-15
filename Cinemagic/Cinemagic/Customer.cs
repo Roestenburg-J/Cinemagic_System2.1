@@ -83,15 +83,17 @@ namespace Cinemagic
             btnAdd.Size = new Size(80, 40);
             btnCancel.Size = new Size(80, 40);
             btnAdd.Location = new Point(60, 300);
-            btnCancel.Location = new Point(200, 300);
+            btnCancel.Location = new Point(210, 300);
             btnAdd.Text = "Add customer";
             btnCancel.Text = "Cancel";
 
             form.Text = "Add Customer";
-            form.ClientSize = new Size(500, 500);
+            form.ClientSize = new Size(380, 380);
             form.Controls.AddRange(new Control[] { lblName, lblSurname, lblPhone, lblEmail, txtName, txtSurname, txtPhone, txtEmail, btnAdd, btnCancel });
+          
 
             form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
             form.MinimizeBox = false;
             form.MaximizeBox = false;
             form.AcceptButton = btnAdd;
@@ -102,56 +104,13 @@ namespace Cinemagic
             name = txtName.Text;
             surname = txtSurname.Text;
             phone = txtPhone.Text;
-            email = txtEmail.Text;
+            email = txtEmail.Text;          
 
-            if (dialogResult == DialogResult.Cancel)
-            {
-                form.Close();
-            }
-            else
-            {
-                try
-                {
-                    Convert.ToInt32(txtPhone.Text);
-                }
-                catch
-                {
-                    if (dialogResult == DialogResult.Cancel)
-                    {
-                        form.Close();
-                    }
-                    MessageBox.Show("Phone number can only contain numbers");
-                    txtName.Enabled = false;
-                    txtSurname.Enabled = false;
-                    txtEmail.Enabled = false;
-                    txtPhone.Enabled = true;
-                    txtPhone.Text = "";
-                    form.ShowDialog();
-                }
-                if (txtPhone.Text.Length != 10)
-                {
-                    if (dialogResult == DialogResult.Cancel)
-                    {
-                        form.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Phone number should be 10 digits", "Invalid Phone Number");
-                        txtName.Enabled = false;
-                        txtSurname.Enabled = false;
-                        txtEmail.Enabled = false;
-                        txtPhone.Enabled = true;
-                        txtPhone.Text = "";
-                        form.ShowDialog();
-                    }
-
-                }
-            }
-            if (dialogResult == DialogResult.Cancel)
-            {
-                form.Close();
-            }
-            return dialogResult;
+          
+            return DialogResult;
+           
+            
+            
         }
 
         private void AddCustomer(string name, string surname, string phone, string email)
@@ -170,6 +129,27 @@ namespace Cinemagic
 
             cinema.com.ExecuteNonQuery();
             cinema.conn.Close();
+        }
+
+        private Boolean TestValidPhone(string phone)
+        {
+            Boolean valid = true;
+            try
+            {
+                Convert.ToInt32(phone);
+            }
+            catch
+            {
+                valid = false;
+            }
+            if (valid == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -333,11 +313,12 @@ namespace Cinemagic
             }
             if (TestValidSearch(customerID) == false)
             {
-                MessageBox.Show("Invalid Customer ID", "Invalid Search", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Customer ID not found", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 btnEditCustomer.Enabled = true;
+                btnDeleteCustomer.Enabled = true;
             }
 
         }
@@ -370,6 +351,7 @@ namespace Cinemagic
                 if (txtEditName.Text == "")
                 {
                     MessageBox.Show("Name cannot be empty!", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    sucsess = false;
                 }
                 else
                 {
@@ -389,6 +371,7 @@ namespace Cinemagic
                 if (txtEditName.Text == "")
                 {
                     MessageBox.Show("Surname cannot be empty!", "Invalid Surname", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    sucsess = false;
                 }
                 else
                 {
@@ -504,8 +487,15 @@ namespace Cinemagic
         {
             string customerID = "";
             customerID = udCustomerID.Text;
-            DeleteCustomer(customerID);
-            DisplayCustomers();
+            if (MessageBox.Show("Are your sure you want to delete customer "+ udCustomerID.Text ,"Delete Customer", MessageBoxButtons.OKCancel,MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                DeleteCustomer(customerID);
+                DisplayCustomers();
+                btnDeleteCustomer.Enabled = false;
+            }
+
+            
+            
         }
 
 
