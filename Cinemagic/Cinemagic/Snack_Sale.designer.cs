@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Snack_Sale));
             this.groupBox_SnackSale = new System.Windows.Forms.GroupBox();
+            this.lblBack = new System.Windows.Forms.Button();
             this.groupBox_Delete = new System.Windows.Forms.GroupBox();
             this.btnDelete_Date = new System.Windows.Forms.Button();
             this.lblDeleteDate = new System.Windows.Forms.Label();
@@ -45,7 +47,7 @@
             this.Transact_Date = new System.Windows.Forms.DateTimePicker();
             this.lblAddDate = new System.Windows.Forms.Label();
             this.dbGrid_Dates = new System.Windows.Forms.DataGridView();
-            this.lblBack = new System.Windows.Forms.Button();
+            this.pboxBackground = new System.Windows.Forms.PictureBox();
             this.groupBox_SnackSale.SuspendLayout();
             this.groupBox_Delete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinDeleteDate)).BeginInit();
@@ -53,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numDate_ID)).BeginInit();
             this.groupBox_Add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGrid_Dates)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox_SnackSale
@@ -62,12 +65,22 @@
             this.groupBox_SnackSale.Controls.Add(this.groupBox_Edit);
             this.groupBox_SnackSale.Controls.Add(this.groupBox_Add);
             this.groupBox_SnackSale.Controls.Add(this.dbGrid_Dates);
-            this.groupBox_SnackSale.Location = new System.Drawing.Point(12, 12);
+            this.groupBox_SnackSale.Location = new System.Drawing.Point(31, 25);
             this.groupBox_SnackSale.Name = "groupBox_SnackSale";
-            this.groupBox_SnackSale.Size = new System.Drawing.Size(996, 497);
+            this.groupBox_SnackSale.Size = new System.Drawing.Size(996, 484);
             this.groupBox_SnackSale.TabIndex = 0;
             this.groupBox_SnackSale.TabStop = false;
             this.groupBox_SnackSale.Text = "ADD DATE TO SNACK TRANSACTION";
+            // 
+            // lblBack
+            // 
+            this.lblBack.Location = new System.Drawing.Point(722, 365);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(249, 55);
+            this.lblBack.TabIndex = 26;
+            this.lblBack.Text = "BACK TO SNACK TRANSACTIONS";
+            this.lblBack.UseVisualStyleBackColor = true;
+            this.lblBack.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox_Delete
             // 
@@ -220,23 +233,25 @@
             this.dbGrid_Dates.Size = new System.Drawing.Size(556, 247);
             this.dbGrid_Dates.TabIndex = 0;
             // 
-            // lblBack
+            // pboxBackground
             // 
-            this.lblBack.Location = new System.Drawing.Point(722, 365);
-            this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(249, 55);
-            this.lblBack.TabIndex = 26;
-            this.lblBack.Text = "BACK TO SNACK TRANSACTIONS";
-            this.lblBack.UseVisualStyleBackColor = true;
-            this.lblBack.Click += new System.EventHandler(this.button2_Click);
+            this.pboxBackground.Image = ((System.Drawing.Image)(resources.GetObject("pboxBackground.Image")));
+            this.pboxBackground.Location = new System.Drawing.Point(-6, -3);
+            this.pboxBackground.Name = "pboxBackground";
+            this.pboxBackground.Size = new System.Drawing.Size(1075, 542);
+            this.pboxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxBackground.TabIndex = 5;
+            this.pboxBackground.TabStop = false;
             // 
             // Snack_Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 521);
+            this.ClientSize = new System.Drawing.Size(1065, 536);
             this.Controls.Add(this.groupBox_SnackSale);
+            this.Controls.Add(this.pboxBackground);
             this.Name = "Snack_Sale";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Snack_Sale";
             this.Load += new System.EventHandler(this.Snack_Sale_Load);
             this.groupBox_SnackSale.ResumeLayout(false);
@@ -249,6 +264,7 @@
             this.groupBox_Add.ResumeLayout(false);
             this.groupBox_Add.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGrid_Dates)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,5 +289,6 @@
         private System.Windows.Forms.NumericUpDown spinDeleteDate;
         private System.Windows.Forms.Label lblDelete;
         private System.Windows.Forms.Button lblBack;
+        private System.Windows.Forms.PictureBox pboxBackground;
     }
 }

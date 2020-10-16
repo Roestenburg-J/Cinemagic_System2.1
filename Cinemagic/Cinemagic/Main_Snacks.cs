@@ -544,5 +544,10 @@ namespace RandomProj
             Snack_Sale Snack_Sale = new Snack_Sale();
             Snack_Sale.ShowDialog();
         }
+
+        private void groupSnacks_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
