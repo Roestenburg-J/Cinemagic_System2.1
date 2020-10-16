@@ -657,6 +657,7 @@
             this.Controls.Add(this.pboxBackground);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Main_Snacks";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main_Snacks";
             this.Load += new System.EventHandler(this.Main_Snacks_Load);
             this.groupSnacks.ResumeLayout(false);
