@@ -180,7 +180,6 @@
       <DependentUpon>CinemagicDB.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\IMG-20201015-WA0000.jpg" />
     <None Include="Resources\CinemagicBackground.jpeg" />
   </ItemGroup>
   <ItemGroup>
