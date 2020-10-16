@@ -9,75 +9,252 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Xml;
+using RandomProj;
+using System.Data.SqlTypes;
+using System.Windows.Forms.VisualStyles;
 
 namespace Cinemagic
 {
     public partial class Booking : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Derick\Desktop\GIT\New CIN\Cinemagic_System2.1\Cinemagic\Cinemagic\CinemagicDB.mdf;Integrated Security=True");
+        private string seats;
+        private string booking;
+        private string cost;
+        private string date;
+        private string customer;
+        private string movie;
 
-        SqlCommand cmd = new SqlCommand();
-        SqlDataAdapter sda = new SqlDataAdapter();
-        DataTable dt = new DataTable();
-        DataSet ds = new DataSet();
+        
 
-        private void Delete()
+
+
+        private string connection;
+        public SqlCommand com;
+        public SqlConnection conn;
+        public DataSet ds;
+        public SqlDataAdapter adap;
+
+
+
+
+        private bool CheckSecondaryTBoxes()
+        {   
+            bool isEmpty = false;
+
+            if (String.IsNullOrEmpty(txtcost.Text)|| String.IsNullOrEmpty( txtseats.Text) || String.IsNullOrEmpty(txtseats.Text))
+            {
+                isEmpty = true;
+            }
+
+            
+            return isEmpty;
+           
+
+        }
+        private bool CheckDelete()
+        {
+            bool isEmpty = false;
+
+            if (String.IsNullOrEmpty(txtbooking.Text))
+            {
+                isEmpty = true;
+            }
+
+
+            return isEmpty;
+
+
+        }
+
+
+        private void Search(string booking)
         {
 
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Derick\Desktop\GIT\New CIN\Cinemagic_System2.1\Cinemagic\Cinemagic\CinemagicDB.mdf;Integrated Security=True");
+            booking = txtbooking.Text;
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string select_Booking = "SELECT * FROM BOOKING where Booking_ID'"+booking+"'";
+            cinema.com = new SqlCommand(select_Booking, cinema.conn);
+            cinema.adap = new SqlDataAdapter();
+            cinema.ds = new DataSet();
+            cinema.adap = new SqlDataAdapter(select_Booking, cinema.conn);
+            cinema.adap.Fill(cinema.ds, "Booking");
+            dataGridView1.DataSource = cinema.ds;
+            dataGridView1.DataMember = "Booking";
+            cinema.conn.Close();
 
-            con.Open();
-            SqlCommand command = con.CreateCommand();
-            command.CommandType = CommandType.Text;
-            command.CommandText = "DELETE FROM BOOKING  WHERE Booking_ID ='" + txtbooking.Text + "'";
-            command.ExecuteNonQuery();
+        }
+        private bool TestSearch(string booking)
+        {
 
-            con.Close();
+            booking = txtbooking.Text;
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string select_Booking = "SELECT * FROM BOOKING where Booking_ID'" + booking + "'";
+            cinema.com = new SqlCommand(select_Booking, cinema.conn);
 
-            MessageBox.Show("Data has been deleted off the database");
+          
+            int i = ds.Tables[0].Rows.Count;
 
+            if (i>0)
+            {   
+                MessageBox.Show("The Booking_ID " + booking + " was found in the database ");
+                return true;
+            }
+
+            else
+            {   
+                MessageBox.Show("The Booking_ID " + booking + "was not found in the database");
+                return false;
+                
+            }
+       
+          
+
+        }
+
+
+        private void Delete(string booking)
+        {
+
+            if (CheckDelete())
+            {
+                MessageBox.Show("Please make sure all inputs are filled");
+            }
+            else
+            {   
+                    booking = txtbooking.Text;
+                    Main cinema = new Main();
+                    connection = cinema.constr;
+                try
+                {
+                    cinema.conn = new SqlConnection(connection);
+                    cinema.conn.Open();
+                    string delete_Booking = "delete * FROM BOOKING where Booking_ID '"+booking+ "'";
+                    cinema.com = new SqlCommand(delete_Booking, cinema.conn);
+                    cinema.adap = new SqlDataAdapter();
+                    cinema.ds = new DataSet();
+                    cinema.adap = new SqlDataAdapter(delete_Booking, cinema.conn);
+                    cinema.conn.Close();
+                    MessageBox.Show("Booking successfully deleted");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + " Could not delete booking ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+
+
+
+            }
 
 
 
         }
 
-        private void Insert()
+        private void Insert(string cost, string seats, string date)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Derick\Desktop\GIT\New CIN\Cinemagic_System2.1\Cinemagic\Cinemagic\CinemagicDB.mdf;Integrated Security=True;");
-            SqlDataAdapter sda = new SqlDataAdapter("insert into BOOKING values('" + txtcost.Text + "','" + txtseats.Text + "','" + dtptickets + "')", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
+
+            if(CheckSecondaryTBoxes())
+            {
+                MessageBox.Show("Please make sure all inputs are filled");
+            }
+            else
+            {
+                Main cinema = new Main();
+                connection = cinema.constr;
+
+                try
+                {
+                    cinema.conn = new SqlConnection(connection);
+                    cinema.conn.Open();
+                    string insert_booking = @"INSERT INTO BOOKING (Total_Ticketcost,NumberOfSeats,Tickets_saleDate) values(@cost,@seats,@date)";
+
+                    cinema.com = new SqlCommand(insert_booking, cinema.conn);
+                    cinema.com.Parameters.AddWithValue("@Total_Ticketcost", cost);
+                    cinema.com.Parameters.AddWithValue("@NumberOfSeats",seats );
+                    cinema.com.Parameters.AddWithValue("@Tickets_saleDate", date);
+
+                    cinema.com.ExecuteNonQuery();
+                    cinema.conn.Close();
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message + " Could not insert data ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+               
+            }
+         
 
         }
 
         private void Display()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Derick\Desktop\GIT\New CIN\Cinemagic_System2.1\Cinemagic\Cinemagic\CinemagicDB.mdf;Integrated Security=True");
-            con.Open();
-
-
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select* FROM BOOKING";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            sda.Fill(dt);
-            dataGridView1.DataSource = dt;
-
-            con.Close();
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string select_Booking = "SELECT * FROM BOOKING";
+            cinema.com = new SqlCommand(select_Booking, cinema.conn);
+            cinema.adap = new SqlDataAdapter();
+            cinema.ds = new DataSet();
+            cinema.adap = new SqlDataAdapter(select_Booking, cinema.conn);
+            cinema.adap.Fill(cinema.ds, "Booking");
+            dataGridView1.DataSource = cinema.ds;
+            dataGridView1.DataMember = "Booking";
+            cinema.conn.Close();
 
 
 
         }
 
-        private void Edit()
+        private void EditTicketCost(string newCost)
         {
-            dataGridView1.CurrentRow.Cells[3].Value = txtcost.Text;
-            dataGridView1.CurrentRow.Cells[4].Value = txtseats.Text;
-            dataGridView1.CurrentRow.Cells[5].Value = dtptickets;
+            cost = txtcost.Text;
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string edit_cost = "UPDATE BOOKING SETTotal_Ticketcost=@cost'";
+            cinema.com = new SqlCommand(edit_cost, cinema.conn);
+            cinema.com.Parameters.AddWithValue("@cost", newCost);
+            cinema.conn.Close();
+      
         }
 
+        private void EditSeats(string newseats)
+        {
+            seats = txtseats.Text;
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string edit_seats = "UPDATE BOOKING SET NumberOfSeats=@seats'";
+            cinema.com = new SqlCommand(edit_seats, cinema.conn);
+            cinema.com.Parameters.AddWithValue("@seats", newseats);
+            cinema.conn.Close();
+  
+        }
+
+        private void EditDate(string newDate)
+        {
+            date = txtdate.Text;
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string edit_date = "UPDATE BOOKING SET Tickets_SaleDate=@date'";
+            cinema.com = new SqlCommand(edit_date, cinema.conn);
+            cinema.com.Parameters.AddWithValue("@date", newDate);
+            cinema.conn.Close();
+     
+        }
 
 
 
@@ -98,7 +275,6 @@ namespace Cinemagic
 
         private void Booking_Load(object sender, EventArgs e)
         {
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,16 +285,6 @@ namespace Cinemagic
         private void btnbooking_Click(object sender, EventArgs e)
         {
 
-            if (txtbooking.Text != "")
-            {
-                Delete();
-            }
-
-            else
-            {
-                MessageBox.Show("Please enter a ID that is valid");
-            }
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -128,33 +294,131 @@ namespace Cinemagic
 
         private void btninsert_Click(object sender, EventArgs e)
         {
-            if (txtcost.Text != "" && txtseats.Text != "")
-            {
-                Insert();
-            }
-
-            else
-            {
-                MessageBox.Show("An error has accured, please try again.");
-            }
+         
         }
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            if (txtcost.Text != "" && txtseats.Text != "")
-            {
-                Update();
-            }
-
-            else
-            {
-                MessageBox.Show("An error has accured, please try again.");
-            }
+          
         }
 
         private void dtptickets_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BookingID_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtbooking.Text = "";
+            booking = txtbooking.Text;
+
+            if(txtbooking.Text != "")
+            {
+                TestSearch(booking);
+
+                if(TestSearch(booking) == true)
+                {
+                    Search(booking);
+                }
+
+
+            }
+
+
+
+          
+        }
+
+        private void btninsert_Click_1(object sender, EventArgs e)
+        {
+            seats = txtseats.Text;
+            cost = txtcost.Text;
+            movie = txtMovie.Text;
+            date = txtdate.Text;
+
+            Insert(cost, seats, date);
+
+            
+
+
+
+        }
+
+        private void btnupdate_Click_1(object sender, EventArgs e)
+        {
+            booking = txtbooking.Text;
+
+            if(cbcost.Checked == true)
+            {
+                try
+                {
+                    EditTicketCost(txtcost.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Please enter a correct value.");
+                }
+            }
+            if (cbseats.Checked == true)
+            {
+                try
+                {
+                    EditSeats(txtseats.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Please enter a correct value.");
+                }
+            if (cbdate.Checked == true)
+            {
+                try
+                {
+                    EditDate(txtdate.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Please enter a correct value.");
+                }
+            }
+
+                MessageBox.Show("Booking updated Successfully");
+                Display();
+
+
+
+
+
+
+
+
+            }
+        }
+
+        private void btnbooking_Click_1(object sender, EventArgs e)
+        {
+            booking = txtbooking.Text;
+            Delete(booking);
+            Display();
+        }
+
+        private void cbcost_CheckedChanged(object sender, EventArgs e)
+        {
+            txtcost.Enabled = true;
+        }
+
+        private void cbseats_CheckedChanged(object sender, EventArgs e)
+        {
+            txtseats.Enabled = true;
+        }
+
+        private void cbdate_CheckedChanged(object sender, EventArgs e)
+        {
+            txtdate.Enabled = true;
         }
     }
 }
