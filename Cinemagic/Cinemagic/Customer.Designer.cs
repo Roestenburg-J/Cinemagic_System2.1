@@ -35,7 +35,6 @@
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
-            this.udCustomerID = new System.Windows.Forms.NumericUpDown();
             this.gbCustomerFields = new System.Windows.Forms.GroupBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtEditEmail = new System.Windows.Forms.TextBox();
@@ -47,10 +46,11 @@
             this.cbSurname = new System.Windows.Forms.CheckBox();
             this.cbName = new System.Windows.Forms.CheckBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.udCustomerID = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).BeginInit();
             this.gbCustomerFields.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).BeginInit();
             this.SuspendLayout();
             // 
             // dgCustomers
@@ -64,12 +64,12 @@
             // groupBox1
             // 
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.udCustomerID);
             this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.btnDeleteCustomer);
             this.groupBox1.Controls.Add(this.btnAddCustomer);
             this.groupBox1.Controls.Add(this.btnEditCustomer);
             this.groupBox1.Controls.Add(this.btnSearchCustomer);
-            this.groupBox1.Controls.Add(this.udCustomerID);
             this.groupBox1.Location = new System.Drawing.Point(87, 35);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(259, 237);
@@ -127,14 +127,6 @@
             this.btnSearchCustomer.Text = "Search Customer";
             this.btnSearchCustomer.UseVisualStyleBackColor = true;
             this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click_1);
-            // 
-            // udCustomerID
-            // 
-            this.udCustomerID.Location = new System.Drawing.Point(46, 21);
-            this.udCustomerID.Name = "udCustomerID";
-            this.udCustomerID.Size = new System.Drawing.Size(171, 20);
-            this.udCustomerID.TabIndex = 0;
-            this.udCustomerID.ValueChanged += new System.EventHandler(this.udCustomerID_ValueChanged);
             // 
             // gbCustomerFields
             // 
@@ -197,7 +189,6 @@
             this.txtEditName.Name = "txtEditName";
             this.txtEditName.Size = new System.Drawing.Size(161, 20);
             this.txtEditName.TabIndex = 4;
-            this.txtEditName.TextChanged += new System.EventHandler(this.txtEditName_TextChanged);
             // 
             // cbEmail
             // 
@@ -253,6 +244,13 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // udCustomerID
+            // 
+            this.udCustomerID.Location = new System.Drawing.Point(46, 21);
+            this.udCustomerID.Name = "udCustomerID";
+            this.udCustomerID.Size = new System.Drawing.Size(171, 20);
+            this.udCustomerID.TabIndex = 5;
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,9 +267,9 @@
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).EndInit();
             this.gbCustomerFields.ResumeLayout(false);
             this.gbCustomerFields.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,7 +282,6 @@
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnEditCustomer;
         private System.Windows.Forms.Button btnSearchCustomer;
-        private System.Windows.Forms.NumericUpDown udCustomerID;
         private System.Windows.Forms.GroupBox gbCustomerFields;
         private System.Windows.Forms.TextBox txtEditEmail;
         private System.Windows.Forms.TextBox txtEditPhone;
@@ -297,5 +294,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.NumericUpDown udCustomerID;
     }
 }
