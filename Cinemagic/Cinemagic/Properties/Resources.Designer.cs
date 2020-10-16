@@ -69,5 +69,15 @@ namespace Cinemagic.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_20201015_WA0000 {
+            get {
+                object obj = ResourceManager.GetObject("IMG-20201015-WA0000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

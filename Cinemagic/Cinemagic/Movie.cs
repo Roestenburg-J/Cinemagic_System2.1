@@ -88,12 +88,19 @@ namespace Cinemagic
                     cinema.conn.Close();
 
                     MessageBox.Show("Movie Added Successfully!");
+
+                    aNameBox.Text = "";
+                    aGenreBox.Text = "";
+                    aDurationBox.Text = "";
+                    aAgeBox.Text = "";
+                    aReleaseBox.Text = "";
+                    aWithdrawBox.Text = "";
                 }
             }
 
             catch
-            { 
-                MessageBox.Show("Ensure that you have entered valid values.");
+            {
+                MessageBox.Show("Ensure dates are in the format yyyy/mm/dd , Times are in the format 00:00:00 and Genre is a numeric value.");
             }
 
         }
@@ -225,9 +232,10 @@ namespace Cinemagic
             relDate = aReleaseBox.Text;
             withdrawDate = aWithdrawBox.Text;
 
+
             AddMovie(name,genre,duration,ageRes,relDate,withdrawDate);
             DisplayMovies();
-    }
+        }
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -239,21 +247,59 @@ namespace Cinemagic
 
         }
 
+        private Boolean TestValidID(string id)
+        {
+            Main cinema = new Main();
+            connection = cinema.constr;
+            cinema.conn = new SqlConnection(connection);
+            cinema.conn.Open();
+            string select_Customers = "SELECT * FROM MOVIE WHERE Movie_ID = '" + id + "'";
+            cinema.com = new SqlCommand(select_Customers, cinema.conn);
+            cinema.adap = new SqlDataAdapter();
+
+            SqlDataReader dr = cinema.com.ExecuteReader();
+            int count = 0;
+            while (dr.Read())
+            {
+                count++;
+            }
+            dr.Close();
+            cinema.conn.Close();
+
+            if (count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void updateBtn_Click(object sender, EventArgs e)
         {
             try
             {
+                Boolean updated = true;
                 id = uIDBox.Text;
+
+                if (TestValidID(id) == false)
+                {
+                    MessageBox.Show("ID Entered is invalid! ", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 if (nameCB.Checked == true)
                 {
 
                     try
                     {
                         EditName(uNameBox.Text);
+                        updated = true;
                     }
                     catch
                     {
-                        MessageBox.Show("Please enter a value.");
+                        MessageBox.Show("Movie Name Entered is invalid!", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        updated = false;
                     }
 
                 }
@@ -264,10 +310,12 @@ namespace Cinemagic
                     try
                     {
                         EditGenre(uGenreBox.Text);
+                        updated = true;
                     }
                     catch
                     {
-                        MessageBox.Show("Please enter a value.");
+                        MessageBox.Show("Genre Entered is invalid!", "Invalid Genre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        updated = false;
                     }
 
                 }
@@ -278,10 +326,12 @@ namespace Cinemagic
                     try
                     {
                         EditDuration(uDurationBox.Text);
+                        updated = true;
                     }
                     catch
                     {
-                        MessageBox.Show("Please enter a value.");
+                        MessageBox.Show("Duration Entered is invalid! Must be in the form 00:00:00", "Invalid Duration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        updated = false;
                     }
 
                 }
@@ -292,10 +342,12 @@ namespace Cinemagic
                     try
                     {
                         EditAge(uAgeBox.Text);
+                        updated = true;
                     }
                     catch
                     {
-                        MessageBox.Show("Please enter a value.");
+                        MessageBox.Show("Age Restriction Entered is invalid!", "Invalid Age Restriction", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        updated = false;
                     }
 
                 }
@@ -306,10 +358,12 @@ namespace Cinemagic
                     try
                     {
                         EditRelease(uReleaseBox.Text);
+                        updated = true;
                     }
                     catch
                     {
-                        MessageBox.Show("Please enter a value.");
+                        MessageBox.Show("Release Date Entered is invalid! Must be in the form: yyyy/mm/dd.", "Invalid Release Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        updated = false;
                     }
 
                 }
@@ -320,15 +374,20 @@ namespace Cinemagic
                     try
                     {
                         EditWithdraw(uWithdrawBox.Text);
+                        updated = true;
                     }
                     catch
                     {
-                        MessageBox.Show("Please enter a value.");
+                        MessageBox.Show("Withdrawal Date Entered is invalid! Must be in the form: yyyy/mm/dd.", "Invalid Withdrawal Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        updated = false;
                     }
 
                 }
 
-                MessageBox.Show("Movie Updated Successfully.");
+                if (updated == true)
+                {
+                    MessageBox.Show("Movie updated successfully.");
+                }
                 DisplayMovies();
             }
 
@@ -336,18 +395,44 @@ namespace Cinemagic
             {
                 MessageBox.Show("Ensure that you have entered valid values.");
             }
+
+            uIDBox.Text = "";
+            uNameBox.Text = "";
+            uGenreBox.Text = "";
+            uDurationBox.Text = "";
+            uAgeBox.Text = "";
+            uReleaseBox.Text = "";
+            uWithdrawBox.Text = "";
         }
 
 
         private void delBtn_Click(object sender, EventArgs e)
         {
-            id = dIDBox.Text;
-            if (MessageBox.Show("Are your sure you want to delete movie " + dIDBox.Text, "Delete Movie", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            try
             {
-                DeleteMovie(id);
-                DisplayMovies();
-                delBtn.Enabled = false;
+                id = dIDBox.Text;
+
+
+
+                if (TestValidID(id) == false)
+                {
+                    MessageBox.Show("ID Entered is invalid! ", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+                else if (MessageBox.Show("Are your sure you want to delete movie " + dIDBox.Text, "Delete Movie", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    DeleteMovie(id);
+                    DisplayMovies();
+                }
             }
+
+            catch
+            {
+                MessageBox.Show("Movie ID Entered is invalid!", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            dIDBox.Text = "";
         }
 
         private void Movie_Load(object sender, EventArgs e)
@@ -356,6 +441,13 @@ namespace Cinemagic
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Main main = new Main();
+            main.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             Main main = new Main();
