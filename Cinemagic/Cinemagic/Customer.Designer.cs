@@ -30,6 +30,7 @@
         {
             this.dgCustomers = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.udCustomerID = new System.Windows.Forms.NumericUpDown();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
@@ -46,11 +47,10 @@
             this.cbSurname = new System.Windows.Forms.CheckBox();
             this.cbName = new System.Windows.Forms.CheckBox();
             this.btnBack = new System.Windows.Forms.Button();
-            this.udCustomerID = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.gbCustomerFields.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).BeginInit();
+            this.gbCustomerFields.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgCustomers
@@ -63,6 +63,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.udCustomerID);
             this.groupBox1.Controls.Add(this.btnRefresh);
@@ -75,6 +76,13 @@
             this.groupBox1.Size = new System.Drawing.Size(259, 237);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // udCustomerID
+            // 
+            this.udCustomerID.Location = new System.Drawing.Point(46, 21);
+            this.udCustomerID.Name = "udCustomerID";
+            this.udCustomerID.Size = new System.Drawing.Size(171, 20);
+            this.udCustomerID.TabIndex = 5;
             // 
             // btnRefresh
             // 
@@ -130,6 +138,7 @@
             // 
             // gbCustomerFields
             // 
+            this.gbCustomerFields.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gbCustomerFields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.gbCustomerFields.Controls.Add(this.btnUpdate);
             this.gbCustomerFields.Controls.Add(this.txtEditEmail);
@@ -244,17 +253,11 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // udCustomerID
-            // 
-            this.udCustomerID.Location = new System.Drawing.Point(46, 21);
-            this.udCustomerID.Name = "udCustomerID";
-            this.udCustomerID.Size = new System.Drawing.Size(171, 20);
-            this.udCustomerID.TabIndex = 5;
-            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Cinemagic.Properties.Resources.CinemagicBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(782, 507);
             this.Controls.Add(this.btnBack);
@@ -267,9 +270,9 @@
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).EndInit();
             this.gbCustomerFields.ResumeLayout(false);
             this.gbCustomerFields.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).EndInit();
             this.ResumeLayout(false);
 
         }
