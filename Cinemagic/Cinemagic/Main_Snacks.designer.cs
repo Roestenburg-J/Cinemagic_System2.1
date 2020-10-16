@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Snacks));
             this.groupSnacks = new System.Windows.Forms.GroupBox();
             this.dbGridSnacks = new System.Windows.Forms.DataGridView();
             this.groupMaintain_Snacks = new System.Windows.Forms.GroupBox();
@@ -79,6 +80,7 @@
             this.lblDeleteAll = new System.Windows.Forms.Label();
             this.lblBack = new System.Windows.Forms.Button();
             this.lblDates = new System.Windows.Forms.Button();
+            this.pboxBackground = new System.Windows.Forms.PictureBox();
             this.groupSnacks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridSnacks)).BeginInit();
             this.groupMaintain_Snacks.SuspendLayout();
@@ -96,17 +98,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbGridTransact_Dates)).BeginInit();
             this.groupDeleteTransacts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinDeleteAll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // groupSnacks
             // 
             this.groupSnacks.Controls.Add(this.dbGridSnacks);
             this.groupSnacks.Controls.Add(this.groupMaintain_Snacks);
-            this.groupSnacks.Location = new System.Drawing.Point(9, 10);
-            this.groupSnacks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupSnacks.Location = new System.Drawing.Point(12, 12);
+            this.groupSnacks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupSnacks.Name = "groupSnacks";
-            this.groupSnacks.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupSnacks.Size = new System.Drawing.Size(353, 596);
+            this.groupSnacks.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupSnacks.Size = new System.Drawing.Size(471, 734);
             this.groupSnacks.TabIndex = 0;
             this.groupSnacks.TabStop = false;
             this.groupSnacks.Text = "SNACKS";
@@ -115,11 +118,11 @@
             // dbGridSnacks
             // 
             this.dbGridSnacks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbGridSnacks.Location = new System.Drawing.Point(22, 32);
-            this.dbGridSnacks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dbGridSnacks.Location = new System.Drawing.Point(29, 39);
+            this.dbGridSnacks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dbGridSnacks.Name = "dbGridSnacks";
             this.dbGridSnacks.RowTemplate.Height = 24;
-            this.dbGridSnacks.Size = new System.Drawing.Size(302, 164);
+            this.dbGridSnacks.Size = new System.Drawing.Size(403, 202);
             this.dbGridSnacks.TabIndex = 0;
             // 
             // groupMaintain_Snacks
@@ -144,21 +147,21 @@
             this.groupMaintain_Snacks.Controls.Add(this.lblDescription);
             this.groupMaintain_Snacks.Controls.Add(this.txtItem);
             this.groupMaintain_Snacks.Controls.Add(this.lblItem);
-            this.groupMaintain_Snacks.Location = new System.Drawing.Point(22, 210);
-            this.groupMaintain_Snacks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupMaintain_Snacks.Location = new System.Drawing.Point(29, 258);
+            this.groupMaintain_Snacks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupMaintain_Snacks.Name = "groupMaintain_Snacks";
-            this.groupMaintain_Snacks.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupMaintain_Snacks.Size = new System.Drawing.Size(302, 356);
+            this.groupMaintain_Snacks.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupMaintain_Snacks.Size = new System.Drawing.Size(403, 438);
             this.groupMaintain_Snacks.TabIndex = 1;
             this.groupMaintain_Snacks.TabStop = false;
             this.groupMaintain_Snacks.Text = "MAINTAIN SNACKS";
             // 
             // btnDelete_Snack
             // 
-            this.btnDelete_Snack.Location = new System.Drawing.Point(177, 320);
-            this.btnDelete_Snack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete_Snack.Location = new System.Drawing.Point(236, 394);
+            this.btnDelete_Snack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete_Snack.Name = "btnDelete_Snack";
-            this.btnDelete_Snack.Size = new System.Drawing.Size(69, 19);
+            this.btnDelete_Snack.Size = new System.Drawing.Size(92, 23);
             this.btnDelete_Snack.TabIndex = 19;
             this.btnDelete_Snack.Text = "DELETE";
             this.btnDelete_Snack.UseVisualStyleBackColor = true;
@@ -167,65 +170,61 @@
             // lblFill_Snack
             // 
             this.lblFill_Snack.AutoSize = true;
-            this.lblFill_Snack.Location = new System.Drawing.Point(21, 219);
-            this.lblFill_Snack.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFill_Snack.Location = new System.Drawing.Point(28, 270);
             this.lblFill_Snack.Name = "lblFill_Snack";
-            this.lblFill_Snack.Size = new System.Drawing.Size(190, 13);
+            this.lblFill_Snack.Size = new System.Drawing.Size(241, 17);
             this.lblFill_Snack.TabIndex = 18;
             this.lblFill_Snack.Text = "FILL INPUT CONTROLS WITH DATA";
             // 
             // spinFill_SnackID
             // 
-            this.spinFill_SnackID.Location = new System.Drawing.Point(82, 245);
-            this.spinFill_SnackID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spinFill_SnackID.Location = new System.Drawing.Point(109, 302);
+            this.spinFill_SnackID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.spinFill_SnackID.Name = "spinFill_SnackID";
-            this.spinFill_SnackID.Size = new System.Drawing.Size(75, 20);
+            this.spinFill_SnackID.Size = new System.Drawing.Size(100, 22);
             this.spinFill_SnackID.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 249);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(28, 306);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 16;
             this.label2.Text = "Snack_ID:";
             // 
             // lblDeleteSnack
             // 
             this.lblDeleteSnack.AutoSize = true;
-            this.lblDeleteSnack.Location = new System.Drawing.Point(21, 294);
-            this.lblDeleteSnack.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDeleteSnack.Location = new System.Drawing.Point(28, 362);
             this.lblDeleteSnack.Name = "lblDeleteSnack";
-            this.lblDeleteSnack.Size = new System.Drawing.Size(98, 13);
+            this.lblDeleteSnack.Size = new System.Drawing.Size(125, 17);
             this.lblDeleteSnack.TabIndex = 15;
             this.lblDeleteSnack.Text = "DELETE A SNACK";
             // 
             // spinID
             // 
-            this.spinID.Location = new System.Drawing.Point(82, 321);
-            this.spinID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spinID.Location = new System.Drawing.Point(109, 395);
+            this.spinID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.spinID.Name = "spinID";
-            this.spinID.Size = new System.Drawing.Size(75, 20);
+            this.spinID.Size = new System.Drawing.Size(100, 22);
             this.spinID.TabIndex = 14;
             // 
             // lbl_ID
             // 
             this.lbl_ID.AutoSize = true;
-            this.lbl_ID.Location = new System.Drawing.Point(21, 325);
-            this.lbl_ID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_ID.Location = new System.Drawing.Point(28, 400);
             this.lbl_ID.Name = "lbl_ID";
-            this.lbl_ID.Size = new System.Drawing.Size(58, 13);
+            this.lbl_ID.Size = new System.Drawing.Size(72, 17);
             this.lbl_ID.TabIndex = 13;
             this.lbl_ID.Text = "Snack_ID:";
             // 
             // btnUpdate_Snacks
             // 
-            this.btnUpdate_Snacks.Location = new System.Drawing.Point(198, 70);
-            this.btnUpdate_Snacks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate_Snacks.Location = new System.Drawing.Point(264, 86);
+            this.btnUpdate_Snacks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate_Snacks.Name = "btnUpdate_Snacks";
-            this.btnUpdate_Snacks.Size = new System.Drawing.Size(69, 19);
+            this.btnUpdate_Snacks.Size = new System.Drawing.Size(92, 23);
             this.btnUpdate_Snacks.TabIndex = 12;
             this.btnUpdate_Snacks.Text = "UPDATE";
             this.btnUpdate_Snacks.UseVisualStyleBackColor = true;
@@ -233,10 +232,10 @@
             // 
             // btnFill_Snacks
             // 
-            this.btnFill_Snacks.Location = new System.Drawing.Point(177, 245);
-            this.btnFill_Snacks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFill_Snacks.Location = new System.Drawing.Point(236, 302);
+            this.btnFill_Snacks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFill_Snacks.Name = "btnFill_Snacks";
-            this.btnFill_Snacks.Size = new System.Drawing.Size(56, 19);
+            this.btnFill_Snacks.Size = new System.Drawing.Size(75, 23);
             this.btnFill_Snacks.TabIndex = 11;
             this.btnFill_Snacks.Text = "FILL";
             this.btnFill_Snacks.UseVisualStyleBackColor = true;
@@ -244,10 +243,10 @@
             // 
             // btnAdd_Snacks
             // 
-            this.btnAdd_Snacks.Location = new System.Drawing.Point(211, 34);
-            this.btnAdd_Snacks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd_Snacks.Location = new System.Drawing.Point(281, 42);
+            this.btnAdd_Snacks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd_Snacks.Name = "btnAdd_Snacks";
-            this.btnAdd_Snacks.Size = new System.Drawing.Size(56, 19);
+            this.btnAdd_Snacks.Size = new System.Drawing.Size(75, 23);
             this.btnAdd_Snacks.TabIndex = 10;
             this.btnAdd_Snacks.Text = "ADD";
             this.btnAdd_Snacks.UseVisualStyleBackColor = true;
@@ -255,93 +254,88 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(85, 164);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.Location = new System.Drawing.Point(113, 202);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(76, 20);
+            this.txtPrice.Size = new System.Drawing.Size(100, 22);
             this.txtPrice.TabIndex = 9;
             this.txtPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrice_Validating);
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(40, 167);
-            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrice.Location = new System.Drawing.Point(53, 206);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(34, 13);
+            this.lblPrice.Size = new System.Drawing.Size(44, 17);
             this.lblPrice.TabIndex = 8;
             this.lblPrice.Text = "Price:";
             // 
             // txtUnit_Cost
             // 
-            this.txtUnit_Cost.Location = new System.Drawing.Point(85, 131);
-            this.txtUnit_Cost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUnit_Cost.Location = new System.Drawing.Point(113, 161);
+            this.txtUnit_Cost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUnit_Cost.Name = "txtUnit_Cost";
-            this.txtUnit_Cost.Size = new System.Drawing.Size(76, 20);
+            this.txtUnit_Cost.Size = new System.Drawing.Size(100, 22);
             this.txtUnit_Cost.TabIndex = 7;
             this.txtUnit_Cost.Validating += new System.ComponentModel.CancelEventHandler(this.txtUnit_Cost_Validating);
             // 
             // lblUnit_Cost
             // 
             this.lblUnit_Cost.AutoSize = true;
-            this.lblUnit_Cost.Location = new System.Drawing.Point(21, 133);
-            this.lblUnit_Cost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUnit_Cost.Location = new System.Drawing.Point(28, 164);
             this.lblUnit_Cost.Name = "lblUnit_Cost";
-            this.lblUnit_Cost.Size = new System.Drawing.Size(53, 13);
+            this.lblUnit_Cost.Size = new System.Drawing.Size(69, 17);
             this.lblUnit_Cost.TabIndex = 6;
             this.lblUnit_Cost.Text = "Unit Cost:";
             // 
             // spinQuantity
             // 
-            this.spinQuantity.Location = new System.Drawing.Point(85, 99);
-            this.spinQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spinQuantity.Location = new System.Drawing.Point(113, 122);
+            this.spinQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.spinQuantity.Name = "spinQuantity";
-            this.spinQuantity.Size = new System.Drawing.Size(75, 20);
+            this.spinQuantity.Size = new System.Drawing.Size(100, 22);
             this.spinQuantity.TabIndex = 5;
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(24, 103);
-            this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblQuantity.Location = new System.Drawing.Point(32, 127);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(49, 13);
+            this.lblQuantity.Size = new System.Drawing.Size(65, 17);
             this.lblQuantity.TabIndex = 4;
             this.lblQuantity.Text = "Quantity:";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(85, 67);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescription.Location = new System.Drawing.Point(113, 82);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(76, 20);
+            this.txtDescription.Size = new System.Drawing.Size(100, 22);
             this.txtDescription.TabIndex = 3;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(10, 70);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDescription.Location = new System.Drawing.Point(13, 86);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(63, 13);
+            this.lblDescription.Size = new System.Drawing.Size(83, 17);
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "Description:";
             // 
             // txtItem
             // 
-            this.txtItem.Location = new System.Drawing.Point(85, 34);
-            this.txtItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtItem.Location = new System.Drawing.Point(113, 42);
+            this.txtItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(76, 20);
+            this.txtItem.Size = new System.Drawing.Size(100, 22);
             this.txtItem.TabIndex = 1;
             // 
             // lblItem
             // 
             this.lblItem.AutoSize = true;
-            this.lblItem.Location = new System.Drawing.Point(44, 37);
-            this.lblItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblItem.Location = new System.Drawing.Point(59, 46);
             this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(30, 13);
+            this.lblItem.Size = new System.Drawing.Size(38, 17);
             this.lblItem.TabIndex = 0;
             this.lblItem.Text = "Item:";
             // 
@@ -349,11 +343,11 @@
             // 
             this.groupTransact_Detail.Controls.Add(this.dbTransaction_Details);
             this.groupTransact_Detail.Controls.Add(this.groupTransact_Details);
-            this.groupTransact_Detail.Location = new System.Drawing.Point(376, 12);
-            this.groupTransact_Detail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupTransact_Detail.Location = new System.Drawing.Point(501, 15);
+            this.groupTransact_Detail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupTransact_Detail.Name = "groupTransact_Detail";
-            this.groupTransact_Detail.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupTransact_Detail.Size = new System.Drawing.Size(388, 593);
+            this.groupTransact_Detail.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupTransact_Detail.Size = new System.Drawing.Size(517, 730);
             this.groupTransact_Detail.TabIndex = 1;
             this.groupTransact_Detail.TabStop = false;
             this.groupTransact_Detail.Text = "TRANSACTION DETAILS";
@@ -361,11 +355,11 @@
             // dbTransaction_Details
             // 
             this.dbTransaction_Details.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbTransaction_Details.Location = new System.Drawing.Point(20, 30);
-            this.dbTransaction_Details.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dbTransaction_Details.Location = new System.Drawing.Point(27, 37);
+            this.dbTransaction_Details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dbTransaction_Details.Name = "dbTransaction_Details";
             this.dbTransaction_Details.RowTemplate.Height = 24;
-            this.dbTransaction_Details.Size = new System.Drawing.Size(330, 164);
+            this.dbTransaction_Details.Size = new System.Drawing.Size(440, 202);
             this.dbTransaction_Details.TabIndex = 2;
             // 
             // groupTransact_Details
@@ -386,29 +380,29 @@
             this.groupTransact_Details.Controls.Add(this.spinQuantity_Ordered);
             this.groupTransact_Details.Controls.Add(this.lblQuantity_Ordered);
             this.groupTransact_Details.Controls.Add(this.lblSnack_ID);
-            this.groupTransact_Details.Location = new System.Drawing.Point(20, 208);
-            this.groupTransact_Details.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupTransact_Details.Location = new System.Drawing.Point(27, 256);
+            this.groupTransact_Details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupTransact_Details.Name = "groupTransact_Details";
-            this.groupTransact_Details.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupTransact_Details.Size = new System.Drawing.Size(330, 356);
+            this.groupTransact_Details.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupTransact_Details.Size = new System.Drawing.Size(440, 438);
             this.groupTransact_Details.TabIndex = 3;
             this.groupTransact_Details.TabStop = false;
             this.groupTransact_Details.Text = "MAINTAIN TRANSACTION DETAILS";
             // 
             // spinSnack_ID
             // 
-            this.spinSnack_ID.Location = new System.Drawing.Point(118, 37);
-            this.spinSnack_ID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spinSnack_ID.Location = new System.Drawing.Point(157, 46);
+            this.spinSnack_ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.spinSnack_ID.Name = "spinSnack_ID";
-            this.spinSnack_ID.Size = new System.Drawing.Size(75, 20);
+            this.spinSnack_ID.Size = new System.Drawing.Size(100, 22);
             this.spinSnack_ID.TabIndex = 20;
             // 
             // btnDelete_Transaction
             // 
-            this.btnDelete_Transaction.Location = new System.Drawing.Point(208, 289);
-            this.btnDelete_Transaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete_Transaction.Location = new System.Drawing.Point(277, 356);
+            this.btnDelete_Transaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete_Transaction.Name = "btnDelete_Transaction";
-            this.btnDelete_Transaction.Size = new System.Drawing.Size(76, 19);
+            this.btnDelete_Transaction.Size = new System.Drawing.Size(101, 23);
             this.btnDelete_Transaction.TabIndex = 19;
             this.btnDelete_Transaction.Text = "DELETE";
             this.btnDelete_Transaction.UseVisualStyleBackColor = true;
@@ -417,65 +411,61 @@
             // lblFill_Transact
             // 
             this.lblFill_Transact.AutoSize = true;
-            this.lblFill_Transact.Location = new System.Drawing.Point(52, 188);
-            this.lblFill_Transact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFill_Transact.Location = new System.Drawing.Point(69, 231);
             this.lblFill_Transact.Name = "lblFill_Transact";
-            this.lblFill_Transact.Size = new System.Drawing.Size(190, 13);
+            this.lblFill_Transact.Size = new System.Drawing.Size(241, 17);
             this.lblFill_Transact.TabIndex = 18;
             this.lblFill_Transact.Text = "FILL INPUT CONTROLS WITH DATA";
             // 
             // spinFill_SnackSaleID
             // 
-            this.spinFill_SnackSaleID.Location = new System.Drawing.Point(113, 214);
-            this.spinFill_SnackSaleID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spinFill_SnackSaleID.Location = new System.Drawing.Point(151, 263);
+            this.spinFill_SnackSaleID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.spinFill_SnackSaleID.Name = "spinFill_SnackSaleID";
-            this.spinFill_SnackSaleID.Size = new System.Drawing.Size(75, 20);
+            this.spinFill_SnackSaleID.Size = new System.Drawing.Size(100, 22);
             this.spinFill_SnackSaleID.TabIndex = 17;
             // 
             // lblFill_SnackSaleID
             // 
             this.lblFill_SnackSaleID.AutoSize = true;
-            this.lblFill_SnackSaleID.Location = new System.Drawing.Point(28, 219);
-            this.lblFill_SnackSaleID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFill_SnackSaleID.Location = new System.Drawing.Point(37, 270);
             this.lblFill_SnackSaleID.Name = "lblFill_SnackSaleID";
-            this.lblFill_SnackSaleID.Size = new System.Drawing.Size(85, 13);
+            this.lblFill_SnackSaleID.Size = new System.Drawing.Size(108, 17);
             this.lblFill_SnackSaleID.TabIndex = 16;
             this.lblFill_SnackSaleID.Text = "Snack_Sale_ID:";
             // 
             // lblDelete_Transact
             // 
             this.lblDelete_Transact.AutoSize = true;
-            this.lblDelete_Transact.Location = new System.Drawing.Point(52, 263);
-            this.lblDelete_Transact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDelete_Transact.Location = new System.Drawing.Point(69, 324);
             this.lblDelete_Transact.Name = "lblDelete_Transact";
-            this.lblDelete_Transact.Size = new System.Drawing.Size(98, 13);
+            this.lblDelete_Transact.Size = new System.Drawing.Size(125, 17);
             this.lblDelete_Transact.TabIndex = 15;
             this.lblDelete_Transact.Text = "DELETE A SNACK";
             // 
             // spinDelete_TransactID
             // 
-            this.spinDelete_TransactID.Location = new System.Drawing.Point(113, 290);
-            this.spinDelete_TransactID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spinDelete_TransactID.Location = new System.Drawing.Point(151, 357);
+            this.spinDelete_TransactID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.spinDelete_TransactID.Name = "spinDelete_TransactID";
-            this.spinDelete_TransactID.Size = new System.Drawing.Size(75, 20);
+            this.spinDelete_TransactID.Size = new System.Drawing.Size(100, 22);
             this.spinDelete_TransactID.TabIndex = 14;
             // 
             // lblDelete_TransactID
             // 
             this.lblDelete_TransactID.AutoSize = true;
-            this.lblDelete_TransactID.Location = new System.Drawing.Point(28, 294);
-            this.lblDelete_TransactID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDelete_TransactID.Location = new System.Drawing.Point(37, 362);
             this.lblDelete_TransactID.Name = "lblDelete_TransactID";
-            this.lblDelete_TransactID.Size = new System.Drawing.Size(85, 13);
+            this.lblDelete_TransactID.Size = new System.Drawing.Size(108, 17);
             this.lblDelete_TransactID.TabIndex = 13;
             this.lblDelete_TransactID.Text = "Snack_Sale_ID:";
             // 
             // btnUpdate_Transact
             // 
-            this.btnUpdate_Transact.Location = new System.Drawing.Point(233, 70);
-            this.btnUpdate_Transact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate_Transact.Location = new System.Drawing.Point(311, 86);
+            this.btnUpdate_Transact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate_Transact.Name = "btnUpdate_Transact";
-            this.btnUpdate_Transact.Size = new System.Drawing.Size(69, 19);
+            this.btnUpdate_Transact.Size = new System.Drawing.Size(92, 23);
             this.btnUpdate_Transact.TabIndex = 12;
             this.btnUpdate_Transact.Text = "UPDATE";
             this.btnUpdate_Transact.UseVisualStyleBackColor = true;
@@ -483,10 +473,10 @@
             // 
             // btnFill_Transact
             // 
-            this.btnFill_Transact.Location = new System.Drawing.Point(208, 214);
-            this.btnFill_Transact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFill_Transact.Location = new System.Drawing.Point(277, 263);
+            this.btnFill_Transact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFill_Transact.Name = "btnFill_Transact";
-            this.btnFill_Transact.Size = new System.Drawing.Size(56, 19);
+            this.btnFill_Transact.Size = new System.Drawing.Size(75, 23);
             this.btnFill_Transact.TabIndex = 11;
             this.btnFill_Transact.Text = "FILL";
             this.btnFill_Transact.UseVisualStyleBackColor = true;
@@ -494,10 +484,10 @@
             // 
             // btnAdd_Transact
             // 
-            this.btnAdd_Transact.Location = new System.Drawing.Point(246, 33);
-            this.btnAdd_Transact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd_Transact.Location = new System.Drawing.Point(328, 41);
+            this.btnAdd_Transact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd_Transact.Name = "btnAdd_Transact";
-            this.btnAdd_Transact.Size = new System.Drawing.Size(56, 19);
+            this.btnAdd_Transact.Size = new System.Drawing.Size(75, 23);
             this.btnAdd_Transact.TabIndex = 10;
             this.btnAdd_Transact.Text = "ADD";
             this.btnAdd_Transact.UseVisualStyleBackColor = true;
@@ -505,59 +495,56 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(118, 103);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotal.Location = new System.Drawing.Point(157, 127);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(76, 20);
+            this.txtTotal.Size = new System.Drawing.Size(100, 22);
             this.txtTotal.TabIndex = 7;
             this.txtTotal.Validating += new System.ComponentModel.CancelEventHandler(this.txtTotal_Validating);
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(74, 107);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Location = new System.Drawing.Point(99, 132);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(34, 13);
+            this.lblTotal.Size = new System.Drawing.Size(44, 17);
             this.lblTotal.TabIndex = 6;
             this.lblTotal.Text = "Total:";
             // 
             // spinQuantity_Ordered
             // 
-            this.spinQuantity_Ordered.Location = new System.Drawing.Point(118, 71);
-            this.spinQuantity_Ordered.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spinQuantity_Ordered.Location = new System.Drawing.Point(157, 87);
+            this.spinQuantity_Ordered.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.spinQuantity_Ordered.Name = "spinQuantity_Ordered";
-            this.spinQuantity_Ordered.Size = new System.Drawing.Size(75, 20);
+            this.spinQuantity_Ordered.Size = new System.Drawing.Size(100, 22);
             this.spinQuantity_Ordered.TabIndex = 5;
             // 
             // lblQuantity_Ordered
             // 
             this.lblQuantity_Ordered.AutoSize = true;
-            this.lblQuantity_Ordered.Location = new System.Drawing.Point(15, 75);
-            this.lblQuantity_Ordered.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblQuantity_Ordered.Location = new System.Drawing.Point(20, 92);
             this.lblQuantity_Ordered.Name = "lblQuantity_Ordered";
-            this.lblQuantity_Ordered.Size = new System.Drawing.Size(90, 13);
+            this.lblQuantity_Ordered.Size = new System.Drawing.Size(122, 17);
             this.lblQuantity_Ordered.TabIndex = 4;
             this.lblQuantity_Ordered.Text = "Quantity Ordered:";
             // 
             // lblSnack_ID
             // 
             this.lblSnack_ID.AutoSize = true;
-            this.lblSnack_ID.Location = new System.Drawing.Point(52, 41);
-            this.lblSnack_ID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSnack_ID.Location = new System.Drawing.Point(69, 50);
             this.lblSnack_ID.Name = "lblSnack_ID";
-            this.lblSnack_ID.Size = new System.Drawing.Size(58, 13);
+            this.lblSnack_ID.Size = new System.Drawing.Size(72, 17);
             this.lblSnack_ID.TabIndex = 2;
             this.lblSnack_ID.Text = "Snack_ID:";
             // 
             // groupDate
             // 
             this.groupDate.Controls.Add(this.dbGridTransact_Dates);
-            this.groupDate.Location = new System.Drawing.Point(781, 19);
-            this.groupDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupDate.Location = new System.Drawing.Point(1041, 23);
+            this.groupDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupDate.Name = "groupDate";
-            this.groupDate.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupDate.Size = new System.Drawing.Size(317, 252);
+            this.groupDate.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupDate.Size = new System.Drawing.Size(423, 310);
             this.groupDate.TabIndex = 1;
             this.groupDate.TabStop = false;
             this.groupDate.Text = "TRANSACTION DATE";
@@ -565,11 +552,11 @@
             // dbGridTransact_Dates
             // 
             this.dbGridTransact_Dates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbGridTransact_Dates.Location = new System.Drawing.Point(22, 24);
-            this.dbGridTransact_Dates.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dbGridTransact_Dates.Location = new System.Drawing.Point(29, 30);
+            this.dbGridTransact_Dates.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dbGridTransact_Dates.Name = "dbGridTransact_Dates";
             this.dbGridTransact_Dates.RowTemplate.Height = 24;
-            this.dbGridTransact_Dates.Size = new System.Drawing.Size(269, 164);
+            this.dbGridTransact_Dates.Size = new System.Drawing.Size(359, 202);
             this.dbGridTransact_Dates.TabIndex = 3;
             // 
             // groupDeleteTransacts
@@ -578,21 +565,21 @@
             this.groupDeleteTransacts.Controls.Add(this.lblDeleteAllTransactions);
             this.groupDeleteTransacts.Controls.Add(this.spinDeleteAll);
             this.groupDeleteTransacts.Controls.Add(this.lblDeleteAll);
-            this.groupDeleteTransacts.Location = new System.Drawing.Point(781, 306);
-            this.groupDeleteTransacts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupDeleteTransacts.Location = new System.Drawing.Point(1041, 377);
+            this.groupDeleteTransacts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupDeleteTransacts.Name = "groupDeleteTransacts";
-            this.groupDeleteTransacts.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupDeleteTransacts.Size = new System.Drawing.Size(274, 146);
+            this.groupDeleteTransacts.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupDeleteTransacts.Size = new System.Drawing.Size(365, 180);
             this.groupDeleteTransacts.TabIndex = 21;
             this.groupDeleteTransacts.TabStop = false;
             this.groupDeleteTransacts.Text = "DELETE ALL TRANSACTIONS";
             // 
             // btnDelete_All
             // 
-            this.btnDelete_All.Location = new System.Drawing.Point(26, 102);
-            this.btnDelete_All.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete_All.Location = new System.Drawing.Point(35, 126);
+            this.btnDelete_All.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete_All.Name = "btnDelete_All";
-            this.btnDelete_All.Size = new System.Drawing.Size(76, 19);
+            this.btnDelete_All.Size = new System.Drawing.Size(101, 23);
             this.btnDelete_All.TabIndex = 23;
             this.btnDelete_All.Text = "DELETE";
             this.btnDelete_All.UseVisualStyleBackColor = true;
@@ -601,37 +588,35 @@
             // lblDeleteAllTransactions
             // 
             this.lblDeleteAllTransactions.AutoSize = true;
-            this.lblDeleteAllTransactions.Location = new System.Drawing.Point(23, 45);
-            this.lblDeleteAllTransactions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDeleteAllTransactions.Location = new System.Drawing.Point(31, 55);
             this.lblDeleteAllTransactions.Name = "lblDeleteAllTransactions";
-            this.lblDeleteAllTransactions.Size = new System.Drawing.Size(249, 13);
+            this.lblDeleteAllTransactions.Size = new System.Drawing.Size(316, 17);
             this.lblDeleteAllTransactions.TabIndex = 22;
             this.lblDeleteAllTransactions.Text = "DELETE ALL TRANSACTIONS WITH SNACK_ID:";
             // 
             // spinDeleteAll
             // 
-            this.spinDeleteAll.Location = new System.Drawing.Point(92, 68);
-            this.spinDeleteAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spinDeleteAll.Location = new System.Drawing.Point(123, 84);
+            this.spinDeleteAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.spinDeleteAll.Name = "spinDeleteAll";
-            this.spinDeleteAll.Size = new System.Drawing.Size(75, 20);
+            this.spinDeleteAll.Size = new System.Drawing.Size(100, 22);
             this.spinDeleteAll.TabIndex = 21;
             // 
             // lblDeleteAll
             // 
             this.lblDeleteAll.AutoSize = true;
-            this.lblDeleteAll.Location = new System.Drawing.Point(23, 70);
-            this.lblDeleteAll.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDeleteAll.Location = new System.Drawing.Point(31, 86);
             this.lblDeleteAll.Name = "lblDeleteAll";
-            this.lblDeleteAll.Size = new System.Drawing.Size(58, 13);
+            this.lblDeleteAll.Size = new System.Drawing.Size(72, 17);
             this.lblDeleteAll.TabIndex = 20;
             this.lblDeleteAll.Text = "Snack_ID:";
             // 
             // lblBack
             // 
-            this.lblBack.Location = new System.Drawing.Point(832, 548);
-            this.lblBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblBack.Location = new System.Drawing.Point(1109, 674);
+            this.lblBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(178, 41);
+            this.lblBack.Size = new System.Drawing.Size(237, 50);
             this.lblBack.TabIndex = 24;
             this.lblBack.Text = "BACK TO START PAGE";
             this.lblBack.UseVisualStyleBackColor = true;
@@ -639,27 +624,38 @@
             // 
             // lblDates
             // 
-            this.lblDates.Location = new System.Drawing.Point(832, 483);
-            this.lblDates.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblDates.Location = new System.Drawing.Point(1109, 594);
+            this.lblDates.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblDates.Name = "lblDates";
-            this.lblDates.Size = new System.Drawing.Size(178, 45);
+            this.lblDates.Size = new System.Drawing.Size(237, 55);
             this.lblDates.TabIndex = 25;
             this.lblDates.Text = "ADD DATES TO SALES";
             this.lblDates.UseVisualStyleBackColor = true;
             this.lblDates.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pboxBackground
+            // 
+            this.pboxBackground.Image = ((System.Drawing.Image)(resources.GetObject("pboxBackground.Image")));
+            this.pboxBackground.Location = new System.Drawing.Point(-5, -5);
+            this.pboxBackground.Name = "pboxBackground";
+            this.pboxBackground.Size = new System.Drawing.Size(1547, 786);
+            this.pboxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxBackground.TabIndex = 26;
+            this.pboxBackground.TabStop = false;
+            // 
             // Main_Snacks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 633);
+            this.ClientSize = new System.Drawing.Size(1539, 779);
             this.Controls.Add(this.lblDates);
             this.Controls.Add(this.lblBack);
             this.Controls.Add(this.groupDeleteTransacts);
             this.Controls.Add(this.groupDate);
             this.Controls.Add(this.groupTransact_Detail);
             this.Controls.Add(this.groupSnacks);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.pboxBackground);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Main_Snacks";
             this.Text = "Main_Snacks";
             this.Load += new System.EventHandler(this.Main_Snacks_Load);
@@ -683,6 +679,7 @@
             this.groupDeleteTransacts.ResumeLayout(false);
             this.groupDeleteTransacts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinDeleteAll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -740,5 +737,6 @@
         private System.Windows.Forms.Label lblDeleteAll;
         private System.Windows.Forms.Button lblBack;
         private System.Windows.Forms.Button lblDates;
+        private System.Windows.Forms.PictureBox pboxBackground;
     }
 }
