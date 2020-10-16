@@ -119,6 +119,7 @@
             this.udCustomerID.Name = "udCustomerID";
             this.udCustomerID.Size = new System.Drawing.Size(171, 20);
             this.udCustomerID.TabIndex = 0;
+            this.udCustomerID.ValueChanged += new System.EventHandler(this.udCustomerID_ValueChanged);
             // 
             // gbCustomerFields
             // 
@@ -180,6 +181,7 @@
             this.txtEditName.Name = "txtEditName";
             this.txtEditName.Size = new System.Drawing.Size(161, 20);
             this.txtEditName.TabIndex = 4;
+            this.txtEditName.TextChanged += new System.EventHandler(this.txtEditName_TextChanged);
             // 
             // cbEmail
             // 

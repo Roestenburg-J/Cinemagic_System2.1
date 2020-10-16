@@ -452,6 +452,14 @@ namespace Cinemagic
 
         }
 
-       
+        private void txtEditName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void udCustomerID_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
