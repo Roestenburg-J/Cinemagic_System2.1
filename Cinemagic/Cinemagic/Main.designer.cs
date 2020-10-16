@@ -33,6 +33,7 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnGenre = new System.Windows.Forms.Button();
             this.pboxBackground = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             // btnCustomers
             // 
             this.btnCustomers.Location = new System.Drawing.Point(276, 385);
-            this.btnCustomers.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(136, 65);
             this.btnCustomers.TabIndex = 1;
@@ -62,7 +63,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(577, 383);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 64);
             this.button1.TabIndex = 2;
@@ -73,21 +74,33 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(736, 383);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 67);
+            this.button2.Size = new System.Drawing.Size(152, 66);
             this.button2.TabIndex = 3;
             this.button2.Text = "Movies";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnGenre
+            // 
+            this.btnGenre.Location = new System.Drawing.Point(120, 385);
+            this.btnGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGenre.Name = "btnGenre";
+            this.btnGenre.Size = new System.Drawing.Size(135, 65);
+            this.btnGenre.TabIndex = 4;
+            this.btnGenre.Text = "Genre";
+            this.btnGenre.UseVisualStyleBackColor = true;
+            this.btnGenre.Click += new System.EventHandler(this.btnGenre_Click_1);
+            // 
             // pboxBackground
             // 
             this.pboxBackground.Image = ((System.Drawing.Image)(resources.GetObject("pboxBackground.Image")));
-            this.pboxBackground.Location = new System.Drawing.Point(0, 0);
+            this.pboxBackground.Location = new System.Drawing.Point(-5, -5);
             this.pboxBackground.Name = "pboxBackground";
-            this.pboxBackground.Size = new System.Drawing.Size(1039, 504);
+            this.pboxBackground.Size = new System.Drawing.Size(1045, 517);
             this.pboxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxBackground.TabIndex = 4;
+            this.pboxBackground.TabIndex = 6;
             this.pboxBackground.TabStop = false;
             // 
             // Main
@@ -95,6 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 503);
+            this.Controls.Add(this.btnGenre);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCustomers);
@@ -102,7 +116,6 @@
             this.Controls.Add(this.pboxBackground);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Main";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).EndInit();
@@ -116,6 +129,7 @@
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGenre;
         private System.Windows.Forms.PictureBox pboxBackground;
     }
 }

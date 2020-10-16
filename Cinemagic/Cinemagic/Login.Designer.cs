@@ -43,7 +43,7 @@
             // 
             this.lblHeading.AutoSize = true;
             this.lblHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeading.Location = new System.Drawing.Point(262, 20);
+            this.lblHeading.Location = new System.Drawing.Point(261, 20);
             this.lblHeading.Name = "lblHeading";
             this.lblHeading.Size = new System.Drawing.Size(281, 32);
             this.lblHeading.TabIndex = 0;
@@ -51,7 +51,8 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(358, 208);
+            this.txtPassword.Location = new System.Drawing.Point(357, 208);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(185, 22);
             this.txtPassword.TabIndex = 1;
@@ -59,7 +60,8 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(358, 147);
+            this.txtUsername.Location = new System.Drawing.Point(357, 146);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(185, 22);
             this.txtUsername.TabIndex = 2;
@@ -68,7 +70,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(265, 152);
+            this.lblUsername.Location = new System.Drawing.Point(265, 153);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(77, 17);
             this.lblUsername.TabIndex = 3;
@@ -87,9 +89,10 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(358, 282);
+            this.btnLogin.Location = new System.Drawing.Point(357, 282);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(122, 47);
+            this.btnLogin.Size = new System.Drawing.Size(123, 47);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -98,9 +101,9 @@
             // pboxBackground
             // 
             this.pboxBackground.Image = ((System.Drawing.Image)(resources.GetObject("pboxBackground.Image")));
-            this.pboxBackground.Location = new System.Drawing.Point(-4, -13);
+            this.pboxBackground.Location = new System.Drawing.Point(-6, -7);
             this.pboxBackground.Name = "pboxBackground";
-            this.pboxBackground.Size = new System.Drawing.Size(810, 468);
+            this.pboxBackground.Size = new System.Drawing.Size(812, 467);
             this.pboxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxBackground.TabIndex = 6;
             this.pboxBackground.TabStop = false;
@@ -117,8 +120,8 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.pboxBackground);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).EndInit();
