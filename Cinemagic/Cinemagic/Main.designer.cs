@@ -36,30 +36,35 @@
             this.btnGenre = new System.Windows.Forms.Button();
             this.pboxBackground = new System.Windows.Forms.PictureBox();
             this.groupMaintain_Snacks = new System.Windows.Forms.GroupBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.txtItem = new System.Windows.Forms.TextBox();
-            this.lblItem = new System.Windows.Forms.Label();
+            this.txtLeast = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMost = new System.Windows.Forms.TextBox();
+            this.lblVSnack2 = new System.Windows.Forms.Label();
+            this.txtVSnack = new System.Windows.Forms.TextBox();
+            this.lblVSnack1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTCustomers = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTMovies = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtSBooking = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtBBooking = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTBookings = new System.Windows.Forms.TextBox();
+            this.lblBooking = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtTGenre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.txtSMovie = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtLMovie = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).BeginInit();
             this.groupMaintain_Snacks.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,7 +97,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(633, 384);
+            this.button1.Location = new System.Drawing.Point(633, 385);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 64);
@@ -103,7 +108,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(837, 381);
+            this.button2.Location = new System.Drawing.Point(23, 381);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(169, 66);
@@ -114,7 +119,7 @@
             // 
             // btnGenre
             // 
-            this.btnGenre.Location = new System.Drawing.Point(23, 384);
+            this.btnGenre.Location = new System.Drawing.Point(837, 385);
             this.btnGenre.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenre.Name = "btnGenre";
             this.btnGenre.Size = new System.Drawing.Size(169, 65);
@@ -128,17 +133,20 @@
             this.pboxBackground.Image = ((System.Drawing.Image)(resources.GetObject("pboxBackground.Image")));
             this.pboxBackground.Location = new System.Drawing.Point(-5, -5);
             this.pboxBackground.Name = "pboxBackground";
-            this.pboxBackground.Size = new System.Drawing.Size(1045, 517);
+            this.pboxBackground.Size = new System.Drawing.Size(1045, 563);
             this.pboxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxBackground.TabIndex = 6;
             this.pboxBackground.TabStop = false;
             // 
             // groupMaintain_Snacks
             // 
-            this.groupMaintain_Snacks.Controls.Add(this.txtDescription);
-            this.groupMaintain_Snacks.Controls.Add(this.lblDescription);
-            this.groupMaintain_Snacks.Controls.Add(this.txtItem);
-            this.groupMaintain_Snacks.Controls.Add(this.lblItem);
+            this.groupMaintain_Snacks.Controls.Add(this.txtLeast);
+            this.groupMaintain_Snacks.Controls.Add(this.label10);
+            this.groupMaintain_Snacks.Controls.Add(this.label9);
+            this.groupMaintain_Snacks.Controls.Add(this.txtMost);
+            this.groupMaintain_Snacks.Controls.Add(this.lblVSnack2);
+            this.groupMaintain_Snacks.Controls.Add(this.txtVSnack);
+            this.groupMaintain_Snacks.Controls.Add(this.lblVSnack1);
             this.groupMaintain_Snacks.Location = new System.Drawing.Point(430, 48);
             this.groupMaintain_Snacks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupMaintain_Snacks.Name = "groupMaintain_Snacks";
@@ -148,45 +156,69 @@
             this.groupMaintain_Snacks.TabStop = false;
             this.groupMaintain_Snacks.Text = "SNACK STATS";
             // 
-            // txtDescription
+            // txtLeast
             // 
-            this.txtDescription.Location = new System.Drawing.Point(16, 192);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(100, 22);
-            this.txtDescription.TabIndex = 3;
+            this.txtLeast.Location = new System.Drawing.Point(16, 217);
+            this.txtLeast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLeast.Name = "txtLeast";
+            this.txtLeast.Size = new System.Drawing.Size(100, 22);
+            this.txtLeast.TabIndex = 6;
             // 
-            // lblDescription
+            // label10
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(23, 156);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(83, 17);
-            this.lblDescription.TabIndex = 2;
-            this.lblDescription.Text = "Description:";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 180);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(155, 17);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Least expensive snack:";
             // 
-            // txtItem
+            // label9
             // 
-            this.txtItem.Location = new System.Drawing.Point(16, 66);
-            this.txtItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(100, 22);
-            this.txtItem.TabIndex = 1;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 114);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(150, 17);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Most expensive snack:";
             // 
-            // lblItem
+            // txtMost
             // 
-            this.lblItem.AutoSize = true;
-            this.lblItem.Location = new System.Drawing.Point(13, 33);
-            this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(38, 17);
-            this.lblItem.TabIndex = 0;
-            this.lblItem.Text = "Item:";
+            this.txtMost.Location = new System.Drawing.Point(16, 142);
+            this.txtMost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMost.Name = "txtMost";
+            this.txtMost.Size = new System.Drawing.Size(100, 22);
+            this.txtMost.TabIndex = 3;
+            // 
+            // lblVSnack2
+            // 
+            this.lblVSnack2.AutoSize = true;
+            this.lblVSnack2.Location = new System.Drawing.Point(13, 50);
+            this.lblVSnack2.Name = "lblVSnack2";
+            this.lblVSnack2.Size = new System.Drawing.Size(68, 17);
+            this.lblVSnack2.TabIndex = 2;
+            this.lblVSnack2.Text = "available:";
+            // 
+            // txtVSnack
+            // 
+            this.txtVSnack.Location = new System.Drawing.Point(16, 78);
+            this.txtVSnack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtVSnack.Name = "txtVSnack";
+            this.txtVSnack.Size = new System.Drawing.Size(113, 22);
+            this.txtVSnack.TabIndex = 1;
+            // 
+            // lblVSnack1
+            // 
+            this.lblVSnack1.AutoSize = true;
+            this.lblVSnack1.Location = new System.Drawing.Point(13, 33);
+            this.lblVSnack1.Name = "lblVSnack1";
+            this.lblVSnack1.Size = new System.Drawing.Size(116, 17);
+            this.lblVSnack1.TabIndex = 0;
+            this.lblVSnack1.Text = "Variety of snacks";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtTCustomers);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(228, 48);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -197,46 +229,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CUSTOMER STATS";
             // 
-            // textBox1
+            // txtTCustomers
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 192);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 156);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Description:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(16, 66);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 1;
+            this.txtTCustomers.Location = new System.Drawing.Point(32, 78);
+            this.txtTCustomers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTCustomers.Name = "txtTCustomers";
+            this.txtTCustomers.Size = new System.Drawing.Size(100, 22);
+            this.txtTCustomers.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 33);
+            this.label2.Location = new System.Drawing.Point(29, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 17);
+            this.label2.Size = new System.Drawing.Size(113, 17);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Item:";
+            this.label2.Text = "Total customers:";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtSMovie);
+            this.groupBox2.Controls.Add(this.txtTMovies);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtLMovie);
             this.groupBox2.Location = new System.Drawing.Point(23, 48);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
@@ -244,48 +261,33 @@
             this.groupBox2.Size = new System.Drawing.Size(169, 275);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "GENRE STATS";
+            this.groupBox2.Text = "MOVIE STATS";
             // 
-            // textBox3
+            // txtTMovies
             // 
-            this.textBox3.Location = new System.Drawing.Point(16, 192);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 156);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Description:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(16, 66);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 1;
+            this.txtTMovies.Location = new System.Drawing.Point(16, 66);
+            this.txtTMovies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTMovies.Name = "txtTMovies";
+            this.txtTMovies.Size = new System.Drawing.Size(100, 22);
+            this.txtTMovies.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 17);
+            this.label4.Size = new System.Drawing.Size(92, 17);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Item:";
+            this.label4.Text = "Total movies:";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.txtSBooking);
             this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.txtBBooking);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.txtTBookings);
+            this.groupBox3.Controls.Add(this.lblBooking);
             this.groupBox3.Location = new System.Drawing.Point(633, 48);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
@@ -295,45 +297,60 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "BOOKING STATS";
             // 
-            // textBox5
+            // txtSBooking
             // 
-            this.textBox5.Location = new System.Drawing.Point(16, 192);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 156);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Description:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(16, 66);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 1;
+            this.txtSBooking.Location = new System.Drawing.Point(16, 217);
+            this.txtSBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSBooking.Name = "txtSBooking";
+            this.txtSBooking.Size = new System.Drawing.Size(100, 22);
+            this.txtSBooking.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 33);
+            this.label6.Location = new System.Drawing.Point(13, 180);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Item:";
+            this.label6.Size = new System.Drawing.Size(120, 17);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Smallest Booking:";
+            // 
+            // txtBBooking
+            // 
+            this.txtBBooking.Location = new System.Drawing.Point(16, 142);
+            this.txtBBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBBooking.Name = "txtBBooking";
+            this.txtBBooking.Size = new System.Drawing.Size(100, 22);
+            this.txtBBooking.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 114);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Bigest Booking:";
+            // 
+            // txtTBookings
+            // 
+            this.txtTBookings.Location = new System.Drawing.Point(16, 66);
+            this.txtTBookings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTBookings.Name = "txtTBookings";
+            this.txtTBookings.Size = new System.Drawing.Size(100, 22);
+            this.txtTBookings.TabIndex = 1;
+            // 
+            // lblBooking
+            // 
+            this.lblBooking.AutoSize = true;
+            this.lblBooking.Location = new System.Drawing.Point(13, 33);
+            this.lblBooking.Name = "lblBooking";
+            this.lblBooking.Size = new System.Drawing.Size(144, 17);
+            this.lblBooking.TabIndex = 0;
+            this.lblBooking.Text = "Total bookings made:";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox7);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.textBox8);
+            this.groupBox4.Controls.Add(this.txtTGenre);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Location = new System.Drawing.Point(837, 48);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -342,47 +359,88 @@
             this.groupBox4.Size = new System.Drawing.Size(169, 275);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "MOVIE STATS";
+            this.groupBox4.Text = "GENRE STATS";
             // 
-            // textBox7
+            // txtTGenre
             // 
-            this.textBox7.Location = new System.Drawing.Point(16, 192);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 156);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 17);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Description:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(16, 66);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 1;
+            this.txtTGenre.Location = new System.Drawing.Point(16, 66);
+            this.txtTGenre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTGenre.Name = "txtTGenre";
+            this.txtTGenre.Size = new System.Drawing.Size(100, 22);
+            this.txtTGenre.TabIndex = 1;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(13, 33);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 17);
+            this.label8.Size = new System.Drawing.Size(88, 17);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Item:";
+            this.label8.Text = "Total Genre:";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(175, 467);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(169, 62);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(695, 467);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(169, 62);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // txtSMovie
+            // 
+            this.txtSMovie.Location = new System.Drawing.Point(16, 217);
+            this.txtSMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSMovie.Name = "txtSMovie";
+            this.txtSMovie.Size = new System.Drawing.Size(100, 22);
+            this.txtSMovie.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 180);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Shortest Movie:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Longest Movie:";
+            // 
+            // txtLMovie
+            // 
+            this.txtLMovie.Location = new System.Drawing.Point(16, 142);
+            this.txtLMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLMovie.Name = "txtLMovie";
+            this.txtLMovie.Size = new System.Drawing.Size(100, 22);
+            this.txtLMovie.TabIndex = 7;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 503);
+            this.ClientSize = new System.Drawing.Size(1035, 551);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -423,29 +481,34 @@
         private System.Windows.Forms.Button btnGenre;
         private System.Windows.Forms.PictureBox pboxBackground;
         private System.Windows.Forms.GroupBox groupMaintain_Snacks;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.TextBox txtItem;
-        private System.Windows.Forms.Label lblItem;
+        private System.Windows.Forms.TextBox txtMost;
+        private System.Windows.Forms.Label lblVSnack2;
+        private System.Windows.Forms.TextBox txtVSnack;
+        private System.Windows.Forms.Label lblVSnack1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTCustomers;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTMovies;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBBooking;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTBookings;
+        private System.Windows.Forms.Label lblBooking;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtTGenre;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtLeast;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtSBooking;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox txtSMovie;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtLMovie;
     }
 }
