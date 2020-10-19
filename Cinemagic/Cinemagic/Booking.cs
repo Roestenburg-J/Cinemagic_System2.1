@@ -41,7 +41,7 @@ namespace Cinemagic
         {   
             bool isEmpty = false;
 
-            if (String.IsNullOrEmpty(txtcost.Text)|| String.IsNullOrEmpty( txtseats.Text) || String.IsNullOrEmpty(txtseats.Text))
+            if (String.IsNullOrEmpty(acost.Text)|| String.IsNullOrEmpty( aseats.Text) || String.IsNullOrEmpty(aseats.Text))
             {
                 isEmpty = true;
             }
@@ -55,7 +55,7 @@ namespace Cinemagic
         {
             bool isEmpty = false;
 
-            if (String.IsNullOrEmpty(txtbooking.Text))
+            if (String.IsNullOrEmpty(dbooking.Text))
             {
                 isEmpty = true;
             }
@@ -70,7 +70,7 @@ namespace Cinemagic
         private void Search(string booking)
         {
 
-            booking = txtbooking.Text;
+            booking = dbooking.Text;
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
@@ -89,7 +89,7 @@ namespace Cinemagic
         private bool TestSearch(string booking)
         {
 
-            booking = txtbooking.Text;
+            booking = dbooking.Text;
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
@@ -127,7 +127,7 @@ namespace Cinemagic
             }
             else
             {   
-                    booking = txtbooking.Text;
+                    booking = dbooking.Text;
                     Main cinema = new Main();
                     connection = cinema.constr;
                 try
@@ -216,7 +216,7 @@ namespace Cinemagic
 
         private void EditTicketCost(string newCost)
         {
-            cost = txtcost.Text;
+            cost = bcost.Text;
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
@@ -230,7 +230,7 @@ namespace Cinemagic
 
         private void EditSeats(string newseats)
         {
-            seats = txtseats.Text;
+            seats = bseats.Text;
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
@@ -244,7 +244,7 @@ namespace Cinemagic
 
         private void EditDate(string newDate)
         {
-            date = txtdate.Text;
+            date = bdate.Text;
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
@@ -314,10 +314,10 @@ namespace Cinemagic
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtbooking.Text = "";
-            booking = txtbooking.Text;
+            dbooking.Text = "";
+            booking = dbooking.Text;
 
-            if(txtbooking.Text != "")
+            if(dbooking.Text != "")
             {
                 TestSearch(booking);
 
@@ -336,10 +336,10 @@ namespace Cinemagic
 
         private void btninsert_Click_1(object sender, EventArgs e)
         {
-            seats = txtseats.Text;
-            cost = txtcost.Text;
+            seats = aseats.Text;
+            cost = acost.Text;
             movie = txtMovie.Text;
-            date = txtdate.Text;
+            date = adate.Text;
 
             Insert(cost, seats, date);
 
@@ -351,13 +351,13 @@ namespace Cinemagic
 
         private void btnupdate_Click_1(object sender, EventArgs e)
         {
-            booking = txtbooking.Text;
+            booking = ubooking.Text;
 
             if(cbcost.Checked == true)
             {
                 try
                 {
-                    EditTicketCost(txtcost.Text);
+                    EditTicketCost(bcost.Text);
                 }
                 catch
                 {
@@ -368,7 +368,7 @@ namespace Cinemagic
             {
                 try
                 {
-                    EditSeats(txtseats.Text);
+                    EditSeats(bseats.Text);
                 }
                 catch
                 {
@@ -378,7 +378,7 @@ namespace Cinemagic
             {
                 try
                 {
-                    EditDate(txtdate.Text);
+                    EditDate(bdate.Text);
                 }
                 catch
                 {
@@ -401,25 +401,59 @@ namespace Cinemagic
 
         private void btnbooking_Click_1(object sender, EventArgs e)
         {
-            booking = txtbooking.Text;
+            booking = dbooking.Text;
             Delete(booking);
             Display();
         }
 
         private void cbcost_CheckedChanged(object sender, EventArgs e)
         {
-            txtcost.Enabled = true;
+            acost.Enabled = true;
         }
 
         private void cbseats_CheckedChanged(object sender, EventArgs e)
         {
-            txtseats.Enabled = true;
+            aseats.Enabled = true;
         }
 
         private void cbdate_CheckedChanged(object sender, EventArgs e)
         {
-            txtdate.Enabled = true;
+            adate.Enabled = true;
+        }
+
+        private void txtMovie_TextChanged(object sender, EventArgs e)
+        {
+           
+           
+        }
+
+        private void dbooking_TextChanged(object sender, EventArgs e)
+        {
+           
+
+            if(dbooking.Text == "")
+            {
+                Main cinema = new Main();
+                connection = cinema.constr;
+                cinema.conn = new SqlConnection(connection);
+                cinema.conn.Open();
+                string select_booking = "Select Movie_ID from BOOKING where Booking_ID='"+dbooking.Text+"'";
+                cinema.com = new SqlCommand(select_booking, cinema.conn);
+                
+                cinema.adap = new SqlDataAdapter();
+                
+                SqlDataReader dr = com.ExecuteReader();
+
+                while(dr.Read())
+                {  
+                    txtMovie.Text = dr.GetValue(2).ToString();
+                    txtCustomer.Text = dr.GetValue(1).ToString();
+
+                }
+                conn.Close();
+            }
+            
         }
     }
-}
+}       
 
