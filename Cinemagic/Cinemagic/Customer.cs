@@ -390,6 +390,8 @@ namespace Cinemagic
             if (TestValidSearch(customerID) == false)
             {
                 MessageBox.Show("Customer ID not found", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btnEditCustomer.Enabled = false;
+                btnDeleteCustomer.Enabled = false;
             }
             else
             {

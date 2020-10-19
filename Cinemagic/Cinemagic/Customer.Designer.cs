@@ -63,7 +63,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.udCustomerID);
             this.groupBox1.Controls.Add(this.btnRefresh);
@@ -138,7 +138,7 @@
             // 
             // gbCustomerFields
             // 
-            this.gbCustomerFields.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gbCustomerFields.BackColor = System.Drawing.SystemColors.Control;
             this.gbCustomerFields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.gbCustomerFields.Controls.Add(this.btnUpdate);
             this.gbCustomerFields.Controls.Add(this.txtEditEmail);
