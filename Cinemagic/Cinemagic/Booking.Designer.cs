@@ -47,10 +47,12 @@
             this.acost = new System.Windows.Forms.TextBox();
             this.adate = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ubooking = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.cbdate = new System.Windows.Forms.CheckBox();
+            this.btndisplay = new System.Windows.Forms.Button();
             this.cbseats = new System.Windows.Forms.CheckBox();
             this.cbcost = new System.Windows.Forms.CheckBox();
-            this.btndisplay = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bseats = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,8 +60,6 @@
             this.bdate = new System.Windows.Forms.TextBox();
             this.bcost = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.ubooking = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gpBooking.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -251,6 +251,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Update Records";
             // 
+            // ubooking
+            // 
+            this.ubooking.Location = new System.Drawing.Point(254, 34);
+            this.ubooking.Name = "ubooking";
+            this.ubooking.Size = new System.Drawing.Size(100, 20);
+            this.ubooking.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(165, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 13);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Booking _ID";
+            // 
             // cbdate
             // 
             this.cbdate.AutoSize = true;
@@ -261,6 +277,16 @@
             this.cbdate.Text = "Edit date";
             this.cbdate.UseVisualStyleBackColor = true;
             this.cbdate.CheckedChanged += new System.EventHandler(this.cbdate_CheckedChanged);
+            // 
+            // btndisplay
+            // 
+            this.btndisplay.Location = new System.Drawing.Point(13, 19);
+            this.btndisplay.Name = "btndisplay";
+            this.btndisplay.Size = new System.Drawing.Size(139, 129);
+            this.btndisplay.TabIndex = 3;
+            this.btndisplay.Text = "Display Database";
+            this.btndisplay.UseVisualStyleBackColor = true;
+            this.btndisplay.Click += new System.EventHandler(this.button2_Click);
             // 
             // cbseats
             // 
@@ -283,16 +309,6 @@
             this.cbcost.Text = "Edit Cost";
             this.cbcost.UseVisualStyleBackColor = true;
             this.cbcost.CheckedChanged += new System.EventHandler(this.cbcost_CheckedChanged);
-            // 
-            // btndisplay
-            // 
-            this.btndisplay.Location = new System.Drawing.Point(13, 19);
-            this.btndisplay.Name = "btndisplay";
-            this.btndisplay.Size = new System.Drawing.Size(139, 129);
-            this.btndisplay.TabIndex = 3;
-            this.btndisplay.Text = "Display Database";
-            this.btndisplay.UseVisualStyleBackColor = true;
-            this.btndisplay.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
@@ -358,26 +374,12 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Number of seats:";
             // 
-            // ubooking
-            // 
-            this.ubooking.Location = new System.Drawing.Point(254, 34);
-            this.ubooking.Name = "ubooking";
-            this.ubooking.Size = new System.Drawing.Size(100, 20);
-            this.ubooking.TabIndex = 23;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(165, 37);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 13);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Booking _ID";
-            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Cinemagic.Properties.Resources.CinemagicBackground;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(920, 693);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

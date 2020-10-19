@@ -21,3 +21,4 @@ C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debu
 C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CopyComplete
 C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.exe
 C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.pdb
+C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csprojAssemblyReference.cache
