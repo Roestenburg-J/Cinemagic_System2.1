@@ -50,49 +50,71 @@ namespace Cinemagic
 
         private void UpdateGenre()
         {
-
-            Main cinema = new Main();
-            connection = cinema.constr;
-            cinema.conn = new SqlConnection(connection);
-            cinema.conn.Open();
-            string update_Genre = " UPDATE GENRE SET GENRE_DESCRIPTION = '" + textBox2.Text + "' WHERE GENRE_ID= " + textBox3.Text + ""; 
-            cinema.com = new SqlCommand(update_Genre, cinema.conn);
-            cinema.com.ExecuteNonQuery();
-            cinema.conn.Close();
-            DisplayGenre();
-            MessageBox.Show("Record Updated Successfully");
+            try
+            {
+                Main cinema = new Main();
+                connection = cinema.constr;
+                cinema.conn = new SqlConnection(connection);
+                cinema.conn.Open();
+                string update_Genre = " UPDATE GENRE SET GENRE_DESCRIPTION = '" + textBox2.Text + "' WHERE GENRE_ID= " + textBox3.Text + "";
+                cinema.com = new SqlCommand(update_Genre, cinema.conn);
+                cinema.com.ExecuteNonQuery();
+                cinema.conn.Close();
+                DisplayGenre();
+                MessageBox.Show("Record Updated Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Failed to update genre... try again please", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         private void DisplayGenre()
         {
-            Main cinema = new Main();
-            connection = cinema.constr; 
-            cinema.conn = new SqlConnection(connection);
-            cinema.conn.Open();
-            string select_Genre = "SELECT * FROM GENRE";
-            cinema.com = new SqlCommand(select_Genre, cinema.conn);
-            cinema.adap = new SqlDataAdapter();
-            cinema.ds = new DataSet();
-            cinema.adap = new SqlDataAdapter(select_Genre, cinema.conn);
-            cinema.adap.Fill(cinema.ds, "Genre");
-            GenreGridView.DataSource = cinema.ds;
-            GenreGridView.DataMember = "Genre";
-            cinema.conn.Close();
+            try
+            {
+                Main cinema = new Main();
+                connection = cinema.constr;
+                cinema.conn = new SqlConnection(connection);
+                cinema.conn.Open();
+                string select_Genre = "SELECT * FROM GENRE";
+                cinema.com = new SqlCommand(select_Genre, cinema.conn);
+                cinema.adap = new SqlDataAdapter();
+                cinema.ds = new DataSet();
+                cinema.adap = new SqlDataAdapter(select_Genre, cinema.conn);
+                cinema.adap.Fill(cinema.ds, "Genre");
+                GenreGridView.DataSource = cinema.ds;
+                GenreGridView.DataMember = "Genre";
+                cinema.conn.Close();
+                MessageBox.Show("Record Displayed Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Failed to display genre... try again please", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
+
 
         private void DeleteGenre()
         {
-
-            Main cinema = new Main();
-            connection = cinema.constr;
-            cinema.conn = new SqlConnection(connection);
-            cinema.conn.Open();
-            string delete_Genre = "DELETE FROM GENRE WHERE GENRE_ID = '" + textBox1.Text + "'";
-            cinema.com = new SqlCommand(delete_Genre, cinema.conn);
-            cinema.com.ExecuteNonQuery();
-            cinema.conn.Close();
-            DisplayGenre();
-            MessageBox.Show("Record Deleted Successfully");
+            try
+            {
+                Main cinema = new Main();
+                connection = cinema.constr;
+                cinema.conn = new SqlConnection(connection);
+                cinema.conn.Open();
+                string delete_Genre = "DELETE FROM GENRE WHERE GENRE_ID = '" + textBox1.Text + "'";
+                cinema.com = new SqlCommand(delete_Genre, cinema.conn);
+                cinema.com.ExecuteNonQuery();
+                cinema.conn.Close();
+                DisplayGenre();
+                MessageBox.Show("Record Deleted Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Failed to delete genre... try again please", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -149,27 +171,42 @@ namespace Cinemagic
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
-            Main cinema = new Main();
-            connection = cinema.constr;
-            cinema.conn = new SqlConnection(connection);
-            cinema.conn.Open();
-            string select_Genre = "SELECT * FROM GENRE WHERE GENRE_ID='"+txtSearch.Text+"'";
-            cinema.com = new SqlCommand(select_Genre, cinema.conn);
-            cinema.adap = new SqlDataAdapter();
-            cinema.ds = new DataSet();
-            cinema.adap = new SqlDataAdapter(select_Genre, cinema.conn);
-            cinema.adap.Fill(cinema.ds, "Genre");
-            count = Convert.ToInt32(dt.Rows.Count.ToString());
-            GenreGridView.DataSource = cinema.ds;
-            GenreGridView.DataMember = "Genre";
-            cinema.conn.Close();
-
-            if (count!=0)
+            try
             {
-                MessageBox.Show("Record was found!"); 
+                Main cinema = new Main();
+                connection = cinema.constr;
+                cinema.conn = new SqlConnection(connection);
+                cinema.conn.Open();
+                string select_Genre = "SELECT * FROM GENRE WHERE GENRE_ID='" + txtSearch.Text + "'";
+                cinema.com = new SqlCommand(select_Genre, cinema.conn);
+                cinema.adap = new SqlDataAdapter();
+                cinema.ds = new DataSet();
+                cinema.adap = new SqlDataAdapter(select_Genre, cinema.conn);
+                cinema.adap.Fill(cinema.ds, "Genre");
+                count = Convert.ToInt32(dt.Rows.Count.ToString());
+                GenreGridView.DataSource = cinema.ds;
+                GenreGridView.DataMember = "Genre";
+                cinema.conn.Close();
+
+
+                if (count != 0)
+                {
+                    MessageBox.Show("Record was found!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Failed to search genre... try again please", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            this.Hide();
+            Main main = new Main();
+            main.ShowDialog();
         }
     }
 } 

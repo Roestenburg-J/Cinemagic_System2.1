@@ -34,7 +34,7 @@ namespace RandomProj
             {
                 conn = new SqlConnection(constr);
                 conn.Open();
-                MessageBox.Show("Connection Successfull");
+               // MessageBox.Show("Connection Successfull");
                 conn.Close();
             }
             catch
@@ -59,7 +59,9 @@ namespace RandomProj
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
+            Cinemagic.Booking booking = new Cinemagic.Booking();
+            booking.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -68,15 +70,13 @@ namespace RandomProj
             Cinemagic.Movie movie = new Cinemagic.Movie();
             movie.Show();
         }
+             
 
-       
-
-        private void btnGenre_Click(object sender, EventArgs e)
+        private void btnGenre_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Genre genre = new Genre();
+            Cinemagic.Genre genre = new Cinemagic.Genre();
             genre.ShowDialog();
-
         }
     }
 

@@ -151,6 +151,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Snack_Sale.resx">
       <DependentUpon>Snack_Sale.cs</DependentUpon>
@@ -179,6 +180,8 @@
       <DependentUpon>CinemagicDB.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\WhatsApp Image 2020-10-15 at 08.57.32.jpeg" />
+    <None Include="Resources\CinemagicBackground.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
