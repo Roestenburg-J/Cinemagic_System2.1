@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblHeading = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -43,36 +42,38 @@
             // 
             this.lblHeading.AutoSize = true;
             this.lblHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeading.Location = new System.Drawing.Point(261, 20);
+            this.lblHeading.Location = new System.Drawing.Point(196, 16);
+            this.lblHeading.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeading.Name = "lblHeading";
-            this.lblHeading.Size = new System.Drawing.Size(281, 32);
+            this.lblHeading.Size = new System.Drawing.Size(226, 26);
             this.lblHeading.TabIndex = 0;
             this.lblHeading.Text = "CINEMAGIC LOGIN";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(357, 208);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPassword.Location = new System.Drawing.Point(268, 169);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(185, 22);
+            this.txtPassword.Size = new System.Drawing.Size(140, 20);
             this.txtPassword.TabIndex = 1;
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(357, 146);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsername.Location = new System.Drawing.Point(268, 119);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(185, 22);
+            this.txtUsername.Size = new System.Drawing.Size(140, 19);
             this.txtUsername.TabIndex = 2;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(265, 153);
+            this.lblUsername.Location = new System.Drawing.Point(199, 124);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(77, 17);
+            this.lblUsername.Size = new System.Drawing.Size(58, 13);
             this.lblUsername.TabIndex = 3;
             this.lblUsername.Text = "Username:";
             // 
@@ -80,19 +81,20 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(269, 213);
+            this.lblPassword.Location = new System.Drawing.Point(202, 173);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(73, 17);
+            this.lblPassword.Size = new System.Drawing.Size(56, 13);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password:";
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(357, 282);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogin.Location = new System.Drawing.Point(268, 229);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(123, 47);
+            this.btnLogin.Size = new System.Drawing.Size(92, 38);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -100,19 +102,21 @@
             // 
             // pboxBackground
             // 
-            this.pboxBackground.Image = ((System.Drawing.Image)(resources.GetObject("pboxBackground.Image")));
-            this.pboxBackground.Location = new System.Drawing.Point(-6, -7);
+            this.pboxBackground.Location = new System.Drawing.Point(-4, -6);
+            this.pboxBackground.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pboxBackground.Name = "pboxBackground";
-            this.pboxBackground.Size = new System.Drawing.Size(812, 467);
+            this.pboxBackground.Size = new System.Drawing.Size(609, 379);
             this.pboxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxBackground.TabIndex = 6;
             this.pboxBackground.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::Cinemagic.Properties.Resources.CinemagicBackground;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
@@ -120,7 +124,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.pboxBackground);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
