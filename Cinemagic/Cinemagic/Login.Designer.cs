@@ -34,8 +34,6 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.pboxBackground = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHeading
@@ -52,7 +50,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(268, 169);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(140, 20);
             this.txtPassword.TabIndex = 1;
@@ -61,7 +59,7 @@
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(268, 119);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(140, 19);
             this.txtUsername.TabIndex = 2;
@@ -92,23 +90,13 @@
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(268, 229);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(92, 38);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // pboxBackground
-            // 
-            this.pboxBackground.Location = new System.Drawing.Point(-4, -6);
-            this.pboxBackground.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pboxBackground.Name = "pboxBackground";
-            this.pboxBackground.Size = new System.Drawing.Size(609, 379);
-            this.pboxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxBackground.TabIndex = 6;
-            this.pboxBackground.TabStop = false;
             // 
             // Form1
             // 
@@ -123,13 +111,11 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblHeading);
-            this.Controls.Add(this.pboxBackground);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pboxBackground)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,7 +129,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.PictureBox pboxBackground;
     }
 }
 
