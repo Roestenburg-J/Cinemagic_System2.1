@@ -342,8 +342,12 @@ namespace Cinemagic
         private void delBtn_Click(object sender, EventArgs e)
         {
             id = dIDBox.Text;
-            DeleteMovie(id);
-            DisplayMovies();
+            if (MessageBox.Show("Are your sure you want to delete movie " + dIDBox.Text, "Delete Movie", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                DeleteMovie(id);
+                DisplayMovies();
+                delBtn.Enabled = false;
+            }
         }
 
         private void Movie_Load(object sender, EventArgs e)

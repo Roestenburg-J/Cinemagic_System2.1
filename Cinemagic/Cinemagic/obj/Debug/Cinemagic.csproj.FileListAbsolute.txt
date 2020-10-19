@@ -141,6 +141,8 @@ C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debu
 C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CopyComplete
 C:\Users\Janus\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.frmCustomer.resources
+<<<<<<< HEAD
+=======
 C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\CinemagicDB.mdf
 C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\CinemagicDB_log.ldf
 C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\bin\Debug\Cinemagic.exe.config
@@ -177,3 +179,5 @@ C:\Users\DCSteyn\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\De
 C:\Users\DCSteyn\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.csproj.CopyComplete
 C:\Users\DCSteyn\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.exe
 C:\Users\DCSteyn\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.pdb
+>>>>>>> master
+C:\Users\fathi\Documents\GitHub\Cinemagic_System2.1\Cinemagic\Cinemagic\obj\Debug\Cinemagic.Genre.resources

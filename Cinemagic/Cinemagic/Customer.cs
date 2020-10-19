@@ -302,6 +302,10 @@ namespace Cinemagic
 
         private void EditEmail(string id, string newEmail)
         {
+            if (CheckEmptyInputs())
+            {
+                MessageBox.Show("Please ensure all inputs contain a value", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             Main cinema = new Main();
             connection = cinema.constr;
             cinema.conn = new SqlConnection(connection);
