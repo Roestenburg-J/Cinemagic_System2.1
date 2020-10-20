@@ -361,5 +361,10 @@ namespace Cinemagic
             Main main = new Main();
             main.Show();
         }
+
+        private void aDurationBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
