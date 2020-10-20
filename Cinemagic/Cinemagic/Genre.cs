@@ -86,7 +86,7 @@ namespace Cinemagic
                 GenreGridView.DataSource = cinema.ds;
                 GenreGridView.DataMember = "Genre";
                 cinema.conn.Close();
-                MessageBox.Show("Record Displayed Successfully");
+               
             }
             catch (Exception ex)
             {
@@ -142,6 +142,7 @@ namespace Cinemagic
         private void button1_Click(object sender, EventArgs e)
         {
             DisplayGenre();
+            MessageBox.Show("Record Displayed Successfully");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -203,6 +204,11 @@ namespace Cinemagic
         }
 
         private void button5_Click_2(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button6_Click(object sender, EventArgs e)
         {
             this.Hide();
             Main main = new Main();
