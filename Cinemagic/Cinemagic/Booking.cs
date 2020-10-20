@@ -413,7 +413,7 @@ namespace Cinemagic
 
                     try
                     {
-                        EditDate(ubooking.Text, aseats.Text);
+                        EditDate(ubooking.Text, adate.Value.ToString());
 
                     }
                     catch
@@ -431,9 +431,10 @@ namespace Cinemagic
                 ubooking.Text = "";
                 acost.Text = "";
                 aseats.Text = "";
-                adate.Checked = true;
+            
 
                 Search(booking);
+                Display();
             }
 
            
