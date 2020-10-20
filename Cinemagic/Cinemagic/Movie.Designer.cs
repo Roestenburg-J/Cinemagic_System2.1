@@ -81,9 +81,9 @@
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Location = new System.Drawing.Point(355, 12);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(728, 396);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -93,7 +93,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(458, 349);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 38);
             this.button1.TabIndex = 2;
@@ -119,9 +119,9 @@
             this.groupBox3.Controls.Add(this.updateBtn);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Location = new System.Drawing.Point(280, 39);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(254, 237);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
@@ -131,7 +131,7 @@
             // 
             this.withdrawCB.AutoSize = true;
             this.withdrawCB.Location = new System.Drawing.Point(4, 150);
-            this.withdrawCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.withdrawCB.Margin = new System.Windows.Forms.Padding(2);
             this.withdrawCB.Name = "withdrawCB";
             this.withdrawCB.Size = new System.Drawing.Size(105, 17);
             this.withdrawCB.TabIndex = 20;
@@ -142,7 +142,7 @@
             // 
             this.releaseCB.AutoSize = true;
             this.releaseCB.Location = new System.Drawing.Point(4, 131);
-            this.releaseCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.releaseCB.Margin = new System.Windows.Forms.Padding(2);
             this.releaseCB.Name = "releaseCB";
             this.releaseCB.Size = new System.Drawing.Size(94, 17);
             this.releaseCB.TabIndex = 19;
@@ -153,7 +153,7 @@
             // 
             this.ageCB.AutoSize = true;
             this.ageCB.Location = new System.Drawing.Point(4, 110);
-            this.ageCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ageCB.Margin = new System.Windows.Forms.Padding(2);
             this.ageCB.Name = "ageCB";
             this.ageCB.Size = new System.Drawing.Size(101, 17);
             this.ageCB.TabIndex = 18;
@@ -164,7 +164,7 @@
             // 
             this.durationCB.AutoSize = true;
             this.durationCB.Location = new System.Drawing.Point(4, 87);
-            this.durationCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.durationCB.Margin = new System.Windows.Forms.Padding(2);
             this.durationCB.Name = "durationCB";
             this.durationCB.Size = new System.Drawing.Size(69, 17);
             this.durationCB.TabIndex = 17;
@@ -176,7 +176,7 @@
             // 
             this.genreCB.AutoSize = true;
             this.genreCB.Location = new System.Drawing.Point(4, 65);
-            this.genreCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.genreCB.Margin = new System.Windows.Forms.Padding(2);
             this.genreCB.Name = "genreCB";
             this.genreCB.Size = new System.Drawing.Size(58, 17);
             this.genreCB.TabIndex = 16;
@@ -187,7 +187,7 @@
             // 
             this.nameCB.AutoSize = true;
             this.nameCB.Location = new System.Drawing.Point(4, 44);
-            this.nameCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameCB.Margin = new System.Windows.Forms.Padding(2);
             this.nameCB.Name = "nameCB";
             this.nameCB.Size = new System.Drawing.Size(57, 17);
             this.nameCB.TabIndex = 15;
@@ -197,7 +197,7 @@
             // uWithdrawBox
             // 
             this.uWithdrawBox.Location = new System.Drawing.Point(113, 150);
-            this.uWithdrawBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uWithdrawBox.Margin = new System.Windows.Forms.Padding(2);
             this.uWithdrawBox.Name = "uWithdrawBox";
             this.uWithdrawBox.Size = new System.Drawing.Size(76, 20);
             this.uWithdrawBox.TabIndex = 1;
@@ -205,7 +205,7 @@
             // uReleaseBox
             // 
             this.uReleaseBox.Location = new System.Drawing.Point(113, 129);
-            this.uReleaseBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uReleaseBox.Margin = new System.Windows.Forms.Padding(2);
             this.uReleaseBox.Name = "uReleaseBox";
             this.uReleaseBox.Size = new System.Drawing.Size(76, 20);
             this.uReleaseBox.TabIndex = 2;
@@ -213,7 +213,7 @@
             // uIDBox
             // 
             this.uIDBox.Location = new System.Drawing.Point(113, 20);
-            this.uIDBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uIDBox.Margin = new System.Windows.Forms.Padding(2);
             this.uIDBox.Name = "uIDBox";
             this.uIDBox.Size = new System.Drawing.Size(76, 20);
             this.uIDBox.TabIndex = 3;
@@ -221,7 +221,7 @@
             // uNameBox
             // 
             this.uNameBox.Location = new System.Drawing.Point(113, 41);
-            this.uNameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uNameBox.Margin = new System.Windows.Forms.Padding(2);
             this.uNameBox.Name = "uNameBox";
             this.uNameBox.Size = new System.Drawing.Size(76, 20);
             this.uNameBox.TabIndex = 4;
@@ -229,7 +229,7 @@
             // uGenreBox
             // 
             this.uGenreBox.Location = new System.Drawing.Point(113, 63);
-            this.uGenreBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uGenreBox.Margin = new System.Windows.Forms.Padding(2);
             this.uGenreBox.Name = "uGenreBox";
             this.uGenreBox.Size = new System.Drawing.Size(76, 20);
             this.uGenreBox.TabIndex = 5;
@@ -237,7 +237,7 @@
             // uDurationBox
             // 
             this.uDurationBox.Location = new System.Drawing.Point(113, 85);
-            this.uDurationBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uDurationBox.Margin = new System.Windows.Forms.Padding(2);
             this.uDurationBox.Name = "uDurationBox";
             this.uDurationBox.Size = new System.Drawing.Size(76, 20);
             this.uDurationBox.TabIndex = 6;
@@ -245,7 +245,7 @@
             // uAgeBox
             // 
             this.uAgeBox.Location = new System.Drawing.Point(113, 108);
-            this.uAgeBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uAgeBox.Margin = new System.Windows.Forms.Padding(2);
             this.uAgeBox.Name = "uAgeBox";
             this.uAgeBox.Size = new System.Drawing.Size(76, 20);
             this.uAgeBox.TabIndex = 14;
@@ -253,7 +253,7 @@
             // updateBtn
             // 
             this.updateBtn.Location = new System.Drawing.Point(101, 180);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(2);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(76, 38);
             this.updateBtn.TabIndex = 8;
@@ -277,9 +277,9 @@
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.delBtn);
             this.groupBox4.Location = new System.Drawing.Point(13, 288);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(176, 110);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
@@ -288,7 +288,7 @@
             // dIDBox
             // 
             this.dIDBox.Location = new System.Drawing.Point(97, 21);
-            this.dIDBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dIDBox.Margin = new System.Windows.Forms.Padding(2);
             this.dIDBox.Name = "dIDBox";
             this.dIDBox.Size = new System.Drawing.Size(76, 20);
             this.dIDBox.TabIndex = 1;
@@ -306,7 +306,7 @@
             // delBtn
             // 
             this.delBtn.Location = new System.Drawing.Point(56, 63);
-            this.delBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.delBtn.Margin = new System.Windows.Forms.Padding(2);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(76, 36);
             this.delBtn.TabIndex = 7;
@@ -330,9 +330,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(13, 39);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(254, 237);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -341,7 +341,7 @@
             // aWithdrawBox
             // 
             this.aWithdrawBox.Location = new System.Drawing.Point(114, 129);
-            this.aWithdrawBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aWithdrawBox.Margin = new System.Windows.Forms.Padding(2);
             this.aWithdrawBox.Name = "aWithdrawBox";
             this.aWithdrawBox.Size = new System.Drawing.Size(76, 20);
             this.aWithdrawBox.TabIndex = 2;
@@ -349,7 +349,7 @@
             // aReleaseBox
             // 
             this.aReleaseBox.Location = new System.Drawing.Point(114, 108);
-            this.aReleaseBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aReleaseBox.Margin = new System.Windows.Forms.Padding(2);
             this.aReleaseBox.Name = "aReleaseBox";
             this.aReleaseBox.Size = new System.Drawing.Size(76, 20);
             this.aReleaseBox.TabIndex = 1;
@@ -357,7 +357,7 @@
             // aAgeBox
             // 
             this.aAgeBox.Location = new System.Drawing.Point(114, 85);
-            this.aAgeBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aAgeBox.Margin = new System.Windows.Forms.Padding(2);
             this.aAgeBox.Name = "aAgeBox";
             this.aAgeBox.Size = new System.Drawing.Size(76, 20);
             this.aAgeBox.TabIndex = 1;
@@ -365,15 +365,16 @@
             // aDurationBox
             // 
             this.aDurationBox.Location = new System.Drawing.Point(114, 63);
-            this.aDurationBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aDurationBox.Margin = new System.Windows.Forms.Padding(2);
             this.aDurationBox.Name = "aDurationBox";
             this.aDurationBox.Size = new System.Drawing.Size(76, 20);
             this.aDurationBox.TabIndex = 1;
+            this.aDurationBox.TextChanged += new System.EventHandler(this.aDurationBox_TextChanged);
             // 
             // aGenreBox
             // 
             this.aGenreBox.Location = new System.Drawing.Point(114, 41);
-            this.aGenreBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aGenreBox.Margin = new System.Windows.Forms.Padding(2);
             this.aGenreBox.Name = "aGenreBox";
             this.aGenreBox.Size = new System.Drawing.Size(76, 20);
             this.aGenreBox.TabIndex = 11;
@@ -381,7 +382,7 @@
             // aNameBox
             // 
             this.aNameBox.Location = new System.Drawing.Point(114, 20);
-            this.aNameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aNameBox.Margin = new System.Windows.Forms.Padding(2);
             this.aNameBox.Name = "aNameBox";
             this.aNameBox.Size = new System.Drawing.Size(76, 20);
             this.aNameBox.TabIndex = 10;
@@ -389,7 +390,7 @@
             // addBtn
             // 
             this.addBtn.Location = new System.Drawing.Point(88, 180);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(76, 38);
             this.addBtn.TabIndex = 9;
@@ -461,7 +462,7 @@
             // 
             this.moviesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.moviesGrid.Location = new System.Drawing.Point(9, 15);
-            this.moviesGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moviesGrid.Margin = new System.Windows.Forms.Padding(2);
             this.moviesGrid.Name = "moviesGrid";
             this.moviesGrid.RowTemplate.Height = 24;
             this.moviesGrid.Size = new System.Drawing.Size(341, 394);
@@ -474,7 +475,7 @@
             this.ClientSize = new System.Drawing.Size(920, 421);
             this.Controls.Add(this.moviesGrid);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Movie";
             this.Text = "Movie";
             this.Load += new System.EventHandler(this.Movie_Load);
