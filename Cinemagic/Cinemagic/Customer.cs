@@ -504,6 +504,10 @@ namespace Cinemagic
                 txtEditSurname.Text = "";
                 txtEditPhone.Text = "";
                 txtEditSurname.Text = "";
+                cbName.Checked = false;
+                cbSurname.Checked = false;
+                cbPhone.Checked = false;
+                cbEmail.Checked = false;
 
                 SearchCustomer(id);
             }

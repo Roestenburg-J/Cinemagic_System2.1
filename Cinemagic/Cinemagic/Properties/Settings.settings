@@ -5,10 +5,18 @@
     <Setting Name="Setting" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=LAPTOP-QKV1G6CM\SQLEXPRESS;Initial Catalog=Cinemagic_DB;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=LAPTOP-QKV1G6CM\SQLEXPRESS;Initial Catalog=Cinemagic_DB;Integrated Security=True;MultipleActiveResultSets=true;&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=LAPTOP-QKV1G6CM\SQLEXPRESS;Initial Catalog=Cinemagic_DB;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=LAPTOP-QKV1G6CM\SQLEXPRESS;Initial Catalog=Cinemagic_DB;Integrated Security=True;MultipleActiveResultSets=true;</Value>
+    </Setting>
+    <Setting Name="C__USERS_JANUS_SOURCE_REPOS_ROESTENBURG_J_CINEMAGIC_SYSTEM2_1_CINEMAGIC_CINEMAGIC_BIN_DEBUG_CINEMAGICDB_MDFConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\JANUS\SOURCE\REPOS\ROESTENBURG-J\CINEMAGIC_SYSTEM2.1\CINEMAGIC\CINEMAGIC\BIN\DEBUG\CINEMAGICDB.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\JANUS\SOURCE\REPOS\ROESTENBURG-J\CINEMAGIC_SYSTEM2.1\CINEMAGIC\CINEMAGIC\BIN\DEBUG\CINEMAGICDB.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
