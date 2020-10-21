@@ -146,7 +146,7 @@ namespace Cinemagic
 
         }
 
-        private void Insert(string cost, string seats, string date)
+        private void Insert(string cost, string seats, string date, string customer, string movie)
         {
                 try
                 {   
@@ -154,12 +154,14 @@ namespace Cinemagic
                     connection = cinema.constr;
                     cinema.conn = new SqlConnection(connection);
                     cinema.conn.Open();
-                    string insert_booking = @"INSERT INTO BOOKING (Total_TicketCost,NumberOfSeats,Tickets_SaleDate) values(@cost,@seats,@date)";
+                    string insert_booking = @"INSERT INTO BOOKING (Total_TicketCost,NumberOfSeats,Tickets_SaleDate, Movie_ID, Customer_ID) values(@cost,@seats,@date, @movie, @customer)";
 
                     cinema.com = new SqlCommand(insert_booking, cinema.conn);
                     cinema.com.Parameters.AddWithValue("@cost", cost);
                     cinema.com.Parameters.AddWithValue("@seats",seats );
                     cinema.com.Parameters.AddWithValue("@date", date);
+                    cinema.com.Parameters.AddWithValue("@customer", customer);
+                    cinema.com.Parameters.AddWithValue("@movie", movie);
 
                     cinema.com.ExecuteNonQuery();
                     cinema.conn.Close();
@@ -339,6 +341,8 @@ namespace Cinemagic
             seats = bseats.Text;
             cost = bcost.Text;
             date = bdate.Value.ToString();
+            string customerID = udCustomerID.Text;
+            string movieID = udMovieID.Text;
             
             if(bseats.Text == "" || bcost.Text == "" )
             {
@@ -347,7 +351,7 @@ namespace Cinemagic
 
             else
             {
-                Insert(cost, seats, date);
+                Insert(cost, seats, date, customerID, movieID);
             }
 
             

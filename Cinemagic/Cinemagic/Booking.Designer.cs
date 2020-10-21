@@ -42,13 +42,14 @@
             this.btnupdate = new System.Windows.Forms.Button();
             this.acost = new System.Windows.Forms.TextBox();
             this.gpupdate = new System.Windows.Forms.GroupBox();
+            this.btnrefresh = new System.Windows.Forms.Button();
             this.adate = new System.Windows.Forms.DateTimePicker();
             this.ubooking = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cbdate = new System.Windows.Forms.CheckBox();
-            this.btndisplay = new System.Windows.Forms.Button();
             this.cbseats = new System.Windows.Forms.CheckBox();
             this.cbcost = new System.Windows.Forms.CheckBox();
+            this.btndisplay = new System.Windows.Forms.Button();
             this.gprecord = new System.Windows.Forms.GroupBox();
             this.bdate = new System.Windows.Forms.DateTimePicker();
             this.bseats = new System.Windows.Forms.TextBox();
@@ -56,12 +57,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.bcost = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnrefresh = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.udMovieID = new System.Windows.Forms.NumericUpDown();
+            this.udCustomerID = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gpBooking.SuspendLayout();
             this.gpupdate.SuspendLayout();
             this.gprecord.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udMovieID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -136,7 +142,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(160, 109);
+            this.label3.Location = new System.Drawing.Point(159, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 13;
@@ -170,7 +176,7 @@
             // 
             // btnupdate
             // 
-            this.btnupdate.Location = new System.Drawing.Point(140, 137);
+            this.btnupdate.Location = new System.Drawing.Point(133, 146);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(139, 52);
             this.btnupdate.TabIndex = 9;
@@ -210,10 +216,20 @@
             this.gpupdate.Text = " Update Records";
             this.gpupdate.Enter += new System.EventHandler(this.gpupdate_Enter);
             // 
+            // btnrefresh
+            // 
+            this.btnrefresh.Location = new System.Drawing.Point(278, 146);
+            this.btnrefresh.Name = "btnrefresh";
+            this.btnrefresh.Size = new System.Drawing.Size(139, 52);
+            this.btnrefresh.TabIndex = 25;
+            this.btnrefresh.Text = "Refresh database";
+            this.btnrefresh.UseVisualStyleBackColor = true;
+            this.btnrefresh.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // adate
             // 
             this.adate.Enabled = false;
-            this.adate.Location = new System.Drawing.Point(253, 102);
+            this.adate.Location = new System.Drawing.Point(252, 111);
             this.adate.Name = "adate";
             this.adate.Size = new System.Drawing.Size(100, 20);
             this.adate.TabIndex = 24;
@@ -237,23 +253,13 @@
             // cbdate
             // 
             this.cbdate.AutoSize = true;
-            this.cbdate.Location = new System.Drawing.Point(359, 105);
+            this.cbdate.Location = new System.Drawing.Point(358, 114);
             this.cbdate.Name = "cbdate";
             this.cbdate.Size = new System.Drawing.Size(68, 17);
             this.cbdate.TabIndex = 17;
             this.cbdate.Text = "Edit date";
             this.cbdate.UseVisualStyleBackColor = true;
             this.cbdate.CheckedChanged += new System.EventHandler(this.cbdate_CheckedChanged);
-            // 
-            // btndisplay
-            // 
-            this.btndisplay.Location = new System.Drawing.Point(711, 325);
-            this.btndisplay.Name = "btndisplay";
-            this.btndisplay.Size = new System.Drawing.Size(139, 129);
-            this.btndisplay.TabIndex = 3;
-            this.btndisplay.Text = "Display Database";
-            this.btndisplay.UseVisualStyleBackColor = true;
-            this.btndisplay.Click += new System.EventHandler(this.button2_Click);
             // 
             // cbseats
             // 
@@ -277,8 +283,22 @@
             this.cbcost.UseVisualStyleBackColor = true;
             this.cbcost.CheckedChanged += new System.EventHandler(this.cbcost_CheckedChanged);
             // 
+            // btndisplay
+            // 
+            this.btndisplay.Location = new System.Drawing.Point(711, 325);
+            this.btndisplay.Name = "btndisplay";
+            this.btndisplay.Size = new System.Drawing.Size(139, 129);
+            this.btndisplay.TabIndex = 3;
+            this.btndisplay.Text = "Display Database";
+            this.btndisplay.UseVisualStyleBackColor = true;
+            this.btndisplay.Click += new System.EventHandler(this.button2_Click);
+            // 
             // gprecord
             // 
+            this.gprecord.Controls.Add(this.udCustomerID);
+            this.gprecord.Controls.Add(this.udMovieID);
+            this.gprecord.Controls.Add(this.label6);
+            this.gprecord.Controls.Add(this.label5);
             this.gprecord.Controls.Add(this.bdate);
             this.gprecord.Controls.Add(this.bseats);
             this.gprecord.Controls.Add(this.label7);
@@ -342,16 +362,6 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Number of seats:";
             // 
-            // btnrefresh
-            // 
-            this.btnrefresh.Location = new System.Drawing.Point(285, 137);
-            this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(139, 52);
-            this.btnrefresh.TabIndex = 25;
-            this.btnrefresh.Text = "Refresh database";
-            this.btnrefresh.UseVisualStyleBackColor = true;
-            this.btnrefresh.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // btnMain
             // 
             this.btnMain.Location = new System.Drawing.Point(711, 479);
@@ -361,6 +371,38 @@
             this.btnMain.Text = "Main Menu";
             this.btnMain.UseVisualStyleBackColor = true;
             this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 121);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Movie ID:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Customer ID:";
+            // 
+            // udMovieID
+            // 
+            this.udMovieID.Location = new System.Drawing.Point(80, 118);
+            this.udMovieID.Name = "udMovieID";
+            this.udMovieID.Size = new System.Drawing.Size(120, 20);
+            this.udMovieID.TabIndex = 29;
+            // 
+            // udCustomerID
+            // 
+            this.udCustomerID.Location = new System.Drawing.Point(80, 147);
+            this.udCustomerID.Name = "udCustomerID";
+            this.udCustomerID.Size = new System.Drawing.Size(120, 20);
+            this.udCustomerID.TabIndex = 30;
             // 
             // Booking
             // 
@@ -385,6 +427,8 @@
             this.gpupdate.PerformLayout();
             this.gprecord.ResumeLayout(false);
             this.gprecord.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udMovieID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.udCustomerID)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,5 +465,9 @@
         private System.Windows.Forms.DateTimePicker bdate;
         private System.Windows.Forms.Button btnrefresh;
         private System.Windows.Forms.Button btnMain;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown udCustomerID;
+        private System.Windows.Forms.NumericUpDown udMovieID;
     }
 }
