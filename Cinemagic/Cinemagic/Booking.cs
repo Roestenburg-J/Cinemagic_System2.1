@@ -352,6 +352,7 @@ namespace Cinemagic
             else
             {
                 Insert(cost, seats, date, customerID, movieID);
+                MessageBox.Show("Booking made sucsesfully", "SUCSESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             
