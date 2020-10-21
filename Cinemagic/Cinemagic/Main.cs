@@ -10,7 +10,12 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using RandomProj;
 
-
+//Group Members
+//Janus Roestenburg 311611044
+//Fathima Dindar 31625185
+//Aakib Patel 31825869 
+//Dirk Steyn 32521723
+//Derick Fritz 30015219
 namespace RandomProj
 {
     public partial class Main : Form
